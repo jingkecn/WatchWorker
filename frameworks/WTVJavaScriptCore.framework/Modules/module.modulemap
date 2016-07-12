@@ -1,0 +1,10 @@
+framework module WTVJavaScriptCore {
+  umbrella header "WTVJavaScriptCore.h"
+
+  export *
+  module * { export * }
+}
+
+module WTVJavaScriptCore.Swift {
+    header "WTVJavaScriptCore-Swift.h"
+}

@@ -1,0 +1,10 @@
+{
+    "com.wiztivi.cordova.plugins.smartwatchworker": {
+        "source": {
+            "type": "local",
+            "path": "../.."
+        },
+        "is_top_level": true,
+        "variables": {}
+    }
+}
