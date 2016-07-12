@@ -4,5 +4,50 @@
     <js-module name="SmartWatchWorker" src="www/SmartWatchWorker.js">
         <clobbers target="smartwatchworker" />
     </js-module>
-    <dependency id="cordova-plugin-add-swift-support" version="1.3.1"/>
+    <platform name="ios">
+        <!-- Config files -->
+        <config-file target="config.xml" parent="/*">
+            <feature name="SmartWatchWorker">
+                <param name="ios-package" value="SmartWatchWorker" />
+            </feature>
+        </config-file>
+        <!-- Source files -->
+        <source-file src="src/ios/SmartWatchWorker.swift" />
+        <!-- Resource files -->
+        <resource-file src="www/core/Polyfills/DOM/Document.js" />
+        <resource-file src="www/core/Polyfills/DOM/DOMAPIs.js" />
+        <resource-file src="www/core/Polyfills/DOM/DOMTokenList.js" />
+        <resource-file src="www/core/Polyfills/DOM/Element.js" />
+        <resource-file src="www/core/Polyfills/DOM/HTMLDocument.js" />
+        <resource-file src="www/core/Polyfills/DOM/HTMLElement.js" />
+        <resource-file src="www/core/Polyfills/DOM/Window.js" />
+        <resource-file src="www/core/Polyfills/Events/ErrorEvent.js" />
+        <resource-file src="www/core/Polyfills/Events/Event.js" />
+        <resource-file src="www/core/Polyfills/Events/EventAPIs.js" />
+        <resource-file src="www/core/Polyfills/Events/EventTarget.js" />
+        <resource-file src="www/core/Polyfills/Events/MessageEvent.js" />
+        <resource-file src="www/core/Polyfills/Message/MessageAPIs.js" />
+        <resource-file src="www/core/Polyfills/Message/MessageChannel.js" />
+        <resource-file src="www/core/Polyfills/Message/MessagePort.js" />
+        <resource-file src="www/core/Polyfills/Others/es6-promise.js" />
+        <resource-file src="www/core/Polyfills/Others/OtherPolyfills.js" />
+        <resource-file src="www/core/Polyfills/Others/XMLHttpRequest.js" />
+        <resource-file src="www/core/Polyfills/WCMessage/WCMessageAPIs.js" />
+        <resource-file src="www/core/Polyfills/WCMessage/WCMessageChannel.js" />
+        <resource-file src="www/core/Polyfills/WCMessage/WCMessagePort.js" />
+        <resource-file src="www/core/Polyfills/Workers/SharedWorker.js" />
+        <resource-file src="www/core/Polyfills/Workers/WCSharedWorker.js" />
+        <resource-file src="www/core/Polyfills/Workers/WorkerAPIs.js" />
+        <resource-file src="www/core/Polyfills/Workers/WorkerLocation.js" />
+        <resource-file src="www/core/Polyfills/Workers/WorkerNavigator.js" />
+        <resource-file src="www/core/Polyfills/Polyfills.js" />
+        <resource-file src="www/core/Tests/InsideWorkerTester.js" />
+        <resource-file src="www/core/Tests/OutsideWorkerTester.js" />
+        <resource-file src="www/core/Utilities/Sequences/Queue.js" />
+        <resource-file src="www/core/Utilities/Sequences/Stack.js" />
+        <resource-file src="www/core/Utilities/Utilities.js" />
+        <resource-file src="www/core/JSClassDelegate.js" />
+        <!-- Dependencies -->
+        <dependency id="cordova-plugin-add-swift-support" version="1.3.1"/>
+    </platform>
 </plugin>
