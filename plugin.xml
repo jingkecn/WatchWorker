@@ -49,5 +49,6 @@
         <resource-file src="www/core/JSClassDelegate.js" />
         <!-- Dependencies -->
         <dependency id="cordova-plugin-add-swift-support" version="1.3.1"/>
+        <framework src="frameworks/WTVJavascriptCore.framework" custom="true" />
     </platform>
 </plugin>
