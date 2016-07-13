@@ -50,7 +50,7 @@ smartwatchworker.initialize(url, onSuccess, onError);
       });
 
     /**
-     * Remove event listener from smartwatchworker
+     * Remove event listeners from smartwatchworker
      * @parameter   {string}    type
      * @parameter   {callback}  onSuccess
      * @parameter   {callback}  onError
