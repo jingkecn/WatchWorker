@@ -79,7 +79,6 @@ extension WCMessagePort {
     }
     
     func onWatchDisconnected(event: MessageEvent) {
-//        guard let watchConnectedEvent = self.getEventByType("watchdisconnected") as? MessageEvent else { return }
         self.dispatchEvent(event)
         guard let jsEvent = event.thisJSValue else { return }
         // Invoke global [onwatchconnected] function
@@ -95,7 +94,8 @@ extension WCMessagePort {
     }
     
     func onError(event: ErrorEvent) {
-        dispatchEvent(event)
+        self.postMessage("Your encountered smart watch is not reachable.")
+        self.dispatchEvent(event)
         guard let jsEvent = event.thisJSValue else { return }
         // Invoke global [onwatchconnected] function
         guard let context = self.context.executionContext else { return }
@@ -132,10 +132,6 @@ extension WCMessagePort {
     var reachableSession: WCSession? {
         guard let session = self.session where session.reachable else {
             print("Your Apple Watch device is not reachable...")
-            if let errorEvent = self.getEventByType("error") as? ErrorEvent {
-                errorEvent.registerMessage("Your countered smart watch is not reachable!")
-                self.onError(errorEvent)
-            }
             return nil
         }
         if let connectEvent = self.getEventByType("connect") as? MessageEvent {
@@ -153,7 +149,13 @@ extension WCMessagePort {
      - parameter errorHandler: error handler
      */
     func sendMessage(message: [String : AnyObject], replyHandler: (([String : AnyObject]) -> Void)? = nil, errorHandler: ((NSError) -> Void)? = nil) {
-        guard let session = self.reachableSession else { return }
+        guard let session = self.reachableSession else {
+            if let errorEvent = self.getEventByType("error") as? ErrorEvent {
+                errorEvent.registerMessage("Your countered smart watch is not reachable!")
+                self.onError(errorEvent)
+            }
+            return
+        }
         session.sendMessage(message, replyHandler: replyHandler, errorHandler: {
             error in
             guard let errorEvent = self.getEventByType("error") as? ErrorEvent else { return }
