@@ -53,6 +53,7 @@ var app = {
 
         console.log('Received Event: ' + id);
     },
+    // Testing smartwatchworker
     testSmartWatchWorker: function (worker) {
         var onSuccess = function () {
             worker.addEventListener("message", function (message) {
