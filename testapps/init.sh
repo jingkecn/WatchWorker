@@ -1,6 +1,6 @@
 ##!/bin/sh
 
-# PATH="."
+# PATH="./SmartWatchWorkerExample"
 # ID="com.wiztivi.examples.smartwatchworker"
 # NAME="SmartWatchWorkerExample"
 
