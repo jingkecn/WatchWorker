@@ -74,6 +74,6 @@ var onSuccess = function () {
 };
 // On worker initialized error
 var onError = function () {};
-// Initialization
+// Initialization with a context in script file named InsideWatchWorker.js
 smartwatchworker.initialize("InsideWatchWorker", onSuccess, onError);
 ```
