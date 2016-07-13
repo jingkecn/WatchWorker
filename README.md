@@ -1,6 +1,11 @@
 Smart Watch Worker Plugin for Cordova
 ---
-This is an experimental plugin for communication between a smart watch and its encountered mobile using HTML5 SharedWorker API
+This is an experimental plugin for communication between a smart watch and its encountered mobile using HTML5 SharedWorker APIs.
+
+# Prequisites
+
+## For iOS
+This plugin is ***ONLY*** available for **iOS9.x**, so please make sure that the deployment target in your Xcode project is set to version **9.x** (both project setting and target setting).
 
 # Messaging
 
