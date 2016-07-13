@@ -63,7 +63,7 @@ var app = {
                 messageElement.textContent = message;
             });
             worker.addEventListener("error", function (error) {
-                // Receiving message
+                // Receiving error
                 var parentElement = document.getElementById(app.ids.deviceready);
                 var errorElement = parentElement.querySelector('.error');
                 errorElement.setAttribute('style', 'display:block');
