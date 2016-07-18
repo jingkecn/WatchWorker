@@ -4,6 +4,7 @@ importScripts("WCMessagePort");
 class WCMessageChannel extends JSClassDelegate {
 
     constructor(instance) {
+        super();
         if (this.constructor.name !== "WCMessageChannel") { return; }
         this.instance = instance || scope && scope.createWCMessageChannel();
     }

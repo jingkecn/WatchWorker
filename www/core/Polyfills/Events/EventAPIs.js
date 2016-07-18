@@ -1,5 +1,4 @@
-importScripts("Event");
 importScripts("ErrorEvent");
-importScripts("MessageEvent");
-// importScripts("EventListener");
+importScripts("Event");
 importScripts("EventTarget");
+importScripts("MessageEvent");

@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <plugin id="com-wiztivi-cordova-plugin-smartwatchworker" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>SmartWatchWorker</name>
-    <js-module name="SmartWatchWorker" src="www/SmartWatchWorker.js">
+    <name>SmartwatchWorker</name>
+    <js-module name="SmartwatchWorker" src="www/SmartwatchWorker.js">
         <clobbers target="smartwatchworker" />
     </js-module>
     <platform name="ios">
         <!-- Config files -->
         <config-file target="config.xml" parent="/*">
-            <feature name="SmartWatchWorker">
-                <param name="ios-package" value="SmartWatchWorker" />
+            <feature name="SmartwatchWorker">
+                <param name="ios-package" value="SmartwatchWorker" />
             </feature>
         </config-file>
         <!-- Source files -->
@@ -53,7 +53,7 @@
 
         <source-file src="src/ios/core/JSClassDelegate.swift" />
 
-        <source-file src="src/ios/SmartWatchWorker.swift" />
+        <source-file src="src/ios/SmartwatchWorker.swift" />
         <!-- Resource files -->
         <resource-file src="www/core/Polyfills/DOM/Document.js" />
         <resource-file src="www/core/Polyfills/DOM/DOMAPIs.js" />

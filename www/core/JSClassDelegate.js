@@ -5,7 +5,7 @@ class JSClassDelegate {
 
     constructor() {
         if (this.constructor.name === "JSClassDelegate") {
-            throw new Error(`Illegal constructor - ${this.constructor.name}`);
+            throw new Error(`Attempt to construct an interface - ${this.constructor.name}`);
         }
         this.__instance__ = null;   // Native instance
     }
@@ -29,5 +29,10 @@ class JSClassDelegate {
         this.__instance__ = instance;
         this.__instance__.registerThisJSValue(this);
     }
+
+    // static create(instance) {
+    //     this.instance = instance;
+    //     return this;
+    // }
 
 }

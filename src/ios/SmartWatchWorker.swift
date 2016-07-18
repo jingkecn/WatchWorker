@@ -1,7 +1,7 @@
 import JavaScriptCore
 import ObjectiveC
 
-@objc(SmartWatchWorker) class SmartWatchWorker : CDVPlugin {
+@objc(SmartwatchWorker) class SmartwatchWorker : CDVPlugin {
     
     var worker: WCSharedWorker? {
         didSet {

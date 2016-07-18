@@ -1,1 +1,2 @@
+importScripts("WCMessageChannel");
 importScripts("WCMessagePort");

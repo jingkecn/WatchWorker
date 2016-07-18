@@ -1,6 +1,6 @@
 importScripts("EventTarget");
-importScripts("Queue");
 importScripts("MessageEvent");
+importScripts("Queue");
 /**
  * 
  */
@@ -39,7 +39,7 @@ class MessagePort extends EventTarget {
         this.instance.close();
     }
 
-    __onmessage__(event) { console.debug("Message received from the entangled port", event); }
+    __onmessage__(event) { console.debug("Message received from the entangled port", event.data, event); }
 
     static create(instance) {
         return new MessagePort(instance);

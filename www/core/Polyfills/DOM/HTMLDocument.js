@@ -7,12 +7,11 @@ importScripts("HTMLElement");
  */
 class HTMLDocument extends Document {
 
-    constructor() {
+    constructor(instance) {
         super();
+        if (this.constructor.name !== "HTMLDocument") { return; }
+        this.instance = instance || scope && scope.createEventTarget();
         this.body = new HTMLElement();
-        this.registerEvent(new Event("load"));
-        this.addEventListener("load", this.onload.bind(this));
-        this.dispatchEvent(this.getEventByType("load"));
     }
     
     createElement(element) {
@@ -29,8 +28,9 @@ class HTMLDocument extends Document {
         return [new HTMLElement()];
     }
 
-    // MARK: ********** Event Handlers **********
-    onload(event) { // for testing
-        console.debug(`{${this.constructor.name}} loaded`, event);
+    static create(instance) {
+        return new HTMLDocument(instance);
     }
 }
+
+var document = new HTMLDocument();

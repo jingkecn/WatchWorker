@@ -1,3 +1,5 @@
+var errorEvent;
+
 /**
  * This handler will be invoked when a MessagePort connection is opened between the associated SharedWorker and the main thread.
  * @parameter   {MessageEvent} event 
@@ -7,10 +9,16 @@ onconnect = function (event) {
     var port = event.ports[0];
     port.addEventListener("message", function(event) {
         console.debug("Message from outside port", event.data);
+        port.postMessage(`Inside port has received message: ${event.data}`);
+    });
+    port.addEventListener("error", function(event) {
+        errorEvent = event;
+        console.debug("Error recieved", event);
+        port.postMessage(`Error posting message: ${event.message}`);
     });
     port.start();
     // post message to the outside port
-    // port.postMessage("Inside global scope has been successfully connected!");
+    port.postMessage("Inside global scope has been successfully connected!");
 };
 
 /**
@@ -22,10 +30,10 @@ onwatchconnected = function (event) {
     var port = event.ports[0];
     port.addEventListener("message", function(event) {
         console.debug("Message from outside port", event.data);
-        // port.postMessage(`Inside port has received message: ${event.data}`);
+        port.postMessage(`Inside port has received message: ${event.data}`);
     });
     port.start();
-    // port.postMessage("Smart watch has been successfully connected!");
+    port.postMessage("Inside global scope has been successfully connected!");
 };
 
 /**
@@ -37,10 +45,10 @@ onwatchdisconnected = function (event) {
     var port = event.ports[0];
     port.addEventListener("message", function(event) {
         console.debug("Message from outside port", event.data);
-        // port.postMessage(`Inside port has received message: ${event.data}`);
+        port.postMessage(`Inside port has received message: ${event.data}`);
     });
     port.start();
-    // port.postMessage("Smart watch has been disconnected!");
+    port.postMessage("Inside global scope has been successfully connected!");
 };
 
 /**

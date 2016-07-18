@@ -7,7 +7,7 @@ var exec = require('cordova/exec');
  * @parameter   {callback}  onError
  */
 exports.initialize = function (url, onSuccess, onError) {
-    exec(onSuccess, onError, "SmartWatchWorker", "initialize", [{"url": url}]);
+    exec(onSuccess, onError, "SmartwatchWorker", "initialize", [{"url": url}]);
 };
 
 /**
@@ -18,7 +18,7 @@ exports.initialize = function (url, onSuccess, onError) {
  */
 exports.postMessage = function (message, onSuccess, onError) {
     message = (typeof message === "object") ? JSON.stringify(message) : message;
-    exec(onSuccess, onError, "SmartWatchWorker", "postMessage", [{"message": message}]);
+    exec(onSuccess, onError, "SmartwatchWorker", "postMessage", [{"message": message}]);
 };
 
 /**
@@ -29,10 +29,10 @@ exports.postMessage = function (message, onSuccess, onError) {
 exports.addEventListener = function (type, callback) {
     if (typeof type !== "string") { return; }
     if (type === "error") {
-        exec(null, callback, "SmartWatchWorker", "addEventListener", [{"type": type}]);
+        exec(null, callback, "SmartwatchWorker", "addEventListener", [{"type": type}]);
         return;
     }
-    exec(callback, null, "SmartWatchWorker", "addEventListener", [{"type": type}]);
+    exec(callback, null, "SmartwatchWorker", "addEventListener", [{"type": type}]);
 };
 
 /**
@@ -43,5 +43,5 @@ exports.addEventListener = function (type, callback) {
  */
 exports.removeEventListener = function (type, onSuccess, onError) {
     if (typeof type !== "string") { return; }
-    exec(onSuccess, onError, "SmartWatchWorker", "removeEventListener", [{"type": type}]);
+    exec(onSuccess, onError, "SmartwatchWorker", "removeEventListener", [{"type": type}]);
 };

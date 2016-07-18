@@ -4,12 +4,15 @@ importScripts("JSClassDelegate");
  */
 class EventTarget extends JSClassDelegate {
 
-    constructor() {
+    constructor(instance) {
         super();
         if (this.constructor.name === "EventTarget") {
             throw new Error(`Illegal constructor - ${this.constructor.name}`);
         }
     }
+
+    get onload() { return this.__onload__; }
+    set onload(handler) { this.__onload__ = handler; this.instance.registerThisJSValue(this); }
 
     /**
      * @parameter	{String} type
@@ -47,12 +50,14 @@ class EventTarget extends JSClassDelegate {
         return this.instance.dispatchEvent(event.instance);
     }
 
-    registerEvent(event) {
-        this.instance && this.instance.registerEvent(event.instance);
-    }
+    // registerEvent(event) {
+    //     this.instance && this.instance.registerEvent(event.instance);
+    // }
 
-    getEventByType(type) {
-        return this.instance &&  this.instance.getEventByType(type).thisJSValue;
-    }
+    // getEventByType(type) {
+    //     return this.instance &&  this.instance.getEventByType(type).thisJSValue;
+    // }
+
+    __onload__(event) { console.info(`[${this.constructor.name}] loaded`, event); }
 
 }

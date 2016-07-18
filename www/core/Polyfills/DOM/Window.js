@@ -6,10 +6,8 @@ class Window extends EventTarget {
 
     constructor(instance) {
         super();
-        // this.__instance__ = 
-        this.registerEvent(new Event("load"));
-        this.addEventListener("load", this.onload.bind(this));
-        this.dispatchEvent("load");
+        if (this.constructor.name !== "Window") { return; }
+        this.instance = instance || scope && scope.createEventTarget();
     }
 
     // MARK: ********** Window Timers **********
@@ -48,9 +46,11 @@ class Window extends EventTarget {
         JSCWindowTimers.clearIntervalById(id);
     }
 
-    // MARK: ********** Event Handlers **********
-    onload(event) { // for testing
-        console.debug(`{${this.constructor.name}} loaded`, event);
+    static create(instance) {
+        return new Window(instance);
     }
 
 }
+
+var self = new Window();
+var window = self;

@@ -1,7 +1,6 @@
-importScripts("HTMLDocument");
+importScripts("Document");
 importScripts("DOMTokenList");
+importScripts("Element");
+importScripts("HTMLDocument");
+importScripts("HTMLElement");
 importScripts("Window");
-
-var self = new Window();
-var window = self;
-var document = new HTMLDocument();
