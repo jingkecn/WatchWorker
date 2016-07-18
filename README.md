@@ -7,7 +7,7 @@ This is an experimental plugin for communication between a smart watch and its e
 ## For iOS
 This plugin is ***ONLY*** available for **iOS9.x**, so please make sure that the deployment target is set to version **9.x** in your Xcode project (both project settings and target settings).
 
-Please add the following lines into your ***AppDelegate.m*** file within your Xcode project.
+Please add the following lines into your `AppDelegate.m` file within your Xcode project.
 
 ``` objc 
 /*
