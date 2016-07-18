@@ -6,81 +6,81 @@
 	objectVersion = 46;
 	objects = {
 /* Begin PBXBuildFile section */
+		02025364D1964920AD24435D /* WorkerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA3FFBF07AA4FDE976F148D /* WorkerLocation.swift */; };
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
-		03EA310C6FEB4D968AAC2F8F /* EventInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24543A6B4B8A4CD98759EA9A /* EventInit.swift */; };
-		051F416B9CD9426F88E2AE71 /* WorkerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4AD87AE761445597FAD90D /* WorkerOptions.swift */; };
-		06C1109A2F644E89B0D2D0F8 /* Stack.js in Resources */ = {isa = PBXBuildFile; fileRef = 30FDD74CB4804C5C820B6E07 /* Stack.js */; };
-		0D41F3BE2A4C4FC3B5871B46 /* WorkerLocation.js in Resources */ = {isa = PBXBuildFile; fileRef = B05CBF5353C649EFA15E9B5C /* WorkerLocation.js */; };
-		19420C906D4D4BD991E1817F /* ScriptContextJSExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8FDEAC976A5488FA254EBAC /* ScriptContextJSExport.swift */; };
-		1A580B65ADCF4662AFB5AEDD /* WCSharedWorker.js in Resources */ = {isa = PBXBuildFile; fileRef = A6CB5C50AC83466AABD5B7E6 /* WCSharedWorker.js */; };
+		0BCC67CFB5234457B7F93480 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F5E3CA9669C41349F61C683 /* SwiftyJSON.swift */; };
+		0C6EFB83C23E4DC79EA266C0 /* WCMessagePort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBF87AA894254BFB90E8438B /* WCMessagePort.swift */; };
+		0ECCFBA06E154E6AB8C0560F /* SmartWatchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2D8EA6EC1B4E2D85CC1172 /* SmartWatchWorker.swift */; };
+		116ED12B0901442B97923246 /* MessageChannel.js in Resources */ = {isa = PBXBuildFile; fileRef = 73A09CB046644C5A93F8780B /* MessageChannel.js */; };
+		134B019F320845A8B2D7F9A7 /* EventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDE0C52902C49B59089EF27 /* EventListener.swift */; };
+		167F6D6A511C4A8A94BCB3C2 /* ScriptContextGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CB99A41B79C43DBAED6C88E /* ScriptContextGlobal.swift */; };
+		169C44CD6287430F993BC530 /* Queue.js in Resources */ = {isa = PBXBuildFile; fileRef = 7604751F89C8438D967F5C7D /* Queue.js */; };
+		1AAB41C59E2142088175891A /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A31B5A0E1404A5EB32E4E8A /* Event.swift */; };
+		1D0ABC9169A543C9917D9C0D /* MessageEventInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E5F39B977B4928A45053F5 /* MessageEventInit.swift */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		1E4E2FAC9FC440A695C85419 /* SmartWatchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3BCEDE17517436FBC9A4859 /* SmartWatchWorker.swift */; };
-		1F1507FABB0F4BCABF3DFA4F /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63ADFDFD0174B95BA7E84C0 /* Stack.swift */; };
-		22B46955805649298B185DB7 /* SharedWorker.js in Resources */ = {isa = PBXBuildFile; fileRef = 9D888E05CCB94F9088DAB667 /* SharedWorker.js */; };
-		2726C3B4DD51453080238C3C /* Event.js in Resources */ = {isa = PBXBuildFile; fileRef = 5E2C14D00E70411B96CC01B1 /* Event.js */; };
-		28595908BC794CA9A4292199 /* WindowTimers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087A435257C04CC89ABB2D44 /* WindowTimers.swift */; };
-		290F6F881B0A4DA6BA1A48B2 /* MessageAPIs.js in Resources */ = {isa = PBXBuildFile; fileRef = 49A94CA20C794473852C4772 /* MessageAPIs.js */; };
+		1DC6988A2AB440EEBEB2EB1A /* WorkerLocation.js in Resources */ = {isa = PBXBuildFile; fileRef = 973FC247DD6A44FAA7D0E60C /* WorkerLocation.js */; };
+		248BD9A2E020443ABDF68D62 /* InsideWatchWorker.js in Resources */ = {isa = PBXBuildFile; fileRef = 9E83BCB029084045AC347475 /* InsideWatchWorker.js */; };
+		24A1712769614096B0F37E98 /* XMLHttpRequest.js in Resources */ = {isa = PBXBuildFile; fileRef = BDDF2515D73743C9881A3D0E /* XMLHttpRequest.js */; };
+		25D8C48B678B4FABBCE34551 /* WorkerNavigator.js in Resources */ = {isa = PBXBuildFile; fileRef = DA484AEC425E4C8D9119E6AB /* WorkerNavigator.js */; };
+		2B51DBE644BA4933BCB372EC /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E11EAE39025425EA58E9A16 /* Queue.swift */; };
+		2FDB8A8769654FC8BA17650F /* SwiftyJSONExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A1324B62B42748A9841B1 /* SwiftyJSONExtension.swift */; };
 		301BF552109A68D80062928A /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 301BF535109A57CC0062928A /* libCordova.a */; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
 		3047A5121AB8059700498E2A /* build-debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A50F1AB8059700498E2A /* build-debug.xcconfig */; };
 		3047A5131AB8059700498E2A /* build-release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5101AB8059700498E2A /* build-release.xcconfig */; };
 		3047A5141AB8059700498E2A /* build.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3047A5111AB8059700498E2A /* build.xcconfig */; };
-		32E5821F120C49E2B29781CB /* EventTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A8ECD03919A46F49C2E95A3 /* EventTarget.swift */; };
-		35AB7B6FE4F04687A2CD44C6 /* EventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80AE9E5197D7485EB68DC170 /* EventListener.swift */; };
-		3B753F383FBA43FCAE49D367 /* Queue.js in Resources */ = {isa = PBXBuildFile; fileRef = 2CA4BD4BB2EC4534934C2C7D /* Queue.js */; };
-		3D9F8C0766F6470D9E692872 /* MessageEvent.js in Resources */ = {isa = PBXBuildFile; fileRef = 8A51E7E087184AAAA4394DB5 /* MessageEvent.js */; };
-		44BC39AA5F114E69B64F6593 /* ErrorEvent.js in Resources */ = {isa = PBXBuildFile; fileRef = 411BE901C3B94986883FD658 /* ErrorEvent.js */; };
-		44CAF8C944B04F7E9BB514A9 /* AbstractWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0664F921FEB847ECBF2F0C82 /* AbstractWorker.swift */; };
-		47444F67A0DD48FE918A6802 /* XMLHttpRequest.js in Resources */ = {isa = PBXBuildFile; fileRef = 775791DEDCDE4604A768D2E5 /* XMLHttpRequest.js */; };
-		4A46C5EEB8464544B77196B7 /* Utilities.js in Resources */ = {isa = PBXBuildFile; fileRef = 6A53A197EF9E47C9862CD098 /* Utilities.js */; };
-		4ED18D60E062419F81512DE1 /* WCMessagePort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49767D6FA3F148F484117474 /* WCMessagePort.swift */; };
-		50C8671D413949BD9A7E58EA /* MessageChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80B7B226C574E1C99EB4EC0 /* MessageChannel.swift */; };
-		51300D95BEC24539AE39EC4B /* ScriptContextGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D1B66D4C314FE8B465565E /* ScriptContextGlobal.swift */; };
-		55C9F191DB2546AE8A939F12 /* MessageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC047F4E37204EF48F6749C3 /* MessageEvent.swift */; };
-		595FE03C28E44D53BCC35379 /* InsideWatchWorker.js in Resources */ = {isa = PBXBuildFile; fileRef = EF968366A1AA49D78688A2E7 /* InsideWatchWorker.js */; };
-		5D8C4613CDA84F5BAB30C890 /* HTMLDocument.js in Resources */ = {isa = PBXBuildFile; fileRef = 2D4A5DCE75774B24BA986D41 /* HTMLDocument.js */; };
-		5EDF37721BC8480CB400B454 /* WCSharedWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AEFBA7E32D646DDA446B7ED /* WCSharedWorker.swift */; };
-		71747F583A934387BB58C997 /* WorkerNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516AE72005AC4044A0C79329 /* WorkerNavigator.swift */; };
-		72F2C5D4491C4BF9AC95CEC2 /* ErrorEventInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF5192CC43F4C5A9A02352C /* ErrorEventInit.swift */; };
-		73548937AC8146AFA2415F90 /* DOMTokenList.js in Resources */ = {isa = PBXBuildFile; fileRef = 2CDDD41BC6AA4A2C9823288E /* DOMTokenList.js */; };
-		74C572C0699F481CB88EB237 /* SharedWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589EA9FF03AF40E7842010E4 /* SharedWorker.swift */; };
-		7950E313CD0345318945476C /* OutsideWatchWorker.js in Resources */ = {isa = PBXBuildFile; fileRef = 70E7B2FDCE5644BC9AA113A4 /* OutsideWatchWorker.js */; };
-		7DC02B8D8B7649578845CB5B /* MessagePort.js in Resources */ = {isa = PBXBuildFile; fileRef = EEF52642361F47EF84857EEF /* MessagePort.js */; };
-		7E33FAE9C495462C95D61843 /* EventTarget.js in Resources */ = {isa = PBXBuildFile; fileRef = C4E6009EEFFD4D348A970F6B /* EventTarget.js */; };
-		7E811E975A254FC88D524972 /* Element.js in Resources */ = {isa = PBXBuildFile; fileRef = A6A6F59B1B974565AE7F1A74 /* Element.js */; };
-		830A8B8E6A4E42AAA4812E03 /* WCMessagePort.js in Resources */ = {isa = PBXBuildFile; fileRef = F9FAE9C89DFC4710A933550D /* WCMessagePort.js */; };
-		8844249E83134EC9B7BD85D3 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1045B80BCDE4B20A0DAA0A9 /* Keys.swift */; };
-		88E6FE83D0B94BC193AA2DE1 /* HTMLElement.js in Resources */ = {isa = PBXBuildFile; fileRef = 412A17C325994691BE950FFB /* HTMLElement.js */; };
-		8E997EDCCD4046928416F89D /* Window.js in Resources */ = {isa = PBXBuildFile; fileRef = 8292E5C9730E4AD7843BB224 /* Window.js */; };
-		96DB8E5BABBA4BB4B2E15ED0 /* SwiftyJSONExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72FFC11407E40D1B000ACE7 /* SwiftyJSONExtension.swift */; };
-		98044624B3964FCC9E42F10B /* Document.js in Resources */ = {isa = PBXBuildFile; fileRef = EC8205F1D50E478097B88679 /* Document.js */; };
-		9EA137A41A2A4381B0FBAFA4 /* WCMessageAPIs.js in Resources */ = {isa = PBXBuildFile; fileRef = E073D20AB4E04340ACECE08E /* WCMessageAPIs.js */; };
-		9FB6641A805D47FE821B6B6D /* SwiftyJSONRPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6723D41B13E44BC680EDE299 /* SwiftyJSONRPC.swift */; };
-		A71117E85DB14B078CA223E1 /* MessageChannel.js in Resources */ = {isa = PBXBuildFile; fileRef = E7D909F5DF904636A36FE4C4 /* MessageChannel.js */; };
-		AFE840D06B3744068AB559B9 /* EventAPIs.js in Resources */ = {isa = PBXBuildFile; fileRef = AA5BE139ABA34C9E83BE597C /* EventAPIs.js */; };
-		B04968DE1BD64F58BF6E2851 /* JSClassDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2DFB1FAD3C496BBF9C03E0 /* JSClassDelegate.swift */; };
-		B2444BB93E61499FA293503D /* ScriptContextMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586B62957F25415389C4A4FE /* ScriptContextMessaging.swift */; };
-		B625FB62A7F14789A6C4FF58 /* ScriptContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ACF85C595F4959AD7E4BA4 /* ScriptContext.swift */; };
-		B727F4143E3D4DF58E2866C5 /* WCMessageChannel.js in Resources */ = {isa = PBXBuildFile; fileRef = 64F493FD4B1344B0BD08ED40 /* WCMessageChannel.js */; };
-		B7B126AA4B7B41009F0DF17F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF618BC5F35B4A3AAF8FA8CC /* Event.swift */; };
-		B91AE2A6840F47AF806B0EB5 /* EventListenerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4662DC5380441AA26205DD /* EventListenerOptions.swift */; };
-		BBEC87EE227248F98411BF72 /* DOMAPIs.js in Resources */ = {isa = PBXBuildFile; fileRef = 5176E0E57F84487B8C03746A /* DOMAPIs.js */; };
-		BF0AD5DCC16A4650BE629182 /* WorkerLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C6CB228C584577ADCF6E84 /* WorkerLocation.swift */; };
-		C04BB8DECE6247CA8F478351 /* WorkerAPIs.js in Resources */ = {isa = PBXBuildFile; fileRef = 3E24E18DFB884DFEB08160A6 /* WorkerAPIs.js */; };
-		C33A8378B0D5463096EE4386 /* MessagePort.swift in Sources */ = {isa = PBXBuildFile; fileRef = A004C0233BC24BB7A8E03C2F /* MessagePort.swift */; };
-		C4900A27726A4E26AC454A7F /* es6-promise.js in Resources */ = {isa = PBXBuildFile; fileRef = BB51AD5C45CA44D68D2C1459 /* es6-promise.js */; };
-		C5E7E1F27B414BE2A9DA0486 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20C83B9699A24D4BA3874662 /* SwiftyJSON.swift */; };
-		CCE53621442240599AAF977D /* MessageEventInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F64E81C3EA2040E4A76012B8 /* MessageEventInit.swift */; };
-		DB7FD845012A40158ABAB39C /* Polyfills.js in Resources */ = {isa = PBXBuildFile; fileRef = 3B976B8AAEA947DD99319313 /* Polyfills.js */; };
-		DD69020C27B14F40A5F1A47A /* ErrorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DCE2671CC704AB38E8BEA78 /* ErrorEvent.swift */; };
-		DEABE857A4E5429DB52D3E38 /* WCMessageChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D780F2D4615B41FF87AF6B03 /* WCMessageChannel.swift */; };
-		E516F9A6A73C4155B01EF7F6 /* WorkerNavigator.js in Resources */ = {isa = PBXBuildFile; fileRef = 3A0A8C85DA734CE29563026D /* WorkerNavigator.js */; };
-		E9A1D25FF54340C3B5F5F485 /* OtherPolyfills.js in Resources */ = {isa = PBXBuildFile; fileRef = 690E9C2EF1E84962924EA5FC /* OtherPolyfills.js */; };
-		ECD4F051F09D44C5BE677CFB /* JSClassDelegate.js in Resources */ = {isa = PBXBuildFile; fileRef = F9333765D00747B4AB609660 /* JSClassDelegate.js */; };
-		FD5B24D9FD134C2DB3657193 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10953C02ADB40E6BE1C9364 /* Queue.swift */; };
-		FDB06622117A4DE9BD2881E8 /* WorkerGlobalScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5FE357B9BF4D8AB47C7747 /* WorkerGlobalScope.swift */; };
+		3A08BCDE772B4E1F82127344 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D4178885E9472E90449E38 /* Stack.swift */; };
+		3C5F66E063FC44468BC05B46 /* WorkerNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 481F80088664476C9C338712 /* WorkerNavigator.swift */; };
+		3D115301F47E48A88A700E22 /* Polyfills.js in Resources */ = {isa = PBXBuildFile; fileRef = B4B08B47ED2A400F8DF71DB7 /* Polyfills.js */; };
+		3E397255EF0F47128B990B12 /* SwiftyJSONRPC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A2FB4C51504A8FB23CD28D /* SwiftyJSONRPC.swift */; };
+		40E821FB1BF14ADE89421032 /* Element.js in Resources */ = {isa = PBXBuildFile; fileRef = 83A6A866596344E89A10007A /* Element.js */; };
+		436DC6A0BCDA4391BD43325D /* MessagePort.swift in Sources */ = {isa = PBXBuildFile; fileRef = B28779A4BC5B4C1398900297 /* MessagePort.swift */; };
+		460D847445B143F09E998D07 /* WCMessagePort.js in Resources */ = {isa = PBXBuildFile; fileRef = 501B0E5691974B44A63FEE92 /* WCMessagePort.js */; };
+		48004839E44042D5BD22C531 /* DOMAPIs.js in Resources */ = {isa = PBXBuildFile; fileRef = B6389C130FCF4A92AB5A3745 /* DOMAPIs.js */; };
+		511AC57D12364A0EA0CEBBB8 /* WCSharedWorker.js in Resources */ = {isa = PBXBuildFile; fileRef = 2749C05FD3134F5F84A48684 /* WCSharedWorker.js */; };
+		53310FA8D80A4E1FB5DDA575 /* SharedWorker.js in Resources */ = {isa = PBXBuildFile; fileRef = A1F710058A684D469AA84BFE /* SharedWorker.js */; };
+		5935EE704A384A17A98E208C /* Event.js in Resources */ = {isa = PBXBuildFile; fileRef = 0ECF85C0362940FC96D27607 /* Event.js */; };
+		5B7095C6DF414FF6BA722000 /* ScriptContextJSExport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865BF44F5AC343EC9B068919 /* ScriptContextJSExport.swift */; };
+		5C5DC4FA95034AA896195702 /* EventListenerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F34746EB28A4F6F971A0412 /* EventListenerOptions.swift */; };
+		5C7C4D19F4E34A5EB78113C8 /* DOMTokenList.js in Resources */ = {isa = PBXBuildFile; fileRef = 8E91F768E6D242818997E0A4 /* DOMTokenList.js */; };
+		617C864084C747CE9B7348A3 /* MessageEvent.js in Resources */ = {isa = PBXBuildFile; fileRef = 4F579CF835214EB89AA7F392 /* MessageEvent.js */; };
+		6B6897D8E1564A7C8061B1FF /* MessageAPIs.js in Resources */ = {isa = PBXBuildFile; fileRef = 67B09999C1F34E2FB32950C6 /* MessageAPIs.js */; };
+		70A2B8CEBBDE4DB592AEF497 /* JSClassDelegate.js in Resources */ = {isa = PBXBuildFile; fileRef = 5AC3AE4203AB46689C16A601 /* JSClassDelegate.js */; };
+		7C67E441331C4BC49EE9832A /* JSClassDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C3EF6006FA84C2EAA3D5888 /* JSClassDelegate.swift */; };
+		7FA512ED2F674857A9540B0C /* SharedWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29B99C38390467580248E06 /* SharedWorker.swift */; };
+		83CA246357CA4CE896F7D763 /* es6-promise.js in Resources */ = {isa = PBXBuildFile; fileRef = 6EEA28C235B24130812A9AEF /* es6-promise.js */; };
+		8716D2C4233441A1BC9E2501 /* ScriptContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3031332B86864FC1B48913C2 /* ScriptContext.swift */; };
+		88FC81DEC4E84389B9B32DD4 /* ScriptContextMessaging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27F4F3ED15724FE69D06CC32 /* ScriptContextMessaging.swift */; };
+		8B5DA222951F4591AF072D41 /* AbstractWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CFD35A5404371821E78D4 /* AbstractWorker.swift */; };
+		8BE52F9ACB624A7AAE08B053 /* WorkerOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE5E8F24562454DA4DAA78E /* WorkerOptions.swift */; };
+		8C3EB80BDF644CA685170F91 /* WorkerAPIs.js in Resources */ = {isa = PBXBuildFile; fileRef = A55349C8D4D3442ABF27A8EA /* WorkerAPIs.js */; };
+		91B4E6C1410E412ABEFD4B02 /* OutsideWatchWorker.js in Resources */ = {isa = PBXBuildFile; fileRef = B14B99DBD9E549968E1A1D47 /* OutsideWatchWorker.js */; };
+		993439194FBB47D390BD8948 /* EventTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9165E5AE1C164D42B0F1BBD3 /* EventTarget.swift */; };
+		9B8A26C990244DBAA21F7C83 /* Document.js in Resources */ = {isa = PBXBuildFile; fileRef = 5DF6C7D06FB84D76A670E815 /* Document.js */; };
+		A3DBFC6194644A5A820B7021 /* HTMLElement.js in Resources */ = {isa = PBXBuildFile; fileRef = 3FDE85E557B64D9E9BCB4507 /* HTMLElement.js */; };
+		A7AAFA4C248D4588BC1C0C78 /* WCMessageChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BA0858821C4770B43E9870 /* WCMessageChannel.swift */; };
+		AB193C8B5E444D2B8283C13F /* ErrorEventInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DBFDC881DD4DF08BA657CF /* ErrorEventInit.swift */; };
+		AC11EFBF0BB1422F8957C118 /* OtherPolyfills.js in Resources */ = {isa = PBXBuildFile; fileRef = E8AA325D0BFA4F798E520436 /* OtherPolyfills.js */; };
+		AEA60D177EA740E0BFC6D7B6 /* WCMessageChannel.js in Resources */ = {isa = PBXBuildFile; fileRef = 1C061399702F4160B511B373 /* WCMessageChannel.js */; };
+		AF65C2AD3BB147B88420AA88 /* Stack.js in Resources */ = {isa = PBXBuildFile; fileRef = 15B8C399D8FA42B286294355 /* Stack.js */; };
+		B0C3D9A69671481096F9B95F /* WCSharedWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8ABC4AFEC14A35B7AF5778 /* WCSharedWorker.swift */; };
+		B6B15711873C4528ACDD942C /* EventTarget.js in Resources */ = {isa = PBXBuildFile; fileRef = BEEB8CDB38CE4362B134FDC7 /* EventTarget.js */; };
+		BC0E8C12E9FB41B3A7FD2D41 /* WorkerGlobalScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FF8766A7E849279DFE3525 /* WorkerGlobalScope.swift */; };
+		C2EAFBC1D35D41BE93026DE4 /* Utilities.js in Resources */ = {isa = PBXBuildFile; fileRef = 7C4068A1BCE245EF87E4A305 /* Utilities.js */; };
+		D064458EB96945628C7CC6B7 /* MessagePort.js in Resources */ = {isa = PBXBuildFile; fileRef = 08928430D963445FAF760B07 /* MessagePort.js */; };
+		D08B797596E9452F8B42A5AD /* WindowTimers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CC54FBC67640E093651633 /* WindowTimers.swift */; };
+		D0CA62633AF04BE5B76EB8EE /* WCMessageAPIs.js in Resources */ = {isa = PBXBuildFile; fileRef = F6FFC3DD721A433BB4810B0C /* WCMessageAPIs.js */; };
+		D2A43B057EB44ABEA2F21F75 /* EventInit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBC1AEAF72242949C5D9D84 /* EventInit.swift */; };
+		D78C8029BF084941AA21B2DE /* MessageChannel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5FDBD9300E247FEABA980B7 /* MessageChannel.swift */; };
+		DAC3FC5F79824B4994F993C6 /* Window.js in Resources */ = {isa = PBXBuildFile; fileRef = 5B141BC544454F2C9AF10851 /* Window.js */; };
+		DB1FCE6677444FCFB0F90039 /* HTMLDocument.js in Resources */ = {isa = PBXBuildFile; fileRef = D7FAE7CEA3A742A69D641E4F /* HTMLDocument.js */; };
+		DE8BD99DABC64D579E9C80B6 /* ErrorEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCF403C607F743E68057E536 /* ErrorEvent.swift */; };
+		E292CCD4F24B493DBB69D834 /* MessageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9C8A3FE51542C7B52BAB0E /* MessageEvent.swift */; };
+		EDF26E47C0BA4A168BC2654C /* ErrorEvent.js in Resources */ = {isa = PBXBuildFile; fileRef = 5AE65B1C8677427EBE2A5D21 /* ErrorEvent.js */; };
+		F7E89C19D2D844FF93F5171C /* EventAPIs.js in Resources */ = {isa = PBXBuildFile; fileRef = BE195682C7674B0B95D731BC /* EventAPIs.js */; };
+		FAAB0C3C156143D9B5A45C98 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94318BEF071349E081BF7037 /* Keys.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,91 +101,91 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01E5F39B977B4928A45053F5 /* MessageEventInit.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = MessageEventInit.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/MessageEventInit.swift"; sourceTree = "<group>"; };
 		0207DA571B56EA530066E2B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SmartWatchWorkerExample/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		0664F921FEB847ECBF2F0C82 /* AbstractWorker.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AbstractWorker.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/AbstractWorker.swift; sourceTree = "<group>"; };
-		087A435257C04CC89ABB2D44 /* WindowTimers.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WindowTimers.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/WindowTimers.swift; sourceTree = "<group>"; };
-		0AEFBA7E32D646DDA446B7ED /* WCSharedWorker.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WCSharedWorker.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/WCSharedWorker.swift; sourceTree = "<group>"; };
-		14ACF85C595F4959AD7E4BA4 /* ScriptContext.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = ScriptContext.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/ScriptContext.swift; sourceTree = "<group>"; };
+		08928430D963445FAF760B07 /* MessagePort.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = MessagePort.js; sourceTree = "<group>"; };
+		0AA3FFBF07AA4FDE976F148D /* WorkerLocation.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WorkerLocation.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/WorkerLocation.swift"; sourceTree = "<group>"; };
+		0ECF85C0362940FC96D27607 /* Event.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Event.js; sourceTree = "<group>"; };
+		0F2D8EA6EC1B4E2D85CC1172 /* SmartWatchWorker.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = SmartWatchWorker.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/SmartWatchWorker.swift"; sourceTree = "<group>"; };
+		15B8C399D8FA42B286294355 /* Stack.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Stack.js; sourceTree = "<group>"; };
+		1C061399702F4160B511B373 /* WCMessageChannel.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = WCMessageChannel.js; sourceTree = "<group>"; };
+		1C3EF6006FA84C2EAA3D5888 /* JSClassDelegate.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = JSClassDelegate.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/JSClassDelegate.swift"; sourceTree = "<group>"; };
 		1D3623240D0F684500981E51 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* SmartWatchWorkerExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartWatchWorkerExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		20C83B9699A24D4BA3874662 /* SwiftyJSON.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/SwiftyJSON.swift; sourceTree = "<group>"; };
-		21D1B66D4C314FE8B465565E /* ScriptContextGlobal.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = ScriptContextGlobal.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/ScriptContextGlobal.swift; sourceTree = "<group>"; };
-		24543A6B4B8A4CD98759EA9A /* EventInit.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = EventInit.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/EventInit.swift; sourceTree = "<group>"; };
+		2749C05FD3134F5F84A48684 /* WCSharedWorker.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = WCSharedWorker.js; sourceTree = "<group>"; };
+		27A2FB4C51504A8FB23CD28D /* SwiftyJSONRPC.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = SwiftyJSONRPC.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/SwiftyJSONRPC.swift"; sourceTree = "<group>"; };
+		27F4F3ED15724FE69D06CC32 /* ScriptContextMessaging.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = ScriptContextMessaging.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/ScriptContextMessaging.swift"; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2CA4BD4BB2EC4534934C2C7D /* Queue.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Queue.js; sourceTree = "<group>"; };
-		2CDDD41BC6AA4A2C9823288E /* DOMTokenList.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = DOMTokenList.js; sourceTree = "<group>"; };
-		2D4A5DCE75774B24BA986D41 /* HTMLDocument.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = HTMLDocument.js; sourceTree = "<group>"; };
-		2DCE2671CC704AB38E8BEA78 /* ErrorEvent.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = ErrorEvent.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/ErrorEvent.swift; sourceTree = "<group>"; };
+		2F34746EB28A4F6F971A0412 /* EventListenerOptions.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = EventListenerOptions.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/EventListenerOptions.swift"; sourceTree = "<group>"; };
+		2F5E3CA9669C41349F61C683 /* SwiftyJSON.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/SwiftyJSON.swift"; sourceTree = "<group>"; };
 		301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
 		301BF56E109A69640062928A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
 		302D95EE14D2391D003F00A1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		302D95EF14D2391D003F00A1 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		302D95F014D2391D003F00A1 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		3031332B86864FC1B48913C2 /* ScriptContext.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = ScriptContext.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/ScriptContext.swift"; sourceTree = "<group>"; };
 		3047A50F1AB8059700498E2A /* build-debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-debug.xcconfig"; path = "cordova/build-debug.xcconfig"; sourceTree = SOURCE_ROOT; };
 		3047A5101AB8059700498E2A /* build-release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = "build-release.xcconfig"; path = "cordova/build-release.xcconfig"; sourceTree = SOURCE_ROOT; };
 		3047A5111AB8059700498E2A /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = build.xcconfig; path = cordova/build.xcconfig; sourceTree = SOURCE_ROOT; };
-		30FDD74CB4804C5C820B6E07 /* Stack.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Stack.js; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* SmartWatchWorkerExample-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SmartWatchWorkerExample-Prefix.pch"; sourceTree = "<group>"; };
-		3A0A8C85DA734CE29563026D /* WorkerNavigator.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = WorkerNavigator.js; sourceTree = "<group>"; };
-		3B5FE357B9BF4D8AB47C7747 /* WorkerGlobalScope.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WorkerGlobalScope.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/WorkerGlobalScope.swift; sourceTree = "<group>"; };
-		3B976B8AAEA947DD99319313 /* Polyfills.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Polyfills.js; sourceTree = "<group>"; };
-		3D2DFB1FAD3C496BBF9C03E0 /* JSClassDelegate.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = JSClassDelegate.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/JSClassDelegate.swift; sourceTree = "<group>"; };
-		3E24E18DFB884DFEB08160A6 /* WorkerAPIs.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = WorkerAPIs.js; sourceTree = "<group>"; };
-		411BE901C3B94986883FD658 /* ErrorEvent.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = ErrorEvent.js; sourceTree = "<group>"; };
-		412A17C325994691BE950FFB /* HTMLElement.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = HTMLElement.js; sourceTree = "<group>"; };
-		49767D6FA3F148F484117474 /* WCMessagePort.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WCMessagePort.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/WCMessagePort.swift; sourceTree = "<group>"; };
-		49A94CA20C794473852C4772 /* MessageAPIs.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = MessageAPIs.js; sourceTree = "<group>"; };
-		4C4AD87AE761445597FAD90D /* WorkerOptions.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WorkerOptions.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/WorkerOptions.swift; sourceTree = "<group>"; };
-		516AE72005AC4044A0C79329 /* WorkerNavigator.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WorkerNavigator.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/WorkerNavigator.swift; sourceTree = "<group>"; };
-		5176E0E57F84487B8C03746A /* DOMAPIs.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = DOMAPIs.js; sourceTree = "<group>"; };
-		586B62957F25415389C4A4FE /* ScriptContextMessaging.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = ScriptContextMessaging.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/ScriptContextMessaging.swift; sourceTree = "<group>"; };
-		589EA9FF03AF40E7842010E4 /* SharedWorker.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = SharedWorker.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/SharedWorker.swift; sourceTree = "<group>"; };
-		5E2C14D00E70411B96CC01B1 /* Event.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Event.js; sourceTree = "<group>"; };
-		64F493FD4B1344B0BD08ED40 /* WCMessageChannel.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = WCMessageChannel.js; sourceTree = "<group>"; };
-		6723D41B13E44BC680EDE299 /* SwiftyJSONRPC.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = SwiftyJSONRPC.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/SwiftyJSONRPC.swift; sourceTree = "<group>"; };
-		690E9C2EF1E84962924EA5FC /* OtherPolyfills.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = OtherPolyfills.js; sourceTree = "<group>"; };
-		6A53A197EF9E47C9862CD098 /* Utilities.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Utilities.js; sourceTree = "<group>"; };
-		70E7B2FDCE5644BC9AA113A4 /* OutsideWatchWorker.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = OutsideWatchWorker.js; sourceTree = "<group>"; };
-		775791DEDCDE4604A768D2E5 /* XMLHttpRequest.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = XMLHttpRequest.js; sourceTree = "<group>"; };
-		7B4662DC5380441AA26205DD /* EventListenerOptions.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = EventListenerOptions.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/EventListenerOptions.swift; sourceTree = "<group>"; };
-		80AE9E5197D7485EB68DC170 /* EventListener.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = EventListener.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/EventListener.swift; sourceTree = "<group>"; };
-		8292E5C9730E4AD7843BB224 /* Window.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Window.js; sourceTree = "<group>"; };
-		8A51E7E087184AAAA4394DB5 /* MessageEvent.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = MessageEvent.js; sourceTree = "<group>"; };
+		3A31B5A0E1404A5EB32E4E8A /* Event.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = Event.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/Event.swift"; sourceTree = "<group>"; };
+		3CB99A41B79C43DBAED6C88E /* ScriptContextGlobal.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = ScriptContextGlobal.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/ScriptContextGlobal.swift"; sourceTree = "<group>"; };
+		3FDE85E557B64D9E9BCB4507 /* HTMLElement.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = HTMLElement.js; sourceTree = "<group>"; };
+		481F80088664476C9C338712 /* WorkerNavigator.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WorkerNavigator.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/WorkerNavigator.swift"; sourceTree = "<group>"; };
+		4F579CF835214EB89AA7F392 /* MessageEvent.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = MessageEvent.js; sourceTree = "<group>"; };
+		501B0E5691974B44A63FEE92 /* WCMessagePort.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = WCMessagePort.js; sourceTree = "<group>"; };
+		5AC3AE4203AB46689C16A601 /* JSClassDelegate.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = JSClassDelegate.js; sourceTree = "<group>"; };
+		5AE65B1C8677427EBE2A5D21 /* ErrorEvent.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = ErrorEvent.js; sourceTree = "<group>"; };
+		5B141BC544454F2C9AF10851 /* Window.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Window.js; sourceTree = "<group>"; };
+		5DF6C7D06FB84D76A670E815 /* Document.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Document.js; sourceTree = "<group>"; };
+		65BA0858821C4770B43E9870 /* WCMessageChannel.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WCMessageChannel.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/WCMessageChannel.swift"; sourceTree = "<group>"; };
+		67B09999C1F34E2FB32950C6 /* MessageAPIs.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = MessageAPIs.js; sourceTree = "<group>"; };
+		698A1324B62B42748A9841B1 /* SwiftyJSONExtension.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = SwiftyJSONExtension.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/SwiftyJSONExtension.swift"; sourceTree = "<group>"; };
+		6EBC1AEAF72242949C5D9D84 /* EventInit.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = EventInit.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/EventInit.swift"; sourceTree = "<group>"; };
+		6EEA28C235B24130812A9AEF /* es6-promise.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = "es6-promise.js"; sourceTree = "<group>"; };
+		73A09CB046644C5A93F8780B /* MessageChannel.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = MessageChannel.js; sourceTree = "<group>"; };
+		7604751F89C8438D967F5C7D /* Queue.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Queue.js; sourceTree = "<group>"; };
+		7C4068A1BCE245EF87E4A305 /* Utilities.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Utilities.js; sourceTree = "<group>"; };
+		83A6A866596344E89A10007A /* Element.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Element.js; sourceTree = "<group>"; };
+		865BF44F5AC343EC9B068919 /* ScriptContextJSExport.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = ScriptContextJSExport.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/ScriptContextJSExport.swift"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* SmartWatchWorkerExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "SmartWatchWorkerExample-Info.plist"; path = "SmartWatchWorkerExample/SmartWatchWorkerExample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
-		9A8ECD03919A46F49C2E95A3 /* EventTarget.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = EventTarget.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/EventTarget.swift; sourceTree = "<group>"; };
-		9D888E05CCB94F9088DAB667 /* SharedWorker.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = SharedWorker.js; sourceTree = "<group>"; };
-		A004C0233BC24BB7A8E03C2F /* MessagePort.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = MessagePort.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/MessagePort.swift; sourceTree = "<group>"; };
-		A0C6CB228C584577ADCF6E84 /* WorkerLocation.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WorkerLocation.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/WorkerLocation.swift; sourceTree = "<group>"; };
-		A10953C02ADB40E6BE1C9364 /* Queue.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/Queue.swift; sourceTree = "<group>"; };
-		A6A6F59B1B974565AE7F1A74 /* Element.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Element.js; sourceTree = "<group>"; };
-		A6CB5C50AC83466AABD5B7E6 /* WCSharedWorker.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = WCSharedWorker.js; sourceTree = "<group>"; };
-		A80B7B226C574E1C99EB4EC0 /* MessageChannel.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = MessageChannel.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/MessageChannel.swift; sourceTree = "<group>"; };
-		AA5BE139ABA34C9E83BE597C /* EventAPIs.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = EventAPIs.js; sourceTree = "<group>"; };
-		AC047F4E37204EF48F6749C3 /* MessageEvent.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = MessageEvent.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/MessageEvent.swift; sourceTree = "<group>"; };
-		B05CBF5353C649EFA15E9B5C /* WorkerLocation.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = WorkerLocation.js; sourceTree = "<group>"; };
-		B1045B80BCDE4B20A0DAA0A9 /* Keys.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/Keys.swift; sourceTree = "<group>"; };
-		B3BCEDE17517436FBC9A4859 /* SmartWatchWorker.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = SmartWatchWorker.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/SmartWatchWorker.swift; sourceTree = "<group>"; };
-		BB51AD5C45CA44D68D2C1459 /* es6-promise.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = "es6-promise.js"; sourceTree = "<group>"; };
-		C4E6009EEFFD4D348A970F6B /* EventTarget.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = EventTarget.js; sourceTree = "<group>"; };
-		CF618BC5F35B4A3AAF8FA8CC /* Event.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = Event.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/Event.swift; sourceTree = "<group>"; };
-		D63ADFDFD0174B95BA7E84C0 /* Stack.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/Stack.swift; sourceTree = "<group>"; };
-		D780F2D4615B41FF87AF6B03 /* WCMessageChannel.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WCMessageChannel.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/WCMessageChannel.swift; sourceTree = "<group>"; };
-		D8FDEAC976A5488FA254EBAC /* ScriptContextJSExport.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = ScriptContextJSExport.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/ScriptContextJSExport.swift; sourceTree = "<group>"; };
-		E073D20AB4E04340ACECE08E /* WCMessageAPIs.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = WCMessageAPIs.js; sourceTree = "<group>"; };
-		E72FFC11407E40D1B000ACE7 /* SwiftyJSONExtension.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = SwiftyJSONExtension.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/SwiftyJSONExtension.swift; sourceTree = "<group>"; };
-		E7D909F5DF904636A36FE4C4 /* MessageChannel.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = MessageChannel.js; sourceTree = "<group>"; };
+		8E11EAE39025425EA58E9A16 /* Queue.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = Queue.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/Queue.swift"; sourceTree = "<group>"; };
+		8E91F768E6D242818997E0A4 /* DOMTokenList.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = DOMTokenList.js; sourceTree = "<group>"; };
+		8EDE0C52902C49B59089EF27 /* EventListener.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = EventListener.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/EventListener.swift"; sourceTree = "<group>"; };
+		9165E5AE1C164D42B0F1BBD3 /* EventTarget.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = EventTarget.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/EventTarget.swift"; sourceTree = "<group>"; };
+		94318BEF071349E081BF7037 /* Keys.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = Keys.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/Keys.swift"; sourceTree = "<group>"; };
+		95FF8766A7E849279DFE3525 /* WorkerGlobalScope.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WorkerGlobalScope.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/WorkerGlobalScope.swift"; sourceTree = "<group>"; };
+		973FC247DD6A44FAA7D0E60C /* WorkerLocation.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = WorkerLocation.js; sourceTree = "<group>"; };
+		980CFD35A5404371821E78D4 /* AbstractWorker.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = AbstractWorker.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/AbstractWorker.swift"; sourceTree = "<group>"; };
+		9E83BCB029084045AC347475 /* InsideWatchWorker.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = InsideWatchWorker.js; sourceTree = "<group>"; };
+		A1F710058A684D469AA84BFE /* SharedWorker.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = SharedWorker.js; sourceTree = "<group>"; };
+		A55349C8D4D3442ABF27A8EA /* WorkerAPIs.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = WorkerAPIs.js; sourceTree = "<group>"; };
+		AD8ABC4AFEC14A35B7AF5778 /* WCSharedWorker.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WCSharedWorker.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/WCSharedWorker.swift"; sourceTree = "<group>"; };
+		ADE5E8F24562454DA4DAA78E /* WorkerOptions.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WorkerOptions.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/WorkerOptions.swift"; sourceTree = "<group>"; };
+		B14B99DBD9E549968E1A1D47 /* OutsideWatchWorker.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = OutsideWatchWorker.js; sourceTree = "<group>"; };
+		B28779A4BC5B4C1398900297 /* MessagePort.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = MessagePort.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/MessagePort.swift"; sourceTree = "<group>"; };
+		B4B08B47ED2A400F8DF71DB7 /* Polyfills.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Polyfills.js; sourceTree = "<group>"; };
+		B4DBFDC881DD4DF08BA657CF /* ErrorEventInit.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = ErrorEventInit.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/ErrorEventInit.swift"; sourceTree = "<group>"; };
+		B6389C130FCF4A92AB5A3745 /* DOMAPIs.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = DOMAPIs.js; sourceTree = "<group>"; };
+		BDDF2515D73743C9881A3D0E /* XMLHttpRequest.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = XMLHttpRequest.js; sourceTree = "<group>"; };
+		BE195682C7674B0B95D731BC /* EventAPIs.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = EventAPIs.js; sourceTree = "<group>"; };
+		BEEB8CDB38CE4362B134FDC7 /* EventTarget.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = EventTarget.js; sourceTree = "<group>"; };
+		C29B99C38390467580248E06 /* SharedWorker.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = SharedWorker.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/SharedWorker.swift"; sourceTree = "<group>"; };
+		C5FDBD9300E247FEABA980B7 /* MessageChannel.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = MessageChannel.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/MessageChannel.swift"; sourceTree = "<group>"; };
+		CCF403C607F743E68057E536 /* ErrorEvent.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = ErrorEvent.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/ErrorEvent.swift"; sourceTree = "<group>"; };
+		D4D4178885E9472E90449E38 /* Stack.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/Stack.swift"; sourceTree = "<group>"; };
+		D7FAE7CEA3A742A69D641E4F /* HTMLDocument.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = HTMLDocument.js; sourceTree = "<group>"; };
+		DA484AEC425E4C8D9119E6AB /* WorkerNavigator.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = WorkerNavigator.js; sourceTree = "<group>"; };
+		DBF87AA894254BFB90E8438B /* WCMessagePort.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WCMessagePort.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/WCMessagePort.swift"; sourceTree = "<group>"; };
+		E8AA325D0BFA4F798E520436 /* OtherPolyfills.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = OtherPolyfills.js; sourceTree = "<group>"; };
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
-		EC8205F1D50E478097B88679 /* Document.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = Document.js; sourceTree = "<group>"; };
 		ED33DF2A687741AEAF9F8254 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		EEF52642361F47EF84857EEF /* MessagePort.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = MessagePort.js; sourceTree = "<group>"; };
-		EF968366A1AA49D78688A2E7 /* InsideWatchWorker.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = InsideWatchWorker.js; sourceTree = "<group>"; };
-		F64E81C3EA2040E4A76012B8 /* MessageEventInit.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = MessageEventInit.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/MessageEventInit.swift; sourceTree = "<group>"; };
+		EF9C8A3FE51542C7B52BAB0E /* MessageEvent.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = MessageEvent.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/MessageEvent.swift"; sourceTree = "<group>"; };
+		F0CC54FBC67640E093651633 /* WindowTimers.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = WindowTimers.swift; path = "com-wiztivi-cordova-plugin-smartwatchworker/WindowTimers.swift"; sourceTree = "<group>"; };
+		F6FFC3DD721A433BB4810B0C /* WCMessageAPIs.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = WCMessageAPIs.js; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = SmartWatchWorkerExample/config.xml; sourceTree = "<group>"; };
-		F9333765D00747B4AB609660 /* JSClassDelegate.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = JSClassDelegate.js; sourceTree = "<group>"; };
-		F9FAE9C89DFC4710A933550D /* WCMessagePort.js */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; path = WCMessagePort.js; sourceTree = "<group>"; };
-		FDF5192CC43F4C5A9A02352C /* ErrorEventInit.swift */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.swift; name = ErrorEventInit.swift; path = com.wiztivi.cordova.plugins.smartwatchworker/ErrorEventInit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,39 +255,39 @@
 				0207DA571B56EA530066E2B4 /* Images.xcassets */,
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* SmartWatchWorkerExample-Info.plist */,
-				EC8205F1D50E478097B88679 /* Document.js */,
-				5176E0E57F84487B8C03746A /* DOMAPIs.js */,
-				2CDDD41BC6AA4A2C9823288E /* DOMTokenList.js */,
-				A6A6F59B1B974565AE7F1A74 /* Element.js */,
-				2D4A5DCE75774B24BA986D41 /* HTMLDocument.js */,
-				412A17C325994691BE950FFB /* HTMLElement.js */,
-				8292E5C9730E4AD7843BB224 /* Window.js */,
-				411BE901C3B94986883FD658 /* ErrorEvent.js */,
-				5E2C14D00E70411B96CC01B1 /* Event.js */,
-				AA5BE139ABA34C9E83BE597C /* EventAPIs.js */,
-				C4E6009EEFFD4D348A970F6B /* EventTarget.js */,
-				8A51E7E087184AAAA4394DB5 /* MessageEvent.js */,
-				49A94CA20C794473852C4772 /* MessageAPIs.js */,
-				E7D909F5DF904636A36FE4C4 /* MessageChannel.js */,
-				EEF52642361F47EF84857EEF /* MessagePort.js */,
-				BB51AD5C45CA44D68D2C1459 /* es6-promise.js */,
-				690E9C2EF1E84962924EA5FC /* OtherPolyfills.js */,
-				775791DEDCDE4604A768D2E5 /* XMLHttpRequest.js */,
-				E073D20AB4E04340ACECE08E /* WCMessageAPIs.js */,
-				64F493FD4B1344B0BD08ED40 /* WCMessageChannel.js */,
-				F9FAE9C89DFC4710A933550D /* WCMessagePort.js */,
-				9D888E05CCB94F9088DAB667 /* SharedWorker.js */,
-				A6CB5C50AC83466AABD5B7E6 /* WCSharedWorker.js */,
-				3E24E18DFB884DFEB08160A6 /* WorkerAPIs.js */,
-				B05CBF5353C649EFA15E9B5C /* WorkerLocation.js */,
-				3A0A8C85DA734CE29563026D /* WorkerNavigator.js */,
-				3B976B8AAEA947DD99319313 /* Polyfills.js */,
-				EF968366A1AA49D78688A2E7 /* InsideWatchWorker.js */,
-				70E7B2FDCE5644BC9AA113A4 /* OutsideWatchWorker.js */,
-				2CA4BD4BB2EC4534934C2C7D /* Queue.js */,
-				30FDD74CB4804C5C820B6E07 /* Stack.js */,
-				6A53A197EF9E47C9862CD098 /* Utilities.js */,
-				F9333765D00747B4AB609660 /* JSClassDelegate.js */,
+				5DF6C7D06FB84D76A670E815 /* Document.js */,
+				B6389C130FCF4A92AB5A3745 /* DOMAPIs.js */,
+				8E91F768E6D242818997E0A4 /* DOMTokenList.js */,
+				83A6A866596344E89A10007A /* Element.js */,
+				D7FAE7CEA3A742A69D641E4F /* HTMLDocument.js */,
+				3FDE85E557B64D9E9BCB4507 /* HTMLElement.js */,
+				5B141BC544454F2C9AF10851 /* Window.js */,
+				5AE65B1C8677427EBE2A5D21 /* ErrorEvent.js */,
+				0ECF85C0362940FC96D27607 /* Event.js */,
+				BE195682C7674B0B95D731BC /* EventAPIs.js */,
+				BEEB8CDB38CE4362B134FDC7 /* EventTarget.js */,
+				4F579CF835214EB89AA7F392 /* MessageEvent.js */,
+				67B09999C1F34E2FB32950C6 /* MessageAPIs.js */,
+				73A09CB046644C5A93F8780B /* MessageChannel.js */,
+				08928430D963445FAF760B07 /* MessagePort.js */,
+				6EEA28C235B24130812A9AEF /* es6-promise.js */,
+				E8AA325D0BFA4F798E520436 /* OtherPolyfills.js */,
+				BDDF2515D73743C9881A3D0E /* XMLHttpRequest.js */,
+				F6FFC3DD721A433BB4810B0C /* WCMessageAPIs.js */,
+				1C061399702F4160B511B373 /* WCMessageChannel.js */,
+				501B0E5691974B44A63FEE92 /* WCMessagePort.js */,
+				A1F710058A684D469AA84BFE /* SharedWorker.js */,
+				2749C05FD3134F5F84A48684 /* WCSharedWorker.js */,
+				A55349C8D4D3442ABF27A8EA /* WorkerAPIs.js */,
+				973FC247DD6A44FAA7D0E60C /* WorkerLocation.js */,
+				DA484AEC425E4C8D9119E6AB /* WorkerNavigator.js */,
+				B4B08B47ED2A400F8DF71DB7 /* Polyfills.js */,
+				9E83BCB029084045AC347475 /* InsideWatchWorker.js */,
+				B14B99DBD9E549968E1A1D47 /* OutsideWatchWorker.js */,
+				7604751F89C8438D967F5C7D /* Queue.js */,
+				15B8C399D8FA42B286294355 /* Stack.js */,
+				7C4068A1BCE245EF87E4A305 /* Utilities.js */,
+				5AC3AE4203AB46689C16A601 /* JSClassDelegate.js */,
 			);
 			name = Resources;
 			path = SmartWatchWorkerExample/Resources;
@@ -321,39 +321,39 @@
 		307C750510C5A3420062BCA9 /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				14ACF85C595F4959AD7E4BA4 /* ScriptContext.swift */,
-				21D1B66D4C314FE8B465565E /* ScriptContextGlobal.swift */,
-				D8FDEAC976A5488FA254EBAC /* ScriptContextJSExport.swift */,
-				586B62957F25415389C4A4FE /* ScriptContextMessaging.swift */,
-				2DCE2671CC704AB38E8BEA78 /* ErrorEvent.swift */,
-				FDF5192CC43F4C5A9A02352C /* ErrorEventInit.swift */,
-				CF618BC5F35B4A3AAF8FA8CC /* Event.swift */,
-				24543A6B4B8A4CD98759EA9A /* EventInit.swift */,
-				80AE9E5197D7485EB68DC170 /* EventListener.swift */,
-				7B4662DC5380441AA26205DD /* EventListenerOptions.swift */,
-				9A8ECD03919A46F49C2E95A3 /* EventTarget.swift */,
-				AC047F4E37204EF48F6749C3 /* MessageEvent.swift */,
-				F64E81C3EA2040E4A76012B8 /* MessageEventInit.swift */,
-				A80B7B226C574E1C99EB4EC0 /* MessageChannel.swift */,
-				A004C0233BC24BB7A8E03C2F /* MessagePort.swift */,
-				D780F2D4615B41FF87AF6B03 /* WCMessageChannel.swift */,
-				49767D6FA3F148F484117474 /* WCMessagePort.swift */,
-				0664F921FEB847ECBF2F0C82 /* AbstractWorker.swift */,
-				589EA9FF03AF40E7842010E4 /* SharedWorker.swift */,
-				0AEFBA7E32D646DDA446B7ED /* WCSharedWorker.swift */,
-				3B5FE357B9BF4D8AB47C7747 /* WorkerGlobalScope.swift */,
-				A0C6CB228C584577ADCF6E84 /* WorkerLocation.swift */,
-				516AE72005AC4044A0C79329 /* WorkerNavigator.swift */,
-				4C4AD87AE761445597FAD90D /* WorkerOptions.swift */,
-				087A435257C04CC89ABB2D44 /* WindowTimers.swift */,
-				B1045B80BCDE4B20A0DAA0A9 /* Keys.swift */,
-				A10953C02ADB40E6BE1C9364 /* Queue.swift */,
-				D63ADFDFD0174B95BA7E84C0 /* Stack.swift */,
-				20C83B9699A24D4BA3874662 /* SwiftyJSON.swift */,
-				E72FFC11407E40D1B000ACE7 /* SwiftyJSONExtension.swift */,
-				6723D41B13E44BC680EDE299 /* SwiftyJSONRPC.swift */,
-				3D2DFB1FAD3C496BBF9C03E0 /* JSClassDelegate.swift */,
-				B3BCEDE17517436FBC9A4859 /* SmartWatchWorker.swift */,
+				3031332B86864FC1B48913C2 /* ScriptContext.swift */,
+				3CB99A41B79C43DBAED6C88E /* ScriptContextGlobal.swift */,
+				865BF44F5AC343EC9B068919 /* ScriptContextJSExport.swift */,
+				27F4F3ED15724FE69D06CC32 /* ScriptContextMessaging.swift */,
+				CCF403C607F743E68057E536 /* ErrorEvent.swift */,
+				B4DBFDC881DD4DF08BA657CF /* ErrorEventInit.swift */,
+				3A31B5A0E1404A5EB32E4E8A /* Event.swift */,
+				6EBC1AEAF72242949C5D9D84 /* EventInit.swift */,
+				8EDE0C52902C49B59089EF27 /* EventListener.swift */,
+				2F34746EB28A4F6F971A0412 /* EventListenerOptions.swift */,
+				9165E5AE1C164D42B0F1BBD3 /* EventTarget.swift */,
+				EF9C8A3FE51542C7B52BAB0E /* MessageEvent.swift */,
+				01E5F39B977B4928A45053F5 /* MessageEventInit.swift */,
+				C5FDBD9300E247FEABA980B7 /* MessageChannel.swift */,
+				B28779A4BC5B4C1398900297 /* MessagePort.swift */,
+				65BA0858821C4770B43E9870 /* WCMessageChannel.swift */,
+				DBF87AA894254BFB90E8438B /* WCMessagePort.swift */,
+				980CFD35A5404371821E78D4 /* AbstractWorker.swift */,
+				C29B99C38390467580248E06 /* SharedWorker.swift */,
+				AD8ABC4AFEC14A35B7AF5778 /* WCSharedWorker.swift */,
+				95FF8766A7E849279DFE3525 /* WorkerGlobalScope.swift */,
+				0AA3FFBF07AA4FDE976F148D /* WorkerLocation.swift */,
+				481F80088664476C9C338712 /* WorkerNavigator.swift */,
+				ADE5E8F24562454DA4DAA78E /* WorkerOptions.swift */,
+				F0CC54FBC67640E093651633 /* WindowTimers.swift */,
+				94318BEF071349E081BF7037 /* Keys.swift */,
+				8E11EAE39025425EA58E9A16 /* Queue.swift */,
+				D4D4178885E9472E90449E38 /* Stack.swift */,
+				2F5E3CA9669C41349F61C683 /* SwiftyJSON.swift */,
+				698A1324B62B42748A9841B1 /* SwiftyJSONExtension.swift */,
+				27A2FB4C51504A8FB23CD28D /* SwiftyJSONRPC.swift */,
+				1C3EF6006FA84C2EAA3D5888 /* JSClassDelegate.swift */,
+				0F2D8EA6EC1B4E2D85CC1172 /* SmartWatchWorker.swift */,
 			);
 			name = Plugins;
 			path = SmartWatchWorkerExample/Plugins;
@@ -441,39 +441,39 @@
 				3047A5141AB8059700498E2A /* build.xcconfig in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				3047A5121AB8059700498E2A /* build-debug.xcconfig in Resources */,
-				98044624B3964FCC9E42F10B /* Document.js in Resources */,
-				BBEC87EE227248F98411BF72 /* DOMAPIs.js in Resources */,
-				73548937AC8146AFA2415F90 /* DOMTokenList.js in Resources */,
-				7E811E975A254FC88D524972 /* Element.js in Resources */,
-				5D8C4613CDA84F5BAB30C890 /* HTMLDocument.js in Resources */,
-				88E6FE83D0B94BC193AA2DE1 /* HTMLElement.js in Resources */,
-				8E997EDCCD4046928416F89D /* Window.js in Resources */,
-				44BC39AA5F114E69B64F6593 /* ErrorEvent.js in Resources */,
-				2726C3B4DD51453080238C3C /* Event.js in Resources */,
-				AFE840D06B3744068AB559B9 /* EventAPIs.js in Resources */,
-				7E33FAE9C495462C95D61843 /* EventTarget.js in Resources */,
-				3D9F8C0766F6470D9E692872 /* MessageEvent.js in Resources */,
-				290F6F881B0A4DA6BA1A48B2 /* MessageAPIs.js in Resources */,
-				A71117E85DB14B078CA223E1 /* MessageChannel.js in Resources */,
-				7DC02B8D8B7649578845CB5B /* MessagePort.js in Resources */,
-				C4900A27726A4E26AC454A7F /* es6-promise.js in Resources */,
-				E9A1D25FF54340C3B5F5F485 /* OtherPolyfills.js in Resources */,
-				47444F67A0DD48FE918A6802 /* XMLHttpRequest.js in Resources */,
-				9EA137A41A2A4381B0FBAFA4 /* WCMessageAPIs.js in Resources */,
-				B727F4143E3D4DF58E2866C5 /* WCMessageChannel.js in Resources */,
-				830A8B8E6A4E42AAA4812E03 /* WCMessagePort.js in Resources */,
-				22B46955805649298B185DB7 /* SharedWorker.js in Resources */,
-				1A580B65ADCF4662AFB5AEDD /* WCSharedWorker.js in Resources */,
-				C04BB8DECE6247CA8F478351 /* WorkerAPIs.js in Resources */,
-				0D41F3BE2A4C4FC3B5871B46 /* WorkerLocation.js in Resources */,
-				E516F9A6A73C4155B01EF7F6 /* WorkerNavigator.js in Resources */,
-				DB7FD845012A40158ABAB39C /* Polyfills.js in Resources */,
-				595FE03C28E44D53BCC35379 /* InsideWatchWorker.js in Resources */,
-				7950E313CD0345318945476C /* OutsideWatchWorker.js in Resources */,
-				3B753F383FBA43FCAE49D367 /* Queue.js in Resources */,
-				06C1109A2F644E89B0D2D0F8 /* Stack.js in Resources */,
-				4A46C5EEB8464544B77196B7 /* Utilities.js in Resources */,
-				ECD4F051F09D44C5BE677CFB /* JSClassDelegate.js in Resources */,
+				9B8A26C990244DBAA21F7C83 /* Document.js in Resources */,
+				48004839E44042D5BD22C531 /* DOMAPIs.js in Resources */,
+				5C7C4D19F4E34A5EB78113C8 /* DOMTokenList.js in Resources */,
+				40E821FB1BF14ADE89421032 /* Element.js in Resources */,
+				DB1FCE6677444FCFB0F90039 /* HTMLDocument.js in Resources */,
+				A3DBFC6194644A5A820B7021 /* HTMLElement.js in Resources */,
+				DAC3FC5F79824B4994F993C6 /* Window.js in Resources */,
+				EDF26E47C0BA4A168BC2654C /* ErrorEvent.js in Resources */,
+				5935EE704A384A17A98E208C /* Event.js in Resources */,
+				F7E89C19D2D844FF93F5171C /* EventAPIs.js in Resources */,
+				B6B15711873C4528ACDD942C /* EventTarget.js in Resources */,
+				617C864084C747CE9B7348A3 /* MessageEvent.js in Resources */,
+				6B6897D8E1564A7C8061B1FF /* MessageAPIs.js in Resources */,
+				116ED12B0901442B97923246 /* MessageChannel.js in Resources */,
+				D064458EB96945628C7CC6B7 /* MessagePort.js in Resources */,
+				83CA246357CA4CE896F7D763 /* es6-promise.js in Resources */,
+				AC11EFBF0BB1422F8957C118 /* OtherPolyfills.js in Resources */,
+				24A1712769614096B0F37E98 /* XMLHttpRequest.js in Resources */,
+				D0CA62633AF04BE5B76EB8EE /* WCMessageAPIs.js in Resources */,
+				AEA60D177EA740E0BFC6D7B6 /* WCMessageChannel.js in Resources */,
+				460D847445B143F09E998D07 /* WCMessagePort.js in Resources */,
+				53310FA8D80A4E1FB5DDA575 /* SharedWorker.js in Resources */,
+				511AC57D12364A0EA0CEBBB8 /* WCSharedWorker.js in Resources */,
+				8C3EB80BDF644CA685170F91 /* WorkerAPIs.js in Resources */,
+				1DC6988A2AB440EEBEB2EB1A /* WorkerLocation.js in Resources */,
+				25D8C48B678B4FABBCE34551 /* WorkerNavigator.js in Resources */,
+				3D115301F47E48A88A700E22 /* Polyfills.js in Resources */,
+				248BD9A2E020443ABDF68D62 /* InsideWatchWorker.js in Resources */,
+				91B4E6C1410E412ABEFD4B02 /* OutsideWatchWorker.js in Resources */,
+				169C44CD6287430F993BC530 /* Queue.js in Resources */,
+				AF65C2AD3BB147B88420AA88 /* Stack.js in Resources */,
+				C2EAFBC1D35D41BE93026DE4 /* Utilities.js in Resources */,
+				70A2B8CEBBDE4DB592AEF497 /* JSClassDelegate.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,39 +505,39 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
-				B625FB62A7F14789A6C4FF58 /* ScriptContext.swift in Sources */,
-				51300D95BEC24539AE39EC4B /* ScriptContextGlobal.swift in Sources */,
-				19420C906D4D4BD991E1817F /* ScriptContextJSExport.swift in Sources */,
-				B2444BB93E61499FA293503D /* ScriptContextMessaging.swift in Sources */,
-				DD69020C27B14F40A5F1A47A /* ErrorEvent.swift in Sources */,
-				72F2C5D4491C4BF9AC95CEC2 /* ErrorEventInit.swift in Sources */,
-				B7B126AA4B7B41009F0DF17F /* Event.swift in Sources */,
-				03EA310C6FEB4D968AAC2F8F /* EventInit.swift in Sources */,
-				35AB7B6FE4F04687A2CD44C6 /* EventListener.swift in Sources */,
-				B91AE2A6840F47AF806B0EB5 /* EventListenerOptions.swift in Sources */,
-				32E5821F120C49E2B29781CB /* EventTarget.swift in Sources */,
-				55C9F191DB2546AE8A939F12 /* MessageEvent.swift in Sources */,
-				CCE53621442240599AAF977D /* MessageEventInit.swift in Sources */,
-				50C8671D413949BD9A7E58EA /* MessageChannel.swift in Sources */,
-				C33A8378B0D5463096EE4386 /* MessagePort.swift in Sources */,
-				DEABE857A4E5429DB52D3E38 /* WCMessageChannel.swift in Sources */,
-				4ED18D60E062419F81512DE1 /* WCMessagePort.swift in Sources */,
-				44CAF8C944B04F7E9BB514A9 /* AbstractWorker.swift in Sources */,
-				74C572C0699F481CB88EB237 /* SharedWorker.swift in Sources */,
-				5EDF37721BC8480CB400B454 /* WCSharedWorker.swift in Sources */,
-				FDB06622117A4DE9BD2881E8 /* WorkerGlobalScope.swift in Sources */,
-				BF0AD5DCC16A4650BE629182 /* WorkerLocation.swift in Sources */,
-				71747F583A934387BB58C997 /* WorkerNavigator.swift in Sources */,
-				051F416B9CD9426F88E2AE71 /* WorkerOptions.swift in Sources */,
-				28595908BC794CA9A4292199 /* WindowTimers.swift in Sources */,
-				8844249E83134EC9B7BD85D3 /* Keys.swift in Sources */,
-				FD5B24D9FD134C2DB3657193 /* Queue.swift in Sources */,
-				1F1507FABB0F4BCABF3DFA4F /* Stack.swift in Sources */,
-				C5E7E1F27B414BE2A9DA0486 /* SwiftyJSON.swift in Sources */,
-				96DB8E5BABBA4BB4B2E15ED0 /* SwiftyJSONExtension.swift in Sources */,
-				9FB6641A805D47FE821B6B6D /* SwiftyJSONRPC.swift in Sources */,
-				B04968DE1BD64F58BF6E2851 /* JSClassDelegate.swift in Sources */,
-				1E4E2FAC9FC440A695C85419 /* SmartWatchWorker.swift in Sources */,
+				8716D2C4233441A1BC9E2501 /* ScriptContext.swift in Sources */,
+				167F6D6A511C4A8A94BCB3C2 /* ScriptContextGlobal.swift in Sources */,
+				5B7095C6DF414FF6BA722000 /* ScriptContextJSExport.swift in Sources */,
+				88FC81DEC4E84389B9B32DD4 /* ScriptContextMessaging.swift in Sources */,
+				DE8BD99DABC64D579E9C80B6 /* ErrorEvent.swift in Sources */,
+				AB193C8B5E444D2B8283C13F /* ErrorEventInit.swift in Sources */,
+				1AAB41C59E2142088175891A /* Event.swift in Sources */,
+				D2A43B057EB44ABEA2F21F75 /* EventInit.swift in Sources */,
+				134B019F320845A8B2D7F9A7 /* EventListener.swift in Sources */,
+				5C5DC4FA95034AA896195702 /* EventListenerOptions.swift in Sources */,
+				993439194FBB47D390BD8948 /* EventTarget.swift in Sources */,
+				E292CCD4F24B493DBB69D834 /* MessageEvent.swift in Sources */,
+				1D0ABC9169A543C9917D9C0D /* MessageEventInit.swift in Sources */,
+				D78C8029BF084941AA21B2DE /* MessageChannel.swift in Sources */,
+				436DC6A0BCDA4391BD43325D /* MessagePort.swift in Sources */,
+				A7AAFA4C248D4588BC1C0C78 /* WCMessageChannel.swift in Sources */,
+				0C6EFB83C23E4DC79EA266C0 /* WCMessagePort.swift in Sources */,
+				8B5DA222951F4591AF072D41 /* AbstractWorker.swift in Sources */,
+				7FA512ED2F674857A9540B0C /* SharedWorker.swift in Sources */,
+				B0C3D9A69671481096F9B95F /* WCSharedWorker.swift in Sources */,
+				BC0E8C12E9FB41B3A7FD2D41 /* WorkerGlobalScope.swift in Sources */,
+				02025364D1964920AD24435D /* WorkerLocation.swift in Sources */,
+				3C5F66E063FC44468BC05B46 /* WorkerNavigator.swift in Sources */,
+				8BE52F9ACB624A7AAE08B053 /* WorkerOptions.swift in Sources */,
+				D08B797596E9452F8B42A5AD /* WindowTimers.swift in Sources */,
+				FAAB0C3C156143D9B5A45C98 /* Keys.swift in Sources */,
+				2B51DBE644BA4933BCB372EC /* Queue.swift in Sources */,
+				3A08BCDE772B4E1F82127344 /* Stack.swift in Sources */,
+				0BCC67CFB5234457B7F93480 /* SwiftyJSON.swift in Sources */,
+				2FDB8A8769654FC8BA17650F /* SwiftyJSONExtension.swift in Sources */,
+				3E397255EF0F47128B990B12 /* SwiftyJSONRPC.swift in Sources */,
+				7C67E441331C4BC49EE9832A /* JSClassDelegate.swift in Sources */,
+				0ECCFBA06E154E6AB8C0560F /* SmartWatchWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

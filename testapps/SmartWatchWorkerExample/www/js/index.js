@@ -44,9 +44,9 @@ var app = {
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
 
-        if (smartwatchworker) {
-            app.testSmartWatchWorker(smartwatchworker);
-        }
+        // if (smartwatchworker) {
+        //     app.testSmartWatchWorker(smartwatchworker);
+        // }
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');

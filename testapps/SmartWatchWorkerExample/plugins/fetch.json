@@ -1,12 +1,4 @@
 {
-    "com.wiztivi.cordova.plugins.smartwatchworker": {
-        "source": {
-            "type": "local",
-            "path": "../.."
-        },
-        "is_top_level": true,
-        "variables": {}
-    },
     "cordova-plugin-add-swift-support": {
         "source": {
             "type": "registry",
@@ -19,6 +11,23 @@
         "source": {
             "type": "registry",
             "id": "cordova-plugin-whitelist@1"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "cordova-plugin-test-framework": {
+        "source": {
+            "type": "git",
+            "url": "http://git-wip-us.apache.org/repos/asf/cordova-plugin-test-framework.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "com-wiztivi-cordova-plugin-smartwatchworker": {
+        "source": {
+            "type": "local",
+            "path": "../.."
         },
         "is_top_level": true,
         "variables": {}

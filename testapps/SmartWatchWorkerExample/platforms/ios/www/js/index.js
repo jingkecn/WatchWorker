@@ -44,15 +44,16 @@ var app = {
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
 
-        if (smartwatchworker) {
-            app.testSmartWatchWorker(smartwatchworker);
-        }
+        // if (smartwatchworker) {
+        //     app.testSmartWatchWorker(smartwatchworker);
+        // }
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
     },
+    // Testing smartwatchworker
     testSmartWatchWorker: function (worker) {
         var onSuccess = function () {
             worker.addEventListener("message", function (message) {
@@ -63,7 +64,7 @@ var app = {
                 messageElement.textContent = message;
             });
             worker.addEventListener("error", function (error) {
-                // Receiving message
+                // Receiving error
                 var parentElement = document.getElementById(app.ids.deviceready);
                 var errorElement = parentElement.querySelector('.error');
                 errorElement.setAttribute('style', 'display:block');
