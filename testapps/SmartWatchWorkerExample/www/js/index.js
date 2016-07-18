@@ -17,9 +17,6 @@
  * under the License.
  */
 var app = {
-    ids: {
-        deviceready: "deviceready"
-    },
     // Application Constructor
     initialize: function() {
         this.bindEvents();
@@ -44,36 +41,10 @@ var app = {
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
 
-        // if (smartwatchworker) {
-        //     app.testSmartWatchWorker(smartwatchworker);
-        // }
-
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    },
-    // Testing smartwatchworker
-    testSmartWatchWorker: function (worker) {
-        var onSuccess = function () {
-            worker.addEventListener("message", function (message) {
-                // Receiving message
-                var parentElement = document.getElementById(app.ids.deviceready);
-                var messageElement = parentElement.querySelector('.message');
-                messageElement.setAttribute('style', 'display:block');
-                messageElement.textContent = message;
-            });
-            worker.addEventListener("error", function (error) {
-                // Receiving error
-                var parentElement = document.getElementById(app.ids.deviceready);
-                var errorElement = parentElement.querySelector('.error');
-                errorElement.setAttribute('style', 'display:block');
-                errorElement.textContent = error;
-            });
-            worker.postMessage("Message from web view!");
-        };
-        var onError = function () {};
-        worker.initialize("InsideWatchWorker", onSuccess, onError);
     }
 };
 
