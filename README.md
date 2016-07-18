@@ -1,6 +1,6 @@
-Smart Watch Worker Plugin for Cordova
+Smartwatch Worker Plugin for Cordova
 ---
-This is an experimental plugin for communication between a smart watch and its encountered mobile using HTML5 SharedWorker APIs.
+This is an experimental plugin for asynchronous communication between a smartwatch and its encountered mobile using HTML5 SharedWorker APIs.
 
 # Prequisites
 
