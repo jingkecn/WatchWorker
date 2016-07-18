@@ -36,7 +36,7 @@ You must initialize smartwatchworker to evaluate your script file in the new Jav
 
 ``` javascript
 /**
- * Initialize a worker instance for smart watch
+ * Initialize a worker instance for smartwatch
  * @parameter   {string}    url (currently is the filename of your script, without a suffix)
  * @parameter   {callback}  onSuccess
  * @parameter   {callback}  onError
@@ -50,7 +50,7 @@ smartwatchworker.initialize(url, onSuccess, onError);
 // Please ensure that smartwatchworker has been successfully initialized
  smartwatchworker.initialize(url, function() {
      /**
-      * Post a message to smart watch
+      * Post a message to smartwatch
       * @parameter   {string}    message
       * @parameter   {callback}  onSuccess
       * @parameter   {callback}  onError

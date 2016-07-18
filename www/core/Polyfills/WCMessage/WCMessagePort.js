@@ -15,8 +15,8 @@ class WCMessagePort extends MessagePort {
         super.postMessage(message);
     }
 
-    onwatchconnected(event) { console.info("On smart watch connected", event); }
-    onwatchdisconnected(event) { console.info("On smart watch disconnected", event); }
+    onwatchconnected(event) { console.info("On smartwatch connected", event); }
+    onwatchdisconnected(event) { console.info("On smartwatch disconnected", event); }
 
     static create(instance) {
         return new WCMessagePort(instance);

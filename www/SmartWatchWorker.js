@@ -1,7 +1,7 @@
 var exec = require('cordova/exec');
 
 /**
- * Initialize a worker instance for smart watch
+ * Initialize a worker instance for smartwatch
  * @parameter   {string}    url (currently is the filename of your script, without a suffix)
  * @parameter   {callback}  onSuccess
  * @parameter   {callback}  onError
@@ -11,7 +11,7 @@ exports.initialize = function (url, onSuccess, onError) {
 };
 
 /**
- * Post a message to smart watch
+ * Post a message to smartwatch
  * @parameter   {string}    message
  * @parameter   {callback}  onSuccess
  * @parameter   {callback}  onError
