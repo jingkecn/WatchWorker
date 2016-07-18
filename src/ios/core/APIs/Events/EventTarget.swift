@@ -11,8 +11,8 @@ import JavaScriptCore
 
 @objc protocol EventTargetJSExport: JSExport {
     
-    func registerEvent(event: Event)
-    func getEventByType(type: String) -> Event?
+//    func registerEvent(event: Event)
+//    func getEventByType(type: String) -> Event?
     
     func addEventListener(type: String, _ callback: JSValue, _ options: JSValue?)
     func removeEventListener(type: String?, _ callback: JSValue?, _ options: JSValue?)
@@ -24,6 +24,18 @@ class EventTarget: JSClassDelegate {
     
     var events = Dictionary<String, Event>()
     var listeners = Dictionary<String, Array<EventListener>>()
+    
+    override init(context: ScriptContext) {
+        super.init(context: context)
+        self.registerEvents()
+        guard let event = self.getEventByType("load") else { return }
+        self.onLoad(event)
+        
+    }
+    
+    func registerEvents() {
+        self.registerEvent(Event.create(self.context, type: "load", initDict: [:]))
+    }
     
     func addListener(type: String, listener: EventListener, options: AddEventListenerOptions? = nil) {
         var listeners = self.listeners[type] ?? Array<EventListener>()
@@ -48,6 +60,14 @@ class EventTarget: JSClassDelegate {
             // MARK: Remove all listeners
             self.listeners.removeAll()
         }
+    }
+    
+    func onLoad(event: Event) {
+        self.dispatchEvent(event)
+        guard let jsEvent = event.thisJSValue else { return }
+        guard let this = self.thisJSValue else { return }
+        guard this.hasProperty("onload") else { return }
+        this.objectForKeyedSubscript("onload").callWithArguments([jsEvent])
     }
 }
 

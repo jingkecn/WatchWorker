@@ -67,7 +67,7 @@ class MessagePort: EventTarget {
         self.close()
     }
     
-    func registerEvents() {
+    override func registerEvents() {
         let connectEvent = MessageEvent.create(self.context, type: "connect", initDict: [
             "source": self,
             "ports": [self]

@@ -27,9 +27,9 @@ extension ScriptContext: ScriptContextJSExport {
         return MessageEvent.create(self, type: type, initValue: eventInit)
     }
     
-//    func createEventTarget() -> EventTarget {
-//        return EventTarget.create(self)
-//    }
+    func createEventTarget() -> EventTarget {
+        return EventTarget.create(self)
+    }
     
     func createMessagePort() -> MessagePort {
         return MessagePort.create(self)
@@ -64,7 +64,7 @@ extension ScriptContext: ScriptContextJSExport {
     func createEvent(type: String, _ eventInit: JSValue) -> Event
     func createErrorEvent(type: String, _ eventInit: JSValue) -> ErrorEvent
     func createMessageEvent(type: String, _ eventInit: JSValue) -> MessageEvent
-//    func createEventTarget() -> EventTarget
+    func createEventTarget() -> EventTarget
     func createMessagePort() -> MessagePort
     func createWCMessagePort() -> WCMessagePort
     func createMessageChannel() -> MessageChannel

@@ -10,9 +10,9 @@ import Foundation
 import JavaScriptCore
 
 //@objc protocol EventListenerJSExport: JSExport {
-//    
+//
 //    func handleEvent(event: Event)
-//    
+//
 //}
 
 class EventListener: NSObject {
