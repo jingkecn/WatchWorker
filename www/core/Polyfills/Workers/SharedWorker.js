@@ -12,4 +12,8 @@ class SharedWorker extends EventTarget {
         return this.instance && this.instance.port.thisJSValue || null;
     }
 
+    static create(instance) {
+        return new SharedWorker(instance.initializer.scriptURL, instance.initializer.name, null, instance);
+    }
+
 }

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com.wiztivi.cordova.plugins.smartwatchworker" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<plugin id="com-wiztivi-cordova-plugin-smartwatchworker" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
     <name>SmartWatchWorker</name>
     <js-module name="SmartWatchWorker" src="www/SmartWatchWorker.js">
         <clobbers target="smartwatchworker" />
@@ -12,6 +12,47 @@
             </feature>
         </config-file>
         <!-- Source files -->
+        <source-file src="src/ios/core/APIs/Context/ScriptContext.swift" />
+        <source-file src="src/ios/core/APIs/Context/ScriptContextGlobal.swift" />
+        <source-file src="src/ios/core/APIs/Context/ScriptContextJSExport.swift" />
+        <source-file src="src/ios/core/APIs/Context/ScriptContextMessaging.swift" />
+
+        <source-file src="src/ios/core/APIs/Events/ErrorEvent.swift" />
+        <source-file src="src/ios/core/APIs/Events/ErrorEventInit.swift" />
+        <source-file src="src/ios/core/APIs/Events/Event.swift" />
+        <source-file src="src/ios/core/APIs/Events/EventInit.swift" />
+        <source-file src="src/ios/core/APIs/Events/EventListener.swift" />
+        <source-file src="src/ios/core/APIs/Events/EventListenerOptions.swift" />
+        <source-file src="src/ios/core/APIs/Events/EventTarget.swift" />
+        <source-file src="src/ios/core/APIs/Events/MessageEvent.swift" />
+        <source-file src="src/ios/core/APIs/Events/MessageEventInit.swift" />
+
+        <source-file src="src/ios/core/APIs/Message/MessageChannel.swift" />
+        <source-file src="src/ios/core/APIs/Message/MessagePort.swift" />
+
+        <source-file src="src/ios/core/APIs/WCMessage/WCMessageChannel.swift" />
+        <source-file src="src/ios/core/APIs/WCMessage/WCMessagePort.swift" />
+
+        <source-file src="src/ios/core/APIs/Workers/AbstractWorker.swift" />
+        <source-file src="src/ios/core/APIs/Workers/SharedWorker.swift" />
+        <source-file src="src/ios/core/APIs/Workers/WCSharedWorker.swift" />
+        <source-file src="src/ios/core/APIs/Workers/WorkerGlobalScope.swift" />
+        <source-file src="src/ios/core/APIs/Workers/WorkerLocation.swift" />
+        <source-file src="src/ios/core/APIs/Workers/WorkerNavigator.swift" />
+        <source-file src="src/ios/core/APIs/Workers/WorkerOptions.swift" />
+
+        <source-file src="src/ios/core/APIs/WindowTimers.swift" />
+
+        <source-file src="src/ios/core/Constants/Keys.swift" />
+
+        <source-file src="src/ios/core/Utilities/Sequences/Queue.swift" />
+        <source-file src="src/ios/core/Utilities/Sequences/Stack.swift" />
+        <source-file src="src/ios/core/Utilities/SwiftyJSON/SwiftyJSON.swift" />
+        <source-file src="src/ios/core/Utilities/SwiftyJSON/SwiftyJSONExtension.swift" />
+        <source-file src="src/ios/core/Utilities/SwiftyJSON/SwiftyJSONRPC.swift" />
+
+        <source-file src="src/ios/core/JSClassDelegate.swift" />
+
         <source-file src="src/ios/SmartWatchWorker.swift" />
         <!-- Resource files -->
         <resource-file src="www/core/Polyfills/DOM/Document.js" />
@@ -41,11 +82,14 @@
         <resource-file src="www/core/Polyfills/Workers/WorkerLocation.js" />
         <resource-file src="www/core/Polyfills/Workers/WorkerNavigator.js" />
         <resource-file src="www/core/Polyfills/Polyfills.js" />
-        <resource-file src="www/core/Tests/InsideWorkerTester.js" />
-        <resource-file src="www/core/Tests/OutsideWorkerTester.js" />
+
+        <resource-file src="www/core/Tests/InsideWatchWorker.js" />
+        <resource-file src="www/core/Tests/OutsideWatchWorker.js" />
+
         <resource-file src="www/core/Utilities/Sequences/Queue.js" />
         <resource-file src="www/core/Utilities/Sequences/Stack.js" />
         <resource-file src="www/core/Utilities/Utilities.js" />
+
         <resource-file src="www/core/JSClassDelegate.js" />
         <!-- Dependencies -->
         <dependency id="cordova-plugin-add-swift-support" version="1.3.1"/>

@@ -8,4 +8,8 @@ class WCSharedWorker extends SharedWorker {
         this.instance = instance || scope && scope.createWCSharedWorker(scriptURL, name, options);
     }
 
+    static create(instance) {
+        return new WCSharedWorker(instance.initializer.scriptURL, instance.initializer.name, null, instance);
+    }
+
 }
