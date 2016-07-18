@@ -34,14 +34,14 @@ class SharedWorker: EventTarget {
         scope.importScripts(scriptURL)
         self.scope = scope
         super.init(context: context)
-        self.port = initMessagePort(withContext: context, withScope: scope)
+        self.port = initializeMessagePort(withContext: context, withScope: scope)
     }
     
     deinit {
         self.terminate()
     }
     
-    func initMessagePort(withContext context: ScriptContext, withScope scope: WorkerGlobalScope) -> MessagePort {
+    func initializeMessagePort(withContext context: ScriptContext, withScope scope: WorkerGlobalScope) -> MessagePort {
         let outsidePort = MessagePort.create(context)
         let insidePort = MessagePort.create(scope)
         MessageChannel.createChannel(withPort1: insidePort, withPort2: outsidePort)

@@ -54,6 +54,7 @@ extension ScriptContext {
         // TODO
 //        self.evaluateScriptFile("Utilities")
         self.evaluateScriptFile("Polyfills")
+        self.registerModule("Polyfills")
     }
     
     func evaluateScriptFile(module: String) {

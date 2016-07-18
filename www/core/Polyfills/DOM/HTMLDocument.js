@@ -10,8 +10,8 @@ class HTMLDocument extends Document {
     constructor(instance) {
         super();
         if (this.constructor.name !== "HTMLDocument") { return; }
-        this.instance = instance || scope && scope.createEventTarget();
         this.body = new HTMLElement();
+        this.instance = instance || scope && scope.createEventTarget();
     }
     
     createElement(element) {

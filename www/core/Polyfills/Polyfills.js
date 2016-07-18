@@ -1,5 +1,5 @@
-importScripts("DOMAPIs");
 importScripts("EventAPIs");
+importScripts("DOMAPIs");
 importScripts("MessageAPIs");
 importScripts("OtherPolyfills");
 importScripts("WCMessageAPIs");

@@ -9,4 +9,14 @@ importScripts("EventTarget");
  */
 class Element extends EventTarget {
     
+    constructor(instance) {
+        super();
+        if (this.constructor.name !== "Element") { return; }
+        this.instance = instance || scope && scope.createEventTarget();
+    }
+
+    static create(instance) {
+        return new Element(instance);
+    }
+
 }

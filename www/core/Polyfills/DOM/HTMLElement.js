@@ -6,8 +6,14 @@ importScripts("Element");
  */
 class HTMLElement extends Element {
 
-    constructor() {
+    constructor(instance) {
         super();
+        if (this.constructor.name !== "HTMLElement") { return; }
+        this.instance = instance || scope && scope.createEventTarget();
+    }
+
+    static create(instance) {
+        return new HTMLElement(instance);
     }
     
     getAttribute(attribute) {

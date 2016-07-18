@@ -11,7 +11,7 @@ import JavaScriptCore
 
 class WCSharedWorker: SharedWorker {
     
-    override func initMessagePort(withContext context: ScriptContext, withScope scope: WorkerGlobalScope) -> MessagePort {
+    override func initializeMessagePort(withContext context: ScriptContext, withScope scope: WorkerGlobalScope) -> MessagePort {
         let outsidePort = MessagePort.create(context)
         let insidePort = WCMessagePort.create(scope)
         MessageChannel.createChannel(withPort1: insidePort, withPort2: outsidePort)

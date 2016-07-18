@@ -45,6 +45,8 @@
 
         <source-file src="src/ios/core/Constants/Keys.swift" />
 
+        <source-file src="src/ios/core/Services/WCMessageService.swift" />
+
         <source-file src="src/ios/core/Utilities/Sequences/Queue.swift" />
         <source-file src="src/ios/core/Utilities/Sequences/Stack.swift" />
         <source-file src="src/ios/core/Utilities/SwiftyJSON/SwiftyJSON.swift" />
