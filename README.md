@@ -10,19 +10,21 @@ This plugin is ***ONLY*** available for **iOS9.x**, so please make sure that the
 Please add the following lines into your `AppDelegate.m` file within your Xcode project.
 
 ``` objc 
-/*
- * import header file
- */
-#import "SmartwatchWorkerExample-Swift.h"
-/*
- * start WCMessageService when initialize the application
- */
+#import "AppDelegate.h"
+#import "MainViewController.h"
+#import "SmartwatchWorkerExample-Swift.h"   // import swift classes
+
+@implementation AppDelegate
+
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     self.viewController = [[MainViewController alloc] init];
+    // start WCMessageService to support background communication between iOS and Watch OS
     [[WCMessageService defaultService] startServiceOnSuccess:nil onError:nil];
     return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
+
+@end
 ```
 
 # Messaging
