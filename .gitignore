@@ -1,2 +1,2 @@
-testapps/*/platforms/*
-testapps/*/plugins/*
+# Testing applications
+testapps/
