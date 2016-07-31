@@ -168,8 +168,8 @@ class XMLHttpRequest {
             callback: callback
         };
 
-        this.__impl.req = new HttpRequestImpl();
-        // this.__impl.req = HttpRequestImpl.createInstance();
+        // this.__impl.req = new HttpRequestImpl();
+        this.__impl.req = HttpRequestImpl;
         this.__impl.emitProgressEvent("loadstart");
         this.__impl.req.fetch(params);
     }
@@ -209,18 +209,6 @@ class XMLHttpRequest {
     }
     
     overrideMimeType(mime) {}
-}
-
-/**
- * Polyfill for implementation of HttpRequest
- */
-class HttpRequestImpl {
-    fetch(options) {
-        HttpRequestImplSharedInstance.fetch(options);
-    }
-    abort() {
-        HttpRequestImplSharedInstance.abort();
-    }
 }
 
 

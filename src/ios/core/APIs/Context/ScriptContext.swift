@@ -9,11 +9,11 @@
 import Foundation
 import JavaScriptCore
 
-class ScriptContext: NSObject {
+public class ScriptContext: EventTargetDelegate {
     
     var context: JSContext?
     
-    var messagePorts = Set<MessagePort>()
+    var ports = Set<MessagePort>()
     var modules = Set<String>()
     
     override init() {
@@ -26,6 +26,7 @@ class ScriptContext: NSObject {
     
     func destroyContext() {
         NSLog("[ScriptContext] Destroying JSContext: \(self.context)")
+        self.ports.forEach({ $0.disentangle() })
         self.context = nil
     }
     

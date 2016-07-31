@@ -1,13 +1,13 @@
 ##!/bin/sh
 
-# PATH="./SmartwatchWorkerExample"
-# ID="com.wiztivi.examples.smartwatchworker"
-# NAME="SmartwatchWorkerExample"
+# PATH="./WatchWorkerExample"
+# ID="com.wiztivi.examples.watchworker"
+# NAME="WatchWorkerExample"
 
 mkdir -p testapps
 cd testapps
-cordova create SmartwatchWorkerExample com.wiztivi.examples.smartwatchworker SmartwatchWorkerExample
-cd SmartwatchWorkerExample
+cordova create WatchWorkerExample com.wiztivi.examples.watchworker WatchWorkerExample
+cd WatchWorkerExample
+cordova platform add ios
 cordova plugin add ../../ --save
 cordova plugin add http://git-wip-us.apache.org/repos/asf/cordova-plugin-test-framework.git --save
-cordova platform add ios

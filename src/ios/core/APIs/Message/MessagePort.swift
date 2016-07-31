@@ -24,59 +24,29 @@ class MessagePort: EventTarget {
     var started: Bool
     var closed: Bool
     
-    var connected = false
-    
-    var remote: MessagePort? {
-        didSet {
-            guard self.remote != nil else { return }
-            print("[\(self.className)] This port is connected: \n\(self.debugInfo)")
-            guard let event = self.getEventByType("connect") as? MessageEvent where !self.connected else { return }
-            self.onConnect(event)
-        }
+    var connected: Bool {
+        return !self.entangledPorts.isEmpty
     }
+    
+    var entangledPorts = Set<MessagePort>()
     
     var isEntangled: Bool {
         return !self.closed && !self.isNeutered
     }
     var isNeutered: Bool {
-        return self.remote == nil
-    }
-    
-    var messageQueue = Queue<String>() {
-        didSet {
-            while !self.messageQueue.isEmpty {
-                if let message = self.messageQueue.dequeue() {
-                    if let event = self.getEventByType("message") as? MessageEvent {
-                        event.registerData(message)
-                        self.onMessage(event)
-                    }
-                }
-            }
-        }
+        return self.entangledPorts.isEmpty
     }
     
     override init(context: ScriptContext) {
         self.closed = false
         self.started = false
         super.init(context: context)
-        self.context.registerMessagePort(self)
-        self.registerEvents()
+        self.addEventListener("message", listener: EventListener.create(withHandler: self.onMessage))
+        self.context.ports.insert(self)
     }
     
     deinit {
         self.close()
-    }
-    
-    override func registerEvents() {
-        let connectEvent = MessageEvent.create(self.context, type: "connect", initDict: [
-            "source": self,
-            "ports": [self]
-        ])
-        let messageEvent = MessageEvent.create(self.context, type: "message", initDict: [
-            "source": self
-        ])
-        self.registerEvent(connectEvent)
-        self.registerEvent(messageEvent)
     }
     
 }
@@ -84,10 +54,9 @@ class MessagePort: EventTarget {
 extension MessagePort: MessagePortJSExport {
     
     func postMessage(message: String) {
-        print("[\(self)] posting message {\(message)} from \(self.context) to \(self.remote?.context)")
         guard self.started else { return }
-        guard let remote = self.remote else { return }
-        remote.messageQueue.enqueue(message)
+        print("[\(self.className)] about to send message to \(self.entangledPorts)")
+        self.entangledPorts.forEach({ $0.dispatchMessage(message) })
     }
     
     func start() {
@@ -99,11 +68,10 @@ extension MessagePort: MessagePortJSExport {
     
     func close() {
         print("[\(self.className)] Closing message port {\(self)}!")
-        self.remote?.close()
-        self.remote = nil
-        self.closed = true
-        self.context.unregisterMessagePort(self)
+        self.entangledPorts.removeAll()
+        self.context.ports.remove(self)
         self.context.destroyContext()
+        self.closed = true
     }
     
     func debug() {
@@ -114,45 +82,41 @@ extension MessagePort: MessagePortJSExport {
 
 extension MessagePort {
     
-    func entangleRemotePort(port: MessagePort) {
-        if !self.isNeutered { self.disentangleRemotePort() }
-        print("[\(self.className)] Entangling remote port: \(port)")
-        self.remote = port
+    func entangle(port: MessagePort) {
+        guard port != self else { return }
+        if self.context == port.context { self.disentangle() }
+        guard !self.entangledPorts.contains(port) else { return }
+        self.entangledPorts.insert(port)
     }
     
-    func disentangleRemotePort() -> MessagePort? {
-        let remotePort: MessagePort? = self.remote
-        self.remote = nil
-        return remotePort
+    func disentangle(port: MessagePort? = nil) {
+        guard let port = port else { self.entangledPorts.removeAll(); return }
+        self.entangledPorts.remove(port)
     }
     
-    func onConnect(event: MessageEvent) {
-        guard let jsEvent = event.thisJSValue else { return }
-        guard let context = self.context.executionContext else { return }
-        if context.globalObject.hasProperty("onconnect") {
-            context.globalObject.invokeMethod("onconnect", withArguments: [jsEvent])
-        }
-        self.connected = true
+    func dispatchMessage(message: String) {
+        let event = MessageEvent.create(self.context, type: "message", initDict: [ "source": self, "data": message ])
+        self.dispatchEvent(event)
     }
     
-    func onMessage(event: MessageEvent) {
-        print("==================== [\(self.className)] Start handling message ====================")
+}
+
+extension MessagePort {
+    
+    func onMessage(event: Event) {
+        print("==================== [\(self.className)]  Start dispatching message ====================")
+        guard let event = event as? MessageEvent else { return }
         print("1. message event = \(event.debugInfo)")
         guard let jsEvent = event.thisJSValue else { return }
         print("2. event = \(jsEvent), event.instance = \(jsEvent.objectForKeyedSubscript("instance"))")
-        // About to dispatch message event
-        if self.started {
-            self.dispatchEvent(event)
-            print("3. Message event has been dispatched!")
-        }
         // Invoke [onmessage] function in execution context
         guard let this = self.thisJSValue else { return }
-        print("4. this = \(this), this.instane = \(this.objectForKeyedSubscript("instance"))")
-        if this.hasProperty("onmessage") {
-            print("5. Invoking [onmessage] handler with arguments: \(jsEvent.objectForKeyedSubscript("instance"))")
-            this.invokeMethod("onmessage", withArguments: [jsEvent])
-        }
-        print("==================== [\(self.className)] End handling message ====================")
+        print("3. this = \(this), this.instane = \(this.objectForKeyedSubscript("instance"))")
+        //        this.invokeMethod("onmessage", withArguments: [jsEvent])
+        guard let onmessage = this.objectForKeyedSubscript("onmessage") where !onmessage.isUndefined && !onmessage.isNull else { return }
+        print("4. Invoking [onmessage] handler with arguments: \(jsEvent.objectForKeyedSubscript("instance"))")
+        onmessage.callWithArguments([jsEvent])
+        print("==================== [\(self.className)]  End dispatching message ====================")
     }
     
 }

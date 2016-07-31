@@ -2,10 +2,10 @@ importScripts("EventTarget");
 
 class SharedWorker extends EventTarget {
 
-    constructor(scriptURL, name, options, instance) {
+    constructor(scriptURL, name, instance) {
         super();
         if (this.constructor.name !== "SharedWorker") { return; }
-        this.instance = instance || scope && scope.createSharedWorker(scriptURL, name, options);
+        this.instance = instance || scope && scope.createSharedWorker(scriptURL, name);
     }
 
     get port() {
@@ -13,7 +13,7 @@ class SharedWorker extends EventTarget {
     }
 
     static create(instance) {
-        return new SharedWorker(instance.initializer.scriptURL, instance.initializer.name, null, instance);
+        return new SharedWorker(instance.scriptURL, instance, instance);
     }
 
 }

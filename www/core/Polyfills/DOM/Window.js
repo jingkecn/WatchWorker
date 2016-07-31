@@ -14,7 +14,7 @@ class Window extends EventTarget {
     setImmediate(callback) {
         var args = Array.from(arguments).slice(1);
         console.log("Args in setImmediate", args);
-        return JSCWindowTimers.setImmediateWithCallbackWithArgs(callback, args);
+        return WindowTimers.setImmediateWithCallbackWithArgs(callback, args);
     }
 
     setTimeout(callback, delay) {
@@ -24,26 +24,26 @@ class Window extends EventTarget {
         delay = (delay === (void 0) || delay < 0) ? 0 : delay;
         var args = Array.from(arguments).slice(2);
         console.log("Args in setTimeout", args);
-        return JSCWindowTimers.setTimeoutWithCallbackWithDelayWithArgs(callback, delay, args);
+        return WindowTimers.setTimeoutWithCallbackWithDelayWithArgs(callback, delay, args);
     }
 
     setInterval(callback, interval) {
         interval = (interval === (void 0) || interval < 0) ? 0 : interval;
         var args = Array.from(arguments).slice(2);
         console.log("Args in setInterval", args);
-        return JSCWindowTimers.setIntervalWithCallbackWithIntervalWithArgs(callback, interval, args);
+        return WindowTimers.setIntervalWithCallbackWithIntervalWithArgs(callback, interval, args);
     }
 
     clearImmediate(id) {
-        JSCWindowTimers.clearImmediateById(id);
+        WindowTimers.clearImmediateById(id);
     }
 
     clearTimeout(id) {
-        JSCWindowTimers.clearTimeoutById(id);
+        WindowTimers.clearTimeoutById(id);
     }
 
     clearInterval(id) {
-        JSCWindowTimers.clearIntervalById(id);
+        WindowTimers.clearIntervalById(id);
     }
 
     static create(instance) {

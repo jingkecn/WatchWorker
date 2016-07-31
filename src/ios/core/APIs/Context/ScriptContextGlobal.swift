@@ -12,8 +12,9 @@ import JavaScriptCore
 extension ScriptContext {
     
     func registerGlobalObjects() {
-        self.registerGlobalObject(self.scope, forKey: "scope")
-        self.registerGlobalObject(WindowTimers.sharedInstance, forKey: keyForWindowTimers)
+        self.registerGlobalObject(self, forKey: "scope")
+        self.registerGlobalObject(HttpRequestImpl.sharedInstance, forKey: KEY_FOR_HTTPREQUESTIMPL)
+        self.registerGlobalObject(WindowTimers.sharedInstance, forKey: KEY_FOR_WINDOWTIMERS)
     }
     
     func registerGlobalObject(object: AnyObject, forKey key: String) {
@@ -51,17 +52,18 @@ extension ScriptContext {
 extension ScriptContext {
     
     func preEvaluateScripts() {
-        // TODO
-//        self.evaluateScriptFile("Utilities")
         self.evaluateScriptFile("Polyfills")
-        self.registerModule("Polyfills")
+    }
+    
+    func evaluateScript(script: String) -> JSValue? {
+        return self.context?.evaluateScript(script)
     }
     
     func evaluateScriptFile(module: String) {
         guard let context = self.context else { return }
         guard !self.modules.contains(module) else { return }
         do {
-            if let path = NSBundle.mainBundle().pathForResource(module, ofType: "js") {
+            if let path = NSBundle.mainBundle().pathForResource(module, ofType: "js", inDirectory: nil) {
                 let script = try String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
                 print("Evaluating \(module).js")
                 context.evaluateScript(script)

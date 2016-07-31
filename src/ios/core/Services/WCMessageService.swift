@@ -9,52 +9,58 @@
 import Foundation
 import WatchConnectivity
 
-class WCMessageService: NSObject, WCSessionDelegate {
+public class WCMessageService: NSObject, WCSessionDelegate {
     
-    static let defaultService = WCMessageService()
+    typealias MessageListener = (message: String) -> Void
+    public typealias StartHandler = () -> Void
     
-    var messages = Queue<String>() {
-        didSet {
-            guard !self.messages.isEmpty else { return }
-            while let message = messages.dequeue() {
-                self.listeners.forEach({
-                    listener in
-                    listener(message: message)
-                })
-            }
-        }
-    }
-    
-    var listeners = Array<((message: String) -> Void)>()
+    public static let sharedInstance = WCMessageService()
     
     var session: WCSession? = {
         guard WCSession.isSupported() else { return nil }
         return WCSession.defaultSession()
     }()
     
-    func startService(onSuccess success: ((session: WCSession) -> Void)?, onError error: ((message: String) -> Void)?) {
+    var listeners = Array<MessageListener>()
+    
+}
+
+extension WCMessageService {
+    
+    public func startService(onSuccess successHandler: StartHandler? = nil, onError errorHandler: StartHandler? = nil) {
+        print("Starting message service. onSuccess = \(successHandler), onError = \(errorHandler)")
         self.session?.delegate = self
         self.session?.activateSession()
         if let session = self.session where session.reachable {
-            success?(session: session)
+            successHandler?()
         } else {
-            error?(message: "Your Apple Watch is not reachable...");
+            errorHandler?()
         }
-    }
-    
-    func addMessageListener(listener: (message: String) -> Void) {
-        self.listeners.append(listener)
     }
     
 }
 
-
-// MARK: ********** Message receiver **********
+extension WCMessageService {
+    
+    func addMessageListener(listener: MessageListener) {
+        self.listeners.append(listener)
+    }
+    
+    func dispatchMessage(message: String) {
+        self.listeners.forEach({ $0(message: message) })
+    }
+    
+}
 
 extension WCMessageService {
     
-    func onMessage(message: String) {
-        self.messages.enqueue(message)
+    var isReachable: Bool {
+        return self.session?.reachable ?? false
+    }
+    
+    func sendMessage(message: String) {
+        guard let session = self.session /*where session.reachable*/ else { return }
+        session.sendMessage([PHONE_MESSAGE: message], replyHandler: nil, errorHandler: nil)
     }
     
 }
@@ -63,40 +69,15 @@ extension WCMessageService {
 
 extension WCMessageService {
     
-    var reachableSession: WCSession? {
-        guard let session = self.session where session.reachable else {
-            print("Your Apple Watch device is not reachable...")
-            return nil
-        }
-        return session
-    }
-    
-    func sendMessage(message: [String : AnyObject], replyHandler: (([String : AnyObject]) -> Void)? = nil, errorHandler: ((NSError) -> Void)? = nil) {
-        guard let session = self.reachableSession else { return }
-        session.sendMessage(message, replyHandler: replyHandler, errorHandler: errorHandler)
-    }
-    
-    func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
+    public func session(session: WCSession, didReceiveMessage message: [String : AnyObject]) {
         print("Receiving message without reply handler...")
-        if let watchMessage = message[WATCH_MESSAGE] as? String {
-            print("Receiving a message from Apple Watch: \(watchMessage)")
+        if let messageBody = message[WATCH_MESSAGE] as? String {
+            print("Receiving a message from iPhone: \(messageBody)")
             dispatch_async(dispatch_get_main_queue(), {
-                self.onMessage(watchMessage)
+                self.dispatchMessage(messageBody)
             })
         } else {
-            print("Receiving a message: \(message)")
-        }
-    }
-    
-    func session(session: WCSession, didReceiveMessage message: [String : AnyObject], replyHandler: ([String : AnyObject]) -> Void) {
-        print("Receiving message with reply handler...")
-        if let watchMessage = message[WATCH_MESSAGE] as? String {
-            print("Receiving a message from Apple Watch: \(watchMessage)")
-            dispatch_async(dispatch_get_main_queue(), {
-                self.onMessage(watchMessage)
-            })
-        } else {
-            print("Receiving a message: \(message)")
+            print("Receiving an invalid message: \(message)")
         }
     }
     

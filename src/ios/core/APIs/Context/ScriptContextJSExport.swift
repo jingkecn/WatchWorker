@@ -11,10 +11,6 @@ import JavaScriptCore
 
 extension ScriptContext: ScriptContextJSExport {
     
-    var scope: ScriptContext {
-        return self
-    }
-    
     func createEvent(type: String, _ eventInit: JSValue) -> Event {
         return Event.create(self, type: type, initValue: eventInit)
     }
@@ -35,41 +31,46 @@ extension ScriptContext: ScriptContextJSExport {
         return MessagePort.create(self)
     }
     
-    func createWCMessagePort() -> WCMessagePort {
-        return WCMessagePort.create(self)
-    }
-    
     func createMessageChannel() -> MessageChannel {
         return MessageChannel.create(self)
     }
     
-    func createWCMessageChannel() -> WCMessageChannel {
-        return WCMessageChannel.create(self)
+    func createAbstractWorker(scriptURL: String) -> AbstractWorker {
+        return AbstractWorker.create(self, scriptURL: scriptURL)
     }
     
-    func createSharedWorker(scriptURL: String, _ name: String = "", _ options: JSValue) -> SharedWorker {
-        let validName = name == "undefined" ? "" : name
-        return SharedWorker.create(self, scriptURL: scriptURL, name: validName, options: options)
+    func createWorker(scriptURL: String) -> Worker {
+        return Worker.create(self, scriptURL: scriptURL)
     }
     
-    func createWCSharedWorker(scriptURL: String, _ name: String = "", _ options: JSValue) -> WCSharedWorker {
-        return WCSharedWorker.create(self, scriptURL: scriptURL, name: name, options: options)
+//    func createWatchWorker(scriptURL: String) -> WatchWorker {
+//        return WatchWorker.create(self, scriptURL: scriptURL)
+//    }
+    
+    func createSharedWorker(scriptURL: String, _ name: String = "") -> SharedWorker {
+        return SharedWorker.create(self, scriptURL: scriptURL, name: name)
+    }
+    
+    
+    func createSharedWatchWorker(scriptURL: String, _ name: String = "") -> SharedWatchWorker {
+        return SharedWatchWorker.create(self, scriptURL: scriptURL, name: name)
     }
 }
 
 @objc protocol ScriptContextJSExport: JSExport {
     
-    var scope: ScriptContext { get }
+//    var scope: ScriptContext { get }
     
     func createEvent(type: String, _ eventInit: JSValue) -> Event
     func createErrorEvent(type: String, _ eventInit: JSValue) -> ErrorEvent
     func createMessageEvent(type: String, _ eventInit: JSValue) -> MessageEvent
     func createEventTarget() -> EventTarget
     func createMessagePort() -> MessagePort
-    func createWCMessagePort() -> WCMessagePort
     func createMessageChannel() -> MessageChannel
-    func createWCMessageChannel() -> WCMessageChannel
-    func createSharedWorker(scriptURL: String, _ name: String, _ options: JSValue) -> SharedWorker
-    func createWCSharedWorker(scriptURL: String, _ name: String, _ options: JSValue) -> WCSharedWorker
+    func createWorker(scriptURL: String) -> Worker
+//    func createWatchWorker(scriptURL: String) -> WatchWorker
+    func createSharedWorker(scriptURL: String, _ name: String) -> SharedWorker
+    func createSharedWatchWorker(scriptURL: String, _ name: String) -> SharedWatchWorker
+//    func createWCSharedWorker(scriptURL: String, _ name: String, _ options: JSValue) -> WCSharedWorker
     
 }

@@ -11,4 +11,6 @@ import JavaScriptCore
 
 class WorkerNavigator: NSObject {
     
+    
+    
 }

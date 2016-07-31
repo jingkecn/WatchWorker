@@ -73,6 +73,10 @@ class Event: JSClassDelegate {
         self.target = target
     }
     
+//    func attatchEventTarget(target: EventTargetDelegate) {
+//        self.target = target
+//    }
+    
 }
 
 extension Event: EventJSExport {

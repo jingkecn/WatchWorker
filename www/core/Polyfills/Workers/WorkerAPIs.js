@@ -1,4 +1,4 @@
+importScripts("SharedWatchWorker");
 importScripts("SharedWorker");
-importScripts("WCSharedWorker");
-importScripts("WorkerLocation");
-importScripts("WorkerNavigator");
+importScripts("WatchWorker");
+importScripts("Worker");

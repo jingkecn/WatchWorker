@@ -1,21 +1,23 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com-wiztivi-cordova-plugin-smartwatchworker" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>SmartwatchWorker</name>
-    <js-module name="SmartwatchWorker" src="www/SmartwatchWorker.js">
-        <clobbers target="smartwatchworker" />
+<plugin id="com-wiztivi-cordova-plugin-watchworker" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>WatchWorker</name>
+    <js-module name="WatchWorker" src="www/WatchWorker.js">
+        <clobbers target="watchworker" />
     </js-module>
     <platform name="ios">
         <!-- Config files -->
         <config-file target="config.xml" parent="/*">
-            <feature name="SmartwatchWorker">
-                <param name="ios-package" value="SmartwatchWorker" />
+            <feature name="WatchWorker">
+                <param name="ios-package" value="WatchWorker" />
             </feature>
         </config-file>
         <!-- Source files -->
         <source-file src="src/ios/core/APIs/Context/ScriptContext.swift" />
         <source-file src="src/ios/core/APIs/Context/ScriptContextGlobal.swift" />
         <source-file src="src/ios/core/APIs/Context/ScriptContextJSExport.swift" />
-        <source-file src="src/ios/core/APIs/Context/ScriptContextMessaging.swift" />
+
+        <source-file src="src/ios/core/APIs/Delegates/EventTargetDelegate.swift" />
+        <source-file src="src/ios/core/APIs/Delegates/JSClassDelegate.swift" />
 
         <source-file src="src/ios/core/APIs/Events/ErrorEvent.swift" />
         <source-file src="src/ios/core/APIs/Events/ErrorEventInit.swift" />
@@ -30,18 +32,16 @@
         <source-file src="src/ios/core/APIs/Message/MessageChannel.swift" />
         <source-file src="src/ios/core/APIs/Message/MessagePort.swift" />
 
-        <source-file src="src/ios/core/APIs/WCMessage/WCMessageChannel.swift" />
-        <source-file src="src/ios/core/APIs/WCMessage/WCMessagePort.swift" />
+        <source-file src="src/ios/core/APIs/Web/HttpRequestImpl.swift" />
+
+        <source-file src="src/ios/core/APIs/Window/WindowTimers.swift" />
 
         <source-file src="src/ios/core/APIs/Workers/AbstractWorker.swift" />
-        <source-file src="src/ios/core/APIs/Workers/SharedWorker.swift" />
-        <source-file src="src/ios/core/APIs/Workers/WCSharedWorker.swift" />
         <source-file src="src/ios/core/APIs/Workers/WorkerGlobalScope.swift" />
-        <source-file src="src/ios/core/APIs/Workers/WorkerLocation.swift" />
-        <source-file src="src/ios/core/APIs/Workers/WorkerNavigator.swift" />
-        <source-file src="src/ios/core/APIs/Workers/WorkerOptions.swift" />
-
-        <source-file src="src/ios/core/APIs/WindowTimers.swift" />
+        <source-file src="src/ios/core/APIs/Workers/SharedWatchWorker.swift" />
+        <source-file src="src/ios/core/APIs/Workers/SharedWatchWorkerGlobalScope.swift" />
+        <source-file src="src/ios/core/APIs/Workers/SharedWorker.swift" />
+        <source-file src="src/ios/core/APIs/Workers/SharedWorkerGlobalScope.swift" />
 
         <source-file src="src/ios/core/Constants/Keys.swift" />
 
@@ -51,11 +51,8 @@
         <source-file src="src/ios/core/Utilities/Sequences/Stack.swift" />
         <source-file src="src/ios/core/Utilities/SwiftyJSON/SwiftyJSON.swift" />
         <source-file src="src/ios/core/Utilities/SwiftyJSON/SwiftyJSONExtension.swift" />
-        <source-file src="src/ios/core/Utilities/SwiftyJSON/SwiftyJSONRPC.swift" />
 
-        <source-file src="src/ios/core/JSClassDelegate.swift" />
-
-        <source-file src="src/ios/SmartwatchWorker.swift" />
+        <source-file src="src/ios/WatchWorker.swift" />
         <!-- Resource files -->
         <resource-file src="www/core/Polyfills/DOM/Document.js" />
         <resource-file src="www/core/Polyfills/DOM/DOMAPIs.js" />
@@ -75,21 +72,15 @@
         <resource-file src="www/core/Polyfills/Others/es6-promise.js" />
         <resource-file src="www/core/Polyfills/Others/OtherPolyfills.js" />
         <resource-file src="www/core/Polyfills/Others/XMLHttpRequest.js" />
-        <resource-file src="www/core/Polyfills/WCMessage/WCMessageAPIs.js" />
-        <resource-file src="www/core/Polyfills/WCMessage/WCMessageChannel.js" />
-        <resource-file src="www/core/Polyfills/WCMessage/WCMessagePort.js" />
+        <resource-file src="www/core/Polyfills/Workers/SharedWatchWorker.js" />
         <resource-file src="www/core/Polyfills/Workers/SharedWorker.js" />
-        <resource-file src="www/core/Polyfills/Workers/WCSharedWorker.js" />
         <resource-file src="www/core/Polyfills/Workers/WorkerAPIs.js" />
-        <resource-file src="www/core/Polyfills/Workers/WorkerLocation.js" />
-        <resource-file src="www/core/Polyfills/Workers/WorkerNavigator.js" />
         <resource-file src="www/core/Polyfills/Polyfills.js" />
 
-        <resource-file src="www/core/Tests/InsideWatchWorker.js" />
-        <resource-file src="www/core/Tests/OutsideWatchWorker.js" />
+        <resource-file src="www/core/Tests/SharedWatchWorkerTester.js" />
+        <resource-file src="www/core/Tests/SharedWorkerTester.js" />
 
-        <resource-file src="www/core/Utilities/Sequences/Queue.js" />
-        <resource-file src="www/core/Utilities/Sequences/Stack.js" />
+        <resource-file src="www/core/Utilities/Sequences/Sequence.js" />
         <resource-file src="www/core/Utilities/Utilities.js" />
 
         <resource-file src="www/core/JSClassDelegate.js" />

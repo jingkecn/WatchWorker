@@ -24,8 +24,8 @@ class MessageChannel: JSClassDelegate, MessageChannelJSExport {    // EventData 
     override init(context: ScriptContext) {
         self.port1 = MessagePort.create(context)
         self.port2 = MessagePort.create(context)
-        self.port1.entangleRemotePort(self.port2)
-        self.port2.entangleRemotePort(self.port1)
+        self.port1.entangle(self.port2)
+        self.port2.entangle(self.port1)
         super.init(context: context)
     }
     
@@ -38,8 +38,8 @@ extension MessageChannel {
     }
     
     class func createChannel(withPort1 port1: MessagePort, withPort2 port2: MessagePort) {
-        port1.entangleRemotePort(port2)
-        port2.entangleRemotePort(port1)
+        port1.entangle(port2)
+        port2.entangle(port1)
     }
     
 }

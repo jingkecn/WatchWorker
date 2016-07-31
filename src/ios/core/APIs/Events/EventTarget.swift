@@ -11,9 +11,6 @@ import JavaScriptCore
 
 @objc protocol EventTargetJSExport: JSExport {
     
-//    func registerEvent(event: Event)
-//    func getEventByType(type: String) -> Event?
-    
     func addEventListener(type: String, _ callback: JSValue, _ options: JSValue?)
     func removeEventListener(type: String?, _ callback: JSValue?, _ options: JSValue?)
     func dispatchEvent(event: Event) -> Bool
@@ -22,73 +19,18 @@ import JavaScriptCore
 
 class EventTarget: JSClassDelegate {
     
-    var events = Dictionary<String, Event>()
-    var listeners = Dictionary<String, Array<EventListener>>()
-    
     override init(context: ScriptContext) {
         super.init(context: context)
-        self.registerEvents()
-        guard let event = self.getEventByType("load") else { return }
-        self.onLoad(event)
-        
+        self.addEventListener("load", listener: EventListener.create(withHandler: self.onLoad))
+        self.dispatchLoader()
     }
     
-    func registerEvents() {
-        self.registerEvent(Event.create(self.context, type: "load", initDict: [:]))
-    }
-    
-    func addListener(type: String, listener: EventListener, options: AddEventListenerOptions? = nil) {
-        var listeners = self.listeners[type] ?? Array<EventListener>()
-        listeners.append(listener)
-        self.listeners[type] = listeners
-    }
-    
-    func removeListener(type: String? = nil, listener: EventListener? = nil, options: EventListenerOptions? = nil) {
-        if let type = type {
-            if let listener = listener {
-                // MARK: Remove a specific event listener
-                var listeners = self.listeners[type] ?? Array<EventListener>()
-                if let index = listeners.indexOf(listener) {
-                    listeners.removeAtIndex(index)
-                    self.listeners[type] = listeners
-                }
-            } else {
-                // MARK: Remove listeners of a typed event
-                self.listeners.removeValueForKey(type)
-            }
-        } else {
-            // MARK: Remove all listeners
-            self.listeners.removeAll()
-        }
-    }
-    
-    func onLoad(event: Event) {
-        self.dispatchEvent(event)
-        guard let jsEvent = event.thisJSValue else { return }
-        guard let this = self.thisJSValue else { return }
-        guard this.hasProperty("onload") else { return }
-        this.objectForKeyedSubscript("onload").callWithArguments([jsEvent])
-    }
 }
 
 extension EventTarget: EventTargetJSExport {
     
-    func registerEvent(event: Event) {
-        event.attatchEventTarget(self)
-        self.events[event.type] = event
-        print("[\(self.className)][RegisterEvent]: \(self.events)")
-    }
-    
-    func getEventByType(type: String) -> Event? {
-        return self.events[type] ?? nil
-    }
-    
     func addEventListener(type: String, _ callback: JSValue, _ options: JSValue? = nil) {
-        if let options = options {
-            self.addListener(type, listener: EventListener.create(callback), options: AddEventListenerOptions(options: options))
-        } else {
-            self.addListener(type, listener: EventListener.create(callback))
-        }
+        self.addEventListener(type, listener: EventListener.create(callback))
     }
     
     func removeEventListener(type: String? = nil, _ callback: JSValue? = nil, _ options: JSValue? = nil) {
@@ -98,25 +40,41 @@ extension EventTarget: EventTargetJSExport {
                 let callbacks = listeners.map({ return $0.callback ?? JSValue() })
                 if let index = callbacks.indexOf(callback) {
                     let listener = listeners[index]
-                    self.removeListener(type, listener: listener, options: EventListenerOptions(options: options))
+                    self.removeEventListener(type, listener: listener)
                 }
             } else {
-                self.removeListener(type)
+                self.removeEventListener(type, listener: nil)
             }
         } else {
-            self.removeListener()
+            self.removeEventListener(nil, listener: nil)
         }
     }
     
-    func dispatchEvent(event: Event) -> Bool {
-        if let listeners = self.listeners[event.type] {
-            listeners.forEach({ $0.handleEvent(event) })
-            return true
-        } else {
-            return false
-        }
+    override func dispatchEvent(event: Event) -> Bool {
+        event.attatchEventTarget(self)
+        return super.dispatchEvent(event)
     }
 
+}
+
+extension EventTarget {
+    
+    func dispatchLoader() {
+        let event = Event.create(self.context, type: "load", initDict: [:])
+        self.dispatchEvent(event)
+    }
+    
+}
+
+extension EventTarget {
+    
+    func onLoad(event: Event) {
+        guard let jsEvent = event.thisJSValue else { return }
+        guard let this = self.thisJSValue else { return }
+        guard let onload = this.objectForKeyedSubscript("onload") where !onload.isUndefined && !onload.isNull else { return }
+        onload.callWithArguments([jsEvent])
+    }
+    
 }
 
 extension EventTarget {

@@ -20,9 +20,9 @@ class MessagePort extends EventTarget {
      * Objects listed in transfer are transferred, not just cloned, meaning that they are no longer usable on the sending side.
      * Throws a "DataCloneError" DOMException if transfer array contains duplicate objects or the source or target ports, or if message could not be cloned.
      */
-    postMessage(message, transfer) {
+    postMessage(message) {
         // if (!transfer) { transfer = null; }
-        this.instance.postMessage(message, transfer);
+        this.instance.postMessage(message);
     }
 
     /**

@@ -30,4 +30,9 @@ class JSClassDelegate {
         this.__instance__.registerThisJSValue(this);
     }
 
+    // static create(instance) {
+    //     this.instance = instance;
+    //     return this;
+    // }
+
 }

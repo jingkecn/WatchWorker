@@ -30,3 +30,6 @@ let keyForScriptLoaderSharedInstance = "JSCScriptLoaderSharedInstance"
 // Messaging
 let PHONE_MESSAGE = "phone_message"
 let WATCH_MESSAGE = "watch_message"
+
+let KEY_FOR_WINDOWTIMERS = "WindowTimers"
+let KEY_FOR_HTTPREQUESTIMPL = "HttpRequestImpl"
