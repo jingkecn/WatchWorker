@@ -1,0 +1,2 @@
+importScripts("MessageChannel");
+importScripts("MessagePort");

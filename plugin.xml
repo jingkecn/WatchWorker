@@ -1,96 +1,146 @@
 <?xml version='1.0' encoding='utf-8'?>
-<plugin id="com-wiztivi-cordova-plugin-smartwatchworker" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
-    <name>SmartWatchWorker</name>
-    <js-module name="SmartWatchWorker" src="www/SmartWatchWorker.js">
-        <clobbers target="smartwatchworker" />
+<plugin id="com-wiztivi-cordova-plugin-watchworker" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+    <name>WatchWorker</name>
+    <js-module name="WatchWorker" src="www/WatchWorker.js">
+        <clobbers target="watchworker" />
     </js-module>
     <platform name="ios">
         <!-- Config files -->
         <config-file target="config.xml" parent="/*">
-            <feature name="SmartWatchWorker">
-                <param name="ios-package" value="SmartWatchWorker" />
+            <feature name="WatchWorker">
+                <param name="ios-package" value="WatchWorker" />
             </feature>
         </config-file>
+
         <!-- Source files -->
-        <source-file src="src/ios/core/APIs/Context/ScriptContext.swift" />
-        <source-file src="src/ios/core/APIs/Context/ScriptContextGlobal.swift" />
-        <source-file src="src/ios/core/APIs/Context/ScriptContextJSExport.swift" />
-        <source-file src="src/ios/core/APIs/Context/ScriptContextMessaging.swift" />
+        <source-file src="src/ios/JSCore/Context/ScriptContext.swift" />
+        <source-file src="src/ios/JSCore/Context/ScriptContextGlobal.swift" />
+        <source-file src="src/ios/JSCore/Context/ScriptContextJSExport.swift" />
 
-        <source-file src="src/ios/core/APIs/Events/ErrorEvent.swift" />
-        <source-file src="src/ios/core/APIs/Events/ErrorEventInit.swift" />
-        <source-file src="src/ios/core/APIs/Events/Event.swift" />
-        <source-file src="src/ios/core/APIs/Events/EventInit.swift" />
-        <source-file src="src/ios/core/APIs/Events/EventListener.swift" />
-        <source-file src="src/ios/core/APIs/Events/EventListenerOptions.swift" />
-        <source-file src="src/ios/core/APIs/Events/EventTarget.swift" />
-        <source-file src="src/ios/core/APIs/Events/MessageEvent.swift" />
-        <source-file src="src/ios/core/APIs/Events/MessageEventInit.swift" />
+        <source-file src="src/ios/JSCore/Delegates/EventTargetDelegate.swift" />
+        <source-file src="src/ios/JSCore/Delegates/JSClassDelegate.swift" />
 
-        <source-file src="src/ios/core/APIs/Message/MessageChannel.swift" />
-        <source-file src="src/ios/core/APIs/Message/MessagePort.swift" />
+        <source-file src="src/ios/JSCore/Events/ErrorEvent.swift" />
+        <source-file src="src/ios/JSCore/Events/ErrorEventInit.swift" />
+        <source-file src="src/ios/JSCore/Events/Event.swift" />
+        <source-file src="src/ios/JSCore/Events/EventInit.swift" />
+        <source-file src="src/ios/JSCore/Events/EventListener.swift" />
+        <source-file src="src/ios/JSCore/Events/EventListenerOptions.swift" />
+        <source-file src="src/ios/JSCore/Events/EventTarget.swift" />
+        <source-file src="src/ios/JSCore/Events/MessageEvent.swift" />
+        <source-file src="src/ios/JSCore/Events/MessageEventInit.swift" />
 
-        <source-file src="src/ios/core/APIs/WCMessage/WCMessageChannel.swift" />
-        <source-file src="src/ios/core/APIs/WCMessage/WCMessagePort.swift" />
+        <source-file src="src/ios/JSCore/Message/MessageChannel.swift" />
+        <source-file src="src/ios/JSCore/Message/MessagePort.swift" />
 
-        <source-file src="src/ios/core/APIs/Workers/AbstractWorker.swift" />
-        <source-file src="src/ios/core/APIs/Workers/SharedWorker.swift" />
-        <source-file src="src/ios/core/APIs/Workers/WCSharedWorker.swift" />
-        <source-file src="src/ios/core/APIs/Workers/WorkerGlobalScope.swift" />
-        <source-file src="src/ios/core/APIs/Workers/WorkerLocation.swift" />
-        <source-file src="src/ios/core/APIs/Workers/WorkerNavigator.swift" />
-        <source-file src="src/ios/core/APIs/Workers/WorkerOptions.swift" />
+        <source-file src="src/ios/JSCore/Web/HttpRequestImpl.swift" />
 
-        <source-file src="src/ios/core/APIs/WindowTimers.swift" />
+        <source-file src="src/ios/JSCore/Window/WindowTimers.swift" />
 
-        <source-file src="src/ios/core/Constants/Keys.swift" />
+        <source-file src="src/ios/JSCore/Workers/AbstractWorker.swift" />
+        <source-file src="src/ios/JSCore/Workers/DedicatedWorkerGlobalScope.swift" />
+        <source-file src="src/ios/JSCore/Workers/SharedWatchWorker.swift" />
+        <source-file src="src/ios/JSCore/Workers/SharedWatchWorkerGlobalScope.swift" />
+        <source-file src="src/ios/JSCore/Workers/SharedWorker.swift" />
+        <source-file src="src/ios/JSCore/Workers/SharedWorkerGlobalScope.swift" />
+        <source-file src="src/ios/JSCore/Workers/Worker.swift" />
+        <source-file src="src/ios/JSCore/Workers/WorkerGlobalScope.swift" />
 
-        <source-file src="src/ios/core/Utilities/Sequences/Queue.swift" />
-        <source-file src="src/ios/core/Utilities/Sequences/Stack.swift" />
-        <source-file src="src/ios/core/Utilities/SwiftyJSON/SwiftyJSON.swift" />
-        <source-file src="src/ios/core/Utilities/SwiftyJSON/SwiftyJSONExtension.swift" />
-        <source-file src="src/ios/core/Utilities/SwiftyJSON/SwiftyJSONRPC.swift" />
+        <source-file src="src/ios/Services/WCMessageService.swift" />
 
-        <source-file src="src/ios/core/JSClassDelegate.swift" />
+        <source-file src="src/ios/Shared/Sequences/Queue.swift" />
+        <source-file src="src/ios/Shared/Sequences/Stack.swift" />
+        <source-file src="src/ios/Shared/SwiftyJSON/SwiftyJSON.swift" />
+        <source-file src="src/ios/Shared/SwiftyJSON/SwiftyJSONExtension.swift" />
 
-        <source-file src="src/ios/SmartWatchWorker.swift" />
+        <source-file src="src/ios/Shared/Constants.swift" />
+
+        <source-file src="src/ios/WatchWorker.swift" />
+
         <!-- Resource files -->
-        <resource-file src="www/core/Polyfills/DOM/Document.js" />
-        <resource-file src="www/core/Polyfills/DOM/DOMAPIs.js" />
-        <resource-file src="www/core/Polyfills/DOM/DOMTokenList.js" />
-        <resource-file src="www/core/Polyfills/DOM/Element.js" />
-        <resource-file src="www/core/Polyfills/DOM/HTMLDocument.js" />
-        <resource-file src="www/core/Polyfills/DOM/HTMLElement.js" />
-        <resource-file src="www/core/Polyfills/DOM/Window.js" />
-        <resource-file src="www/core/Polyfills/Events/ErrorEvent.js" />
-        <resource-file src="www/core/Polyfills/Events/Event.js" />
-        <resource-file src="www/core/Polyfills/Events/EventAPIs.js" />
-        <resource-file src="www/core/Polyfills/Events/EventTarget.js" />
-        <resource-file src="www/core/Polyfills/Events/MessageEvent.js" />
-        <resource-file src="www/core/Polyfills/Message/MessageAPIs.js" />
-        <resource-file src="www/core/Polyfills/Message/MessageChannel.js" />
-        <resource-file src="www/core/Polyfills/Message/MessagePort.js" />
-        <resource-file src="www/core/Polyfills/Others/es6-promise.js" />
-        <resource-file src="www/core/Polyfills/Others/OtherPolyfills.js" />
-        <resource-file src="www/core/Polyfills/Others/XMLHttpRequest.js" />
-        <resource-file src="www/core/Polyfills/WCMessage/WCMessageAPIs.js" />
-        <resource-file src="www/core/Polyfills/WCMessage/WCMessageChannel.js" />
-        <resource-file src="www/core/Polyfills/WCMessage/WCMessagePort.js" />
-        <resource-file src="www/core/Polyfills/Workers/SharedWorker.js" />
-        <resource-file src="www/core/Polyfills/Workers/WCSharedWorker.js" />
-        <resource-file src="www/core/Polyfills/Workers/WorkerAPIs.js" />
-        <resource-file src="www/core/Polyfills/Workers/WorkerLocation.js" />
-        <resource-file src="www/core/Polyfills/Workers/WorkerNavigator.js" />
-        <resource-file src="www/core/Polyfills/Polyfills.js" />
+        <resource-file src="www/Application/Mobile/Application.js" />
+        <resource-file src="www/Application/Mobile/ApplicationController.js" />
+        <resource-file src="www/Application/Mobile/ApplicationScope.js" />
 
-        <resource-file src="www/core/Tests/InsideWatchWorker.js" />
-        <resource-file src="www/core/Tests/OutsideWatchWorker.js" />
+        <resource-file src="www/Application/Shared/Services/ImageService.js" />
+        <resource-file src="www/Application/Shared/Services/NewsService.js" />
+        <resource-file src="www/Application/Shared/Services/TwitterService.js" />
+        <resource-file src="www/Application/Shared/Services/WebService.js" />
+        <resource-file src="www/Application/Shared/Services/XMLService.js" />
 
-        <resource-file src="www/core/Utilities/Sequences/Queue.js" />
-        <resource-file src="www/core/Utilities/Sequences/Stack.js" />
-        <resource-file src="www/core/Utilities/Utilities.js" />
+        <resource-file src="www/Application/Watch/WKControllers/WKScreens/WKAbstractScreenController.js" />
+        <resource-file src="www/Application/Watch/WKControllers/WKScreens/WKDetailScreenController.js" />
+        <resource-file src="www/Application/Watch/WKControllers/WKScreens/WKListScreenController.js" />
+        <resource-file src="www/Application/Watch/WKControllers/WKScreens/WKMenuScreenController.js" />
 
-        <resource-file src="www/core/JSClassDelegate.js" />
+        <resource-file src="www/Application/Watch/WKControllers/WKWidgets/WKAbstractWidgetController.js" />
+        <resource-file src="www/Application/Watch/WKControllers/WKWidgets/WKDetailWidgetController.js" />
+        <resource-file src="www/Application/Watch/WKControllers/WKWidgets/WKListWidgetController.js" />
+        <resource-file src="www/Application/Watch/WKControllers/WKWidgets/WKMenuWidgetController.js" />
+
+        <resource-file src="www/Application/Watch/WKControllers/WKAbstractController.js" />
+        <resource-file src="www/Application/Watch/WKControllers/WKApplicationController.js" />
+
+        <resource-file src="www/Application/Watch/WKScreens/WKAbstractScreen.js" />
+        <resource-file src="www/Application/Watch/WKScreens/WKDetailScreen.js" />
+        <resource-file src="www/Application/Watch/WKScreens/WKListScreen.js" />
+        <resource-file src="www/Application/Watch/WKScreens/WKMenuScreen.js" />
+
+        <resource-file src="www/Application/Watch/WKWidgets/WKAbstractWidget.js" />
+        <resource-file src="www/Application/Watch/WKWidgets/WKDetailWidget.js" />
+        <resource-file src="www/Application/Watch/WKWidgets/WKListWidget.js" />
+        <resource-file src="www/Application/Watch/WKWidgets/WKMenuWidget.js" />
+
+        <resource-file src="www/Application/Watch/WKApplication.js" />
+        <resource-file src="www/Application/Watch/WKApplicationScope.js" />
+        <resource-file src="www/Application/app.js" />
+
+        <resource-file src="www/JSCore/Polyfills/DOM/Document.js" />
+        <resource-file src="www/JSCore/Polyfills/DOM/DOMAPIs.js" />
+        <resource-file src="www/JSCore/Polyfills/DOM/DOMTokenList.js" />
+        <resource-file src="www/JSCore/Polyfills/DOM/Element.js" />
+        <resource-file src="www/JSCore/Polyfills/DOM/HTMLDocument.js" />
+        <resource-file src="www/JSCore/Polyfills/DOM/HTMLElement.js" />
+        <resource-file src="www/JSCore/Polyfills/DOM/Window.js" />
+
+        <resource-file src="www/JSCore/Polyfills/Events/ErrorEvent.js" />
+        <resource-file src="www/JSCore/Polyfills/Events/Event.js" />
+        <resource-file src="www/JSCore/Polyfills/Events/EventAPIs.js" />
+        <resource-file src="www/JSCore/Polyfills/Events/EventTarget.js" />
+        <resource-file src="www/JSCore/Polyfills/Events/MessageEvent.js" />
+
+        <resource-file src="www/JSCore/Polyfills/Message/MessageAPIs.js" />
+        <resource-file src="www/JSCore/Polyfills/Message/MessageChannel.js" />
+        <resource-file src="www/JSCore/Polyfills/Message/MessagePort.js" />
+
+        <resource-file src="www/JSCore/Polyfills/Others/es6-promise.js" />
+        <resource-file src="www/JSCore/Polyfills/Others/OtherPolyfills.js" />
+        <resource-file src="www/JSCore/Polyfills/Others/XMLHttpRequest.js" />
+
+        <resource-file src="www/JSCore/Polyfills/Workers/SharedWatchWorker.js" />
+        <resource-file src="www/JSCore/Polyfills/Workers/SharedWorker.js" />
+        <resource-file src="www/JSCore/Polyfills/Workers/Worker.js" />
+        <resource-file src="www/JSCore/Polyfills/Workers/WorkerAPIs.js" />
+        <resource-file src="www/JSCore/Polyfills/Polyfills.js" />
+
+        <resource-file src="www/JSCore/Tests/SharedWatchWorker/SharedWatchWorkerTester.js" />
+        <resource-file src="www/JSCore/Tests/SharedWatchWorker/SharedWatchWorkerScope.js" />
+        <resource-file src="www/JSCore/Tests/SharedWorker/SharedWorkerTester.js" />
+        <resource-file src="www/JSCore/Tests/SharedWorker/SharedWorkerScope.js" />
+        <resource-file src="www/JSCore/Tests/Worker/WorkerTester.js" />
+        <resource-file src="www/JSCore/Tests/Worker/WorkerScope.js" />
+
+        <resource-file src="www/JSCore/JSClassDelegate.js" />
+
+        <resource-file src="www/Utilities/JSON-RPC/JSONRPCConnector.js" />
+        <resource-file src="www/Utilities/JSON-RPC/JSONRPCError.js" />
+        <resource-file src="www/Utilities/JSON-RPC/JSONRPCMessage.js" />
+        <resource-file src="www/Utilities/JSON-RPC/JSONRPCService.js" />
+
+        <resource-file src="www/Utilities/Sequences/Sequence.js" />
+
+        <resource-file src="www/Utilities/Utilities.js" />
+
         <!-- Dependencies -->
         <dependency id="cordova-plugin-add-swift-support" version="1.3.1"/>
     </platform>

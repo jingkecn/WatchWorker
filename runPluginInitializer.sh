@@ -1,7 +1,7 @@
 ##!/bin/sh
 
-# NAME=SmartWatchWorker
-# PLUGIN_ID=com.wiztivi.cordova.plugins.smartwatchworker
+# NAME=WatchWorker
+# PLUGIN_ID=com-wiztivi-cordova-plugin-watchworker
 # PLUGIN_VERSION=0.0.1
 # PATH=..
-plugman create --name SmartWatchWorker --plugin_id com.wiztivi.cordova.plugins.smartwatchworker --plugin_version 0.0.1 --path ..
+plugman create --name WatchWorker --plugin_id com-wiztivi-cordova-plugin-watchworker --plugin_version 0.0.1 --path ..
