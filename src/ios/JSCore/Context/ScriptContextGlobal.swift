@@ -52,6 +52,7 @@ extension ScriptContext {
 extension ScriptContext {
     
     func preEvaluateScripts() {
+        self.evaluateScriptFile("JSCore")
         self.evaluateScriptFile("Polyfills")
     }
     

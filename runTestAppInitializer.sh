@@ -4,6 +4,7 @@
 # ID="com.wiztivi.examples.watchworker"
 # NAME="WatchWorkerExample"
 
+rm -rf testapps
 mkdir -p testapps
 cd testapps
 cordova create WatchWorkerExample com.wiztivi.examples.watchworker WatchWorkerExample

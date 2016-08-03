@@ -3,17 +3,20 @@ import ObjectiveC
 
 @objc(WatchWorker) class WatchWorker : CDVPlugin {
     
-    let scope: SharedWorkerGlobalScope = SharedWorkerGlobalScope.create(withUrl: "ApplicationScope", withName: "")
+    typealias MessageListener = (message: String) -> Void
     
-    var worker: SharedWatchWorker? {
-        didSet {
-            guard let worker = self.worker else { return }
-            worker.port.start()
-            worker.port.addEventListener("message", listener: EventListener.create(withHandler: { self.dispatchMessage(($0 as! MessageEvent).data) }))
-        }
-    }
-    var initialized: Bool { return self.worker != nil }
+    static let sharedInstance = WatchWorker()
+    
+    let scope: SharedWorkerGlobalScope
     var targetDelegate: EventTargetDelegate?
+    
+    var worker: SharedWatchWorker?
+    var initialized: Bool { return self.worker != nil }
+    
+    override init() {
+        self.scope = SharedWorkerGlobalScope.create(withUrl: "ApplicationScope", withName: "")
+        super.init()
+    }
     
     func initialize(command: CDVInvokedUrlCommand) {
         self.commandDelegate.runInBackground({
@@ -28,11 +31,19 @@ import ObjectiveC
                 self.commandDelegate.sendPluginResult(result, callbackId: command.callbackId)
                 return
             }
-            self.worker = SharedWatchWorker.create(self.scope, scriptURL: url)
-            self.targetDelegate = EventTargetDelegate()
+            self.initializeWatchWorker(withUrl: url)
             result = CDVPluginResult(status: CDVCommandStatus_OK)
             self.commandDelegate.sendPluginResult(result, callbackId: command.callbackId)
         })
+    }
+    
+    func initializeWatchWorker(withUrl url: String) {
+        self.targetDelegate = EventTargetDelegate()
+        self.worker = SharedWatchWorker.create(self.scope, scriptURL: url)
+        self.worker!.port.addEventListener("message", listener: EventListener.create(withHandler: {
+            self.dispatchMessage(($0 as! MessageEvent).data)
+        }))
+        self.worker!.port.start()
     }
     
     func postMessage(command: CDVInvokedUrlCommand) {
@@ -79,6 +90,8 @@ import ObjectiveC
                 if let event = $0 as? ErrorEvent {
                     result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAsString: event.message)
                 }
+                // MUST SET true to keep listener alive!!!!!!!!!!
+                result.setKeepCallbackAsBool(true)
                 self.commandDelegate.sendPluginResult(result, callbackId: command.callbackId)
             }))
         })
@@ -107,6 +120,7 @@ import ObjectiveC
 extension WatchWorker {
     
     func dispatchMessage(message: String) {
+        print("Dispatching message: \(message)")
         let event = MessageEvent.create(self.scope, type: "message", initDict: [ "data": message ])
         self.dispatchEvent(event)
     }
@@ -124,6 +138,7 @@ extension WatchWorker {
     }
     
     func dispatchEvent(event: Event) {
+        print("\(self.targetDelegate).dispatching event: \(event)")
         self.targetDelegate?.dispatchEvent(event)
     }
     

@@ -20,7 +20,7 @@ Please replace the contents in `AppDelegate.m` file within your Xcode project by
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     self.viewController = [[MainViewController alloc] init];
-    [[WatchWorker sharedInstance] initializeWatchWorker:@"ApplicationScope"];
+    [[WatchWorker sharedInstance] initializeWatchWorkerWithUrl:@"ApplicationScope"];
     [[WCMessageService sharedInstance] startServiceOnSuccess:nil onError:nil];
     return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }

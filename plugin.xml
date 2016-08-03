@@ -58,6 +58,9 @@
         <source-file src="src/ios/WatchWorker.swift" />
 
         <!-- Resource files -->
+
+        <!-- Application resource files -->
+
         <resource-file src="www/Application/Mobile/Application.js" />
         <resource-file src="www/Application/Mobile/ApplicationController.js" />
         <resource-file src="www/Application/Mobile/ApplicationScope.js" />
@@ -94,43 +97,54 @@
         <resource-file src="www/Application/Watch/WKApplication.js" />
         <resource-file src="www/Application/Watch/WKApplicationScope.js" />
         <resource-file src="www/Application/app.js" />
+        
+        <!-- JavaScript core resource files -->
 
-        <resource-file src="www/JSCore/Polyfills/DOM/Document.js" />
-        <resource-file src="www/JSCore/Polyfills/DOM/DOMAPIs.js" />
-        <resource-file src="www/JSCore/Polyfills/DOM/DOMTokenList.js" />
-        <resource-file src="www/JSCore/Polyfills/DOM/Element.js" />
-        <resource-file src="www/JSCore/Polyfills/DOM/HTMLDocument.js" />
-        <resource-file src="www/JSCore/Polyfills/DOM/HTMLElement.js" />
-        <resource-file src="www/JSCore/Polyfills/DOM/Window.js" />
+        <resource-file src="www/JSCore/Delegates/JSClassDelegate.js" />
 
-        <resource-file src="www/JSCore/Polyfills/Events/ErrorEvent.js" />
-        <resource-file src="www/JSCore/Polyfills/Events/Event.js" />
-        <resource-file src="www/JSCore/Polyfills/Events/EventAPIs.js" />
-        <resource-file src="www/JSCore/Polyfills/Events/EventTarget.js" />
-        <resource-file src="www/JSCore/Polyfills/Events/MessageEvent.js" />
+        <resource-file src="www/JSCore/Events/ErrorEvent.js" />
+        <resource-file src="www/JSCore/Events/Event.js" />
+        <resource-file src="www/JSCore/Events/EventAPIs.js" />
+        <resource-file src="www/JSCore/Events/EventTarget.js" />
+        <resource-file src="www/JSCore/Events/MessageEvent.js" />
 
-        <resource-file src="www/JSCore/Polyfills/Message/MessageAPIs.js" />
-        <resource-file src="www/JSCore/Polyfills/Message/MessageChannel.js" />
-        <resource-file src="www/JSCore/Polyfills/Message/MessagePort.js" />
+        <resource-file src="www/JSCore/Message/MessageAPIs.js" />
+        <resource-file src="www/JSCore/Message/MessageChannel.js" />
+        <resource-file src="www/JSCore/Message/MessagePort.js" />
 
-        <resource-file src="www/JSCore/Polyfills/Others/es6-promise.js" />
-        <resource-file src="www/JSCore/Polyfills/Others/OtherPolyfills.js" />
-        <resource-file src="www/JSCore/Polyfills/Others/XMLHttpRequest.js" />
+        <resource-file src="www/JSCore/Workers/SharedWatchWorker.js" />
+        <resource-file src="www/JSCore/Workers/SharedWorker.js" />
+        <resource-file src="www/JSCore/Workers/Worker.js" />
+        <resource-file src="www/JSCore/Workers/WorkerAPIs.js" />
 
-        <resource-file src="www/JSCore/Polyfills/Workers/SharedWatchWorker.js" />
-        <resource-file src="www/JSCore/Polyfills/Workers/SharedWorker.js" />
-        <resource-file src="www/JSCore/Polyfills/Workers/Worker.js" />
-        <resource-file src="www/JSCore/Polyfills/Workers/WorkerAPIs.js" />
-        <resource-file src="www/JSCore/Polyfills/Polyfills.js" />
+        <resource-file src="www/JSCore/JSCore.js" />
 
-        <resource-file src="www/JSCore/Tests/SharedWatchWorker/SharedWatchWorkerTester.js" />
-        <resource-file src="www/JSCore/Tests/SharedWatchWorker/SharedWatchWorkerScope.js" />
-        <resource-file src="www/JSCore/Tests/SharedWorker/SharedWorkerTester.js" />
-        <resource-file src="www/JSCore/Tests/SharedWorker/SharedWorkerScope.js" />
-        <resource-file src="www/JSCore/Tests/Worker/WorkerTester.js" />
-        <resource-file src="www/JSCore/Tests/Worker/WorkerScope.js" />
+        <!-- JavaScript polyfills resource files -->
 
-        <resource-file src="www/JSCore/JSClassDelegate.js" />
+        <resource-file src="www/Polyfills/DOM/Document.js" />
+        <resource-file src="www/Polyfills/DOM/DOMAPIs.js" />
+        <resource-file src="www/Polyfills/DOM/DOMTokenList.js" />
+        <resource-file src="www/Polyfills/DOM/Element.js" />
+        <resource-file src="www/Polyfills/DOM/HTMLDocument.js" />
+        <resource-file src="www/Polyfills/DOM/HTMLElement.js" />
+        <resource-file src="www/Polyfills/DOM/Window.js" />
+
+        <resource-file src="www/Polyfills/Others/es6-promise.js" />
+        <resource-file src="www/Polyfills/Others/OtherPolyfills.js" />
+        <resource-file src="www/Polyfills/Others/XMLHttpRequest.js" />
+
+        <resource-file src="www/Polyfills/Polyfills.js" />
+
+        <!-- User testers (to be removed) -->
+
+        <resource-file src="www/Tests/SharedWatchWorker/SharedWatchWorkerTester.js" />
+        <resource-file src="www/Tests/SharedWatchWorker/SharedWatchWorkerScope.js" />
+        <resource-file src="www/Tests/SharedWorker/SharedWorkerTester.js" />
+        <resource-file src="www/Tests/SharedWorker/SharedWorkerScope.js" />
+        <resource-file src="www/Tests/Worker/WorkerTester.js" />
+        <resource-file src="www/Tests/Worker/WorkerScope.js" />
+
+        <!-- Utilities -->
 
         <resource-file src="www/Utilities/JSON-RPC/JSONRPCConnector.js" />
         <resource-file src="www/Utilities/JSON-RPC/JSONRPCError.js" />
