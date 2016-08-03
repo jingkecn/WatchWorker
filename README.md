@@ -1,11 +1,11 @@
-Smartwatch Worker Plugin for Cordova
+WatchWorker Plugin for Cordova
 ---
 This is an experimental plugin for asynchronous communication between a smartwatch and its encountered mobile using HTML5 SharedWorker APIs.
 
 # Prequisites
 
 ## For iOS
-This plugin is ***ONLY*** available for **iOS9.x**, so please make sure that the deployment target is set to version **9.x** in your Xcode project (both project settings and target settings).
+This plugin is ***ONLY*** available for **iOS9.3**, so please make sure that the deployment target is set to version **9.3** in your Xcode project (both project settings and target settings).
 
 Please replace the contents in `AppDelegate.m` file within your Xcode project by the following lines.
 
@@ -20,8 +20,7 @@ Please replace the contents in `AppDelegate.m` file within your Xcode project by
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     self.viewController = [[MainViewController alloc] init];
-    SharedWatchWorkerGlobalScope* scope = [SharedWatchWorkerGlobalScope create:@""];
-    [scope importScripts:@"app"];
+    [[WatchWorker sharedInstance] initializeWatchWorker:@"ApplicationScope"];
     [[WCMessageService sharedInstance] startServiceOnSuccess:nil onError:nil];
     return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
@@ -102,5 +101,5 @@ var onSuccess = function () {
 // On worker initialized error
 var onError = function () {};
 // Initialization with a context in script file named InsideWatchWorker.js
-watchworker.initialize("InsideWatchWorker", onSuccess, onError);
+watchworker.initialize("ApplicationScope", onSuccess, onError);
 ```
