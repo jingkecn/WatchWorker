@@ -12,15 +12,16 @@ Please replace the contents in `AppDelegate.m` file within your Xcode project by
 ``` objc 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-// replace the placeholder {ProjectName} by your Xcode project name to import Swift classes.
-#import "{ProjectName}-Swift.h"
+#import "WatchWorkerExample-Swift.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     self.viewController = [[MainViewController alloc] init];
+    // Launch JavaScript execution context for WatchKit apps
     [[WatchWorker sharedInstance] initializeWatchWorkerWithUrl:@"ApplicationScope"];
+    // Launch WatchConnectivity session for WatchKit apps
     [[WCMessageService sharedInstance] startServiceOnSuccess:nil onError:nil];
     return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
@@ -32,7 +33,7 @@ Please replace the contents in `AppDelegate.m` file within your Xcode project by
 
 ## Initialization
 
-You must initialize watchworker to evaluate your script file in the new JavaScript context.
+You must initialize watchworker first to evaluate your script file in the new JavaScript context.
 
 ``` javascript
 /**
@@ -98,8 +99,8 @@ var onSuccess = function () {
     });
     watchworker.postMessage("Message from web view!");
 };
-// On worker initialized error
+// On worker initialization error
 var onError = function () {};
-// Initialization with a context in script file named InsideWatchWorker.js
+// Initialize with a context inside script file named ApplicationScope.js
 watchworker.initialize("ApplicationScope", onSuccess, onError);
 ```

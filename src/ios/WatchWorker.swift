@@ -1,10 +1,9 @@
 import JavaScriptCore
 import ObjectiveC
 
-
 /**
  *  Class WatchWorker
- *  This class is aimed to deliver the abilities to communicate with Apple Watch by a HTML5 Worker API
+ *  This class is aimed to deliver the abilities to communicate with Apple Watch by HTML5 Worker API
  */
 @objc(WatchWorker) class WatchWorker : CDVPlugin {
     
