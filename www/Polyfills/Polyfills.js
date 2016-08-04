@@ -1,0 +1,2 @@
+importScripts("DOMAPIs");
+importScripts("OtherPolyfills");
