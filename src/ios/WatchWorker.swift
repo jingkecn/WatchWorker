@@ -1,23 +1,50 @@
 import JavaScriptCore
 import ObjectiveC
 
+
+/**
+ *  Class WatchWorker
+ *  This class is aimed to deliver the abilities to communicate with Apple Watch by a HTML5 Worker API
+ */
 @objc(WatchWorker) class WatchWorker : CDVPlugin {
-    
-    typealias MessageListener = (message: String) -> Void
     
     static let sharedInstance = WatchWorker()
     
-    let scope: SharedWorkerGlobalScope
-    var targetDelegate: EventTargetDelegate?
+    private var targetDelegate: EventTargetDelegate?
+    private var scope: SharedWorkerGlobalScope?
+    private var worker: SharedWatchWorker?
+    private var initialized: Bool { return self.scope != nil && self.worker != nil }
     
-    var worker: SharedWatchWorker?
-    var initialized: Bool { return self.worker != nil }
-    
-    override init() {
-        self.scope = SharedWorkerGlobalScope.create(withUrl: "ApplicationScope", withName: "")
-        super.init()
+    /**
+     Worker initializer, processing model:
+     1. Delegate this worker itself to an event target delegator to support event system
+     2. Initialize an application scope for SharedWatchWorker
+     3. Initialize a SharedWatchWorker with the application scope
+     4. Add message listener to message port of SharedWatchWorker in outside scope to listen messages from the message port(s) of inside scope
+     5. Start the outside message port
+     
+     - parameter url: script url
+     */
+    func initializeWatchWorker(withUrl url: String) {
+        self.targetDelegate = EventTargetDelegate()
+        self.scope = SharedWorkerGlobalScope.create(withUrl: url, withName: "")
+        self.worker = SharedWatchWorker.create(self.scope!, scriptURL: url)
+        self.worker!.port.addEventListener("message", listener: EventListener.create(withHandler: { self.dispatchMessage(($0 as! MessageEvent).data) }))
+        self.worker!.port.start()
     }
     
+}
+
+// MARK: - Exposed plugin API
+
+extension WatchWorker {
+    
+    /**
+     Initialization:
+     Initialize WatchWorker with an execution script url
+     
+     - parameter command: cordova plugin command
+     */
     func initialize(command: CDVInvokedUrlCommand) {
         self.commandDelegate.runInBackground({
             var result = CDVPluginResult(status: CDVCommandStatus_ERROR)
@@ -37,15 +64,11 @@ import ObjectiveC
         })
     }
     
-    func initializeWatchWorker(withUrl url: String) {
-        self.targetDelegate = EventTargetDelegate()
-        self.worker = SharedWatchWorker.create(self.scope, scriptURL: url)
-        self.worker!.port.addEventListener("message", listener: EventListener.create(withHandler: {
-            self.dispatchMessage(($0 as! MessageEvent).data)
-        }))
-        self.worker!.port.start()
-    }
-    
+    /**
+     Message sender: send message to Apple Watch through a asynchronous worker scope
+     
+     - parameter command: cordova plugin command
+     */
     func postMessage(command: CDVInvokedUrlCommand) {
         self.commandDelegate.runInBackground({
             guard self.initialized else { return }
@@ -69,6 +92,12 @@ import ObjectiveC
         })
     }
     
+    /**
+     Event listener handler:
+     add event listener such as message listener
+     
+     - parameter command: cordova command
+     */
     func addEventListener(command: CDVInvokedUrlCommand) {
         self.commandDelegate.runInBackground({
             guard self.initialized else { return }
@@ -83,20 +112,25 @@ import ObjectiveC
                 self.commandDelegate.sendPluginResult(result, callbackId: command.callbackId)
                 return
             }
-            self.addListener(type, listener: EventListener.create(withHandler: {
+            self.addEventListener(byType: type, withListener: EventListener.create(withHandler: {
                 if let event = $0 as? MessageEvent {
                     result = CDVPluginResult(status: CDVCommandStatus_OK, messageAsString: event.data)
                 }
                 if let event = $0 as? ErrorEvent {
                     result = CDVPluginResult(status: CDVCommandStatus_ERROR, messageAsString: event.message)
                 }
-                // MUST SET true to keep listener alive!!!!!!!!!!
                 result.setKeepCallbackAsBool(true)
                 self.commandDelegate.sendPluginResult(result, callbackId: command.callbackId)
             }))
         })
     }
     
+    /**
+     Event listener handler: 
+     remove event listener
+     
+     - parameter command: cordova command
+     */
     func removeEventListener(command: CDVInvokedUrlCommand) {
         self.commandDelegate.runInBackground({
             guard self.initialized else { return }
@@ -111,34 +145,44 @@ import ObjectiveC
                 self.commandDelegate.sendPluginResult(result, callbackId: command.callbackId)
                 return
             }
-            self.removeListener(type)
+            self.removeEventListener(byType: type)
         })
     }
     
 }
 
+// MARK: - Worker dispatchers
+
 extension WatchWorker {
     
-    func dispatchMessage(message: String) {
-        print("Dispatching message: \(message)")
-        let event = MessageEvent.create(self.scope, type: "message", initDict: [ "data": message ])
+    /**
+     Message dispatcher: 
+     this method is called whenever a message is received by the worker's outside port.
+     It'll then dispatch a message event inside this worker scope.
+     
+     - parameter message: message received
+     */
+    private func dispatchMessage(message: String) {
+        guard let scope = self.scope else { return }
+        let event = MessageEvent.create(scope, type: "message", initDict: [ "data": message ])
         self.dispatchEvent(event)
     }
     
 }
 
+// MARK: - Event handlers
+
 extension WatchWorker {
     
-    func addListener(type: String, listener: EventListener) {
+    private func addEventListener(byType type: String, withListener listener: EventListener) {
         self.targetDelegate?.addEventListener(type, listener: listener)
     }
     
-    func removeListener(type: String?) {
+    private func removeEventListener(byType type: String?) {
         self.targetDelegate?.removeEventListener(type, listener: nil)
     }
     
-    func dispatchEvent(event: Event) {
-        print("\(self.targetDelegate).dispatching event: \(event)")
+    private func dispatchEvent(event: Event) {
         self.targetDelegate?.dispatchEvent(event)
     }
     
