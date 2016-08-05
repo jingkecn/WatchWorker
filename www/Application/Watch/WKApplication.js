@@ -11,6 +11,7 @@ class WKApplication {
     }
 
     initialize() {
+    if (this.initialized) { return; }
         this.controller = new WKApplicationController(this);
     }
 
