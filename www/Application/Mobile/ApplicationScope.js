@@ -1,7 +1,7 @@
 importScripts("WKApplication");
 importScripts("WKApplicationController");
 
-WKApplication.initialize();
+WKApplication.singleton.initialize();
 onconnect = function (event) {
     console.info("[ApplicationScope.onconnect]", event);
     var port = event.ports[0];
