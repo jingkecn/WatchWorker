@@ -12,17 +12,18 @@ Please replace the contents in `AppDelegate.m` file within your Xcode project by
 ``` objc 
 #import "AppDelegate.h"
 #import "MainViewController.h"
-#import "WatchWorkerExample-Swift.h"
+#import "{PRODUCT_NAME}-Swift.h"
 
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
-    self.viewController = [[MainViewController alloc] init];
     // Launch JavaScript execution context for WatchKit apps
     [[WatchWorker sharedInstance] initializeWatchWorkerWithUrl:@"ApplicationScope"];
-    // Launch WatchConnectivity session for WatchKit apps
+    // Launch WatchConnectivity session to allow WatchConnectivity communication
     [[WCMessageService sharedInstance] startServiceOnSuccess:nil onError:nil];
+    // We launch cordova WebView at last
+    self.viewController = [[MainViewController alloc] init];
     return [super application:application didFinishLaunchingWithOptions:launchOptions];
 }
 

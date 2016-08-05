@@ -1,6 +1,7 @@
 importScripts("WKApplication");
 importScripts("WKApplicationController");
 
+WKApplication.initialize();
 onconnect = function (event) {
     console.info("[ApplicationScope.onconnect]", event);
     var port = event.ports[0];
@@ -10,5 +11,5 @@ onconnect = function (event) {
     });
     port.start();
     // Initialize WatchKit App here.
-    console.info("[ApplicationScope.onconnect.WKApplication.singleton]", WKApplication.singleton);
+    // console.info("[ApplicationScope.onconnect.WKApplication.singleton]", WKApplication.singleton);
 };

@@ -8,6 +8,9 @@ class WKApplication {
 
     constructor() {
         this.currentScreen = this.menuScreen;
+    }
+
+    initialize() {
         this.controller = new WKApplicationController(this);
     }
 
