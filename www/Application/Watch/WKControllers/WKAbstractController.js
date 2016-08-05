@@ -4,6 +4,7 @@
 class WKAbstractController {
 
     constructor(controlled) {
+        controlled.initialized = true;
         this.controlled = controlled;
         this.observers = {};
     }
