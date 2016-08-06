@@ -1,9 +1,9 @@
-importScripts("JSONRPCService");
-importScripts("Sequence");
-importScripts("SharedWatchWorker");
-importScripts("WKAbstractController");
-importScripts("WKMenuScreenController");
-importScripts("WKListScreenController");
+importScripts("JSONRPCService.js");
+importScripts("Sequence.js");
+importScripts("SharedWatchWorker.js");
+importScripts("WKAbstractController.js");
+importScripts("WKMenuScreenController.js");
+importScripts("WKListScreenController.js");
 
 /**
  * WatchKit Application controller
@@ -12,7 +12,7 @@ class WKApplicationController extends WKAbstractController {
 
     constructor(controlled) {
         super(controlled);
-        this.scope = new SharedWatchWorker("WKApplicationScope");
+        this.scope = new SharedWatchWorker("WKApplicationScope.js");
         this.scope.port.start();
         this.service = new JSONRPCService(this.scope.port);
         this.service.registerScope(this);

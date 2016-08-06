@@ -1,4 +1,4 @@
-importScripts("XMLHttpRequest");
+importScripts("XMLHttpRequest.js");
 
 class WebService {
 

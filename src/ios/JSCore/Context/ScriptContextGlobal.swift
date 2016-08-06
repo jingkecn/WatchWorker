@@ -51,38 +51,41 @@ extension ScriptContext {
 
 extension ScriptContext {
     
-    func preEvaluateScripts() {
-        self.evaluateScriptFile("JSCore")
-        self.evaluateScriptFile("Polyfills")
-    }
-    
-    func evaluateScript(script: String) -> JSValue? {
-        return self.context?.evaluateScript(script)
-    }
-    
-    func evaluateScriptFile(module: String) {
+    func importScript(named filename: String) {
         guard let context = self.context else { return }
-        guard !self.modules.contains(module) else { return }
-        do {
-            if let path = NSBundle.mainBundle().pathForResource(module, ofType: "js", inDirectory: nil) {
-                let script = try String(contentsOfFile: path, encoding: NSUTF8StringEncoding)
-                print("Evaluating \(module).js")
-                context.evaluateScript(script)
-                self.registerModule(module)
-            } else {
-                print("Unable to read resource files: \(module).js")
+        guard !self.importedScripts.contains(filename) else { return }
+        guard let script = self.fetchScript(named: filename) else { return }
+        context.evaluateScript(script)
+        print("[ScriptContext.importScript] evaluating script from \(filename)")
+        self.importedScripts.insert(filename)
+    }
+    
+    func fetchScript(named filename: String) -> String? {
+        guard let rootUrl = self.resolveUrl() else { return nil }
+        let enumerator = NSFileManager.defaultManager().enumeratorAtURL(rootUrl, includingPropertiesForKeys: nil, options: .SkipsHiddenFiles, errorHandler: nil)
+        var script: String?
+        while let url = enumerator?.nextObject() as? NSURL {
+            if url.lastPathComponent == filename && url.pathExtension == "js" {
+                script = self.fetchScript(fromUrl: url)
             }
-        } catch (let error) {
-            print("Error while processing script file: \(error)")
         }
+        return script
     }
     
-    func registerModule(module: String) {
-        self.modules.insert(module)
+    func fetchScript(fromUrl url: NSURL) -> String? {
+        var script: String?
+        do {
+            script = try String(contentsOfURL: url, encoding: NSUTF8StringEncoding)
+        } catch (let error) {
+            print("Error fetching script from url = \(url), error = \(error)")
+        }
+        return script
     }
     
-    func unregisterModule(module: String) -> String? {
-        return self.modules.remove(module)
+    func resolveUrl(withRootDirectory root: String? = nil) -> NSURL? {
+        return root == nil ? NSBundle.mainBundle().bundleURL : NSBundle.mainBundle().bundleURL
+            .URLByAppendingPathComponent(root!, isDirectory: true)
+            .URLByResolvingSymlinksInPath
     }
     
 }

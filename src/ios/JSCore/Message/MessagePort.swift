@@ -42,7 +42,7 @@ class MessagePort: EventTarget {
         self.started = false
         super.init(context: context)
         self.addEventListener("message", listener: EventListener.create(withHandler: self.onMessage))
-        // self.context.ports.insert(self)
+//        self.context.ports.insert(self)
     }
     
     deinit {
@@ -69,7 +69,7 @@ extension MessagePort: MessagePortJSExport {
     func close() {
         print("[\(self.className)] Closing message port {\(self)}!")
         self.entangledPorts.removeAll()
-        self.context.ports.remove(self)
+//        self.context.ports.remove(self)
         self.context.destroyContext()
         self.closed = true
     }

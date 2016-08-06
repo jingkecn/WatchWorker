@@ -1,5 +1,5 @@
-importScripts("ImageService");
-importScripts("WKAbstractWidgetController");
+importScripts("ImageService.js");
+importScripts("WKAbstractWidgetController.js");
 class WKDetailWidgetController extends WKAbstractWidgetController {
 
     constructor(controlled) {

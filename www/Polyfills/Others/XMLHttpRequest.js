@@ -1,4 +1,4 @@
-importScripts("Event");
+importScripts("Event.js");
 /**
  * XMLHttpRequest polyfill.
  * This implementation is relying on HttpRequestImpl for actual network communication

@@ -1,4 +1,4 @@
-importScripts("WKAbstractController");
+importScripts("WKAbstractController.js");
 
 class WKAbstractWidgetController extends WKAbstractController {
 

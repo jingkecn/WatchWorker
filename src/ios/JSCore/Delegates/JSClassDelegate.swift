@@ -44,6 +44,7 @@ class JSClassDelegate: EventTargetDelegate, JSClassDelegateJSExport {
     }
     
     func createJSInstance() -> JSValue? {
+        self.context.importScript(named: "\(self.className).js")
         guard let jsClass = self.context.getJSValue(byKey: self.className) else { return nil }
         guard let creator = jsClass.objectForKeyedSubscript("create") where !creator.isUndefined && !creator.isNull else { return nil }
         let jsInstance = creator.callWithArguments([self])

@@ -1,18 +1,22 @@
-importScripts("WKMenuScreen");
-importScripts("WKListScreen");
-importScripts("WKDetailScreen");
-importScripts("WKMenuWidget");
-importScripts("WKListWidget");
-importScripts("WKDetailWidget");
+importScripts("WKMenuScreen.js");
+importScripts("WKListScreen.js");
+importScripts("WKDetailScreen.js");
+importScripts("WKMenuWidget.js");
+importScripts("WKListWidget.js");
+importScripts("WKDetailWidget.js");
+importScripts("WKApplicationController.js");
+
 class WKApplication {
 
     constructor() {
         this.currentScreen = this.menuScreen;
+        if (this.initialized) { return; }
+        this.controller = new WKApplicationController(this);
+        console.info("[WKApplication.initialize]", this);
     }
 
     initialize() {
-    if (this.initialized) { return; }
-        this.controller = new WKApplicationController(this);
+        
     }
 
     get screens() {

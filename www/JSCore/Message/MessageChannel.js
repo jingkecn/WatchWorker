@@ -1,5 +1,5 @@
-importScripts("JSClassDelegate");
-importScripts("MessagePort")
+importScripts("JSClassDelegate.js");
+importScripts("MessagePort.js")
 
 class MessageChannel extends JSClassDelegate {
 

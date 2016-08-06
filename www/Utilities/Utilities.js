@@ -1,4 +1,4 @@
-importScripts("JSONRPCConnector");
-importScripts("JSONRPCError");
-importScripts("JSONRPCMessage");
-importScripts("JSONRPCService");
+importScripts("JSONRPCConnector.js");
+importScripts("JSONRPCError.js");
+importScripts("JSONRPCMessage.js");
+importScripts("JSONRPCService.js");

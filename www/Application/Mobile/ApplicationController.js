@@ -1,5 +1,5 @@
-importScripts("WKApplication");
-importScripts("WKApplicationController");
+importScripts("WKApplication.js");
+importScripts("WKApplicationController.js");
 
 class ApplicationController {
 

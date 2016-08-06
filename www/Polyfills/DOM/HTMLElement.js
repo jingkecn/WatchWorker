@@ -1,4 +1,4 @@
-importScripts("Element");
+importScripts("Element.js");
 /**
  * Polyfill
  * The HTMLElement interface represents any HTML element. 

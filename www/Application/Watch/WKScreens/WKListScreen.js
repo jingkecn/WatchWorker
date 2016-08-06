@@ -1,5 +1,5 @@
-importScripts("WKAbstractScreen");
-importScripts("WKListScreenController");
+importScripts("WKAbstractScreen.js");
+importScripts("WKListScreenController.js");
 
 class WKListScreen extends WKAbstractScreen {
 

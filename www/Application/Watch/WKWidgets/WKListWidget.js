@@ -1,5 +1,5 @@
-importScripts("WKAbstractWidget");
-importScripts("WKListWidgetController");
+importScripts("WKAbstractWidget.js");
+importScripts("WKListWidgetController.js");
 class WKListWidget extends WKAbstractWidget {
 
     constructor(init) {

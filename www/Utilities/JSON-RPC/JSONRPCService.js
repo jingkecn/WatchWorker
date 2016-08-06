@@ -1,7 +1,7 @@
-importScripts("JSONRPCConnector");
-importScripts("JSONRPCError");
-importScripts("JSONRPCMessage");
-importScripts("Sequence");
+importScripts("JSONRPCConnector.js");
+importScripts("JSONRPCError.js");
+importScripts("JSONRPCMessage.js");
+importScripts("Sequence.js");
 
 class JSONRPCService extends JSONRPCConnector {
 

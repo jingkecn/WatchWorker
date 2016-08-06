@@ -1,4 +1,4 @@
-importScripts("Event");
+importScripts("Event.js");
 
 class ErrorEvent extends Event {
 

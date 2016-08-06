@@ -1,5 +1,5 @@
-importScripts("JSONRPCService");
-importScripts("WKAbstractController");
+importScripts("JSONRPCService.js");
+importScripts("WKAbstractController.js");
 
 class WKAbstractScreenController extends WKAbstractController {
 

@@ -1,4 +1,4 @@
-importScripts("EventTarget");
+importScripts("EventTarget.js");
 /**
  * Polyfill
  * The Element interface represents an object of a Document. 

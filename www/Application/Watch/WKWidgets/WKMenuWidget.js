@@ -1,5 +1,5 @@
-importScripts("WKAbstractWidget");
-importScripts("WKMenuWidgetController");
+importScripts("WKAbstractWidget.js");
+importScripts("WKMenuWidgetController.js");
 
 class WKMenuWidget extends WKAbstractWidget {
 
