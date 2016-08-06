@@ -38,18 +38,20 @@ public class WorkerGlobalScope: ScriptContext {
 
 extension WorkerGlobalScope: WorkerGlobalScopeJSExport {
     
+//    override func preEvaluateScripts() {
+//        self.evaluateScriptFile("JSCore");
+//    }
+    
     override func registerGlobalFunctions() {
         super.registerGlobalFunctions()
-        self.evaluateScript("function importScripts(urls) { scope.importScripts(urls); }")
+        self.context?.evaluateScript("function importScripts(urls) { scope.importScripts(urls); }")
     }
     
     func importScripts(urls: AnyObject) {
-        if let module = urls as? String {
-            self.evaluateScriptFile(module)
-        } else if let modules = urls as? Array<String> {
-            for module in modules {
-                self.evaluateScriptFile(module)
-            }
+        if let url = urls as? String {
+            self.importScript(named: url)
+        } else if let urls = urls as? Array<String> {
+            urls.forEach({ self.importScript(named: $0) })
         }
     }
     
@@ -101,7 +103,7 @@ extension WorkerGlobalScope {
     class func runWorker(worker: AbstractWorker) {
         worker.scope = WorkerGlobalScope.create(withUrl: worker.url)
         guard let scope = worker.scope else { return }
-        scope.evaluateScriptFile(worker.url)
+        scope.importScript(named: worker.url)
         scope.parentScope = worker.context as? WorkerGlobalScope
         let insidePort = MessagePort.create(scope)
         let outsidePort = worker.port

@@ -1,4 +1,4 @@
-importScripts("XMLService");
+importScripts("XMLService.js");
 
 class TwitterService extends XMLService {
 

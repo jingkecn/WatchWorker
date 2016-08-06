@@ -1,6 +1,5 @@
-importScripts("EventTarget");
-importScripts("MessageEvent");
-importScripts("Queue");
+importScripts("EventTarget.js");
+importScripts("MessageEvent.js");
 /**
  * 
  */

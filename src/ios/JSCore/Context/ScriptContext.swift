@@ -13,20 +13,21 @@ public class ScriptContext: EventTargetDelegate {
     
     var context: JSContext?
     
-    var ports = Set<MessagePort>()
-    var modules = Set<String>()
+//    var ports = Set<MessagePort>()
+    var importedScripts = Set<String>()
     
     override init() {
         super.init()
         self.context = JSContext()
         self.registerGlobalObjects()
         self.registerGlobalFunctions()
-        self.preEvaluateScripts()
+//        self.importScript(named: "JSCore.js")
+        self.importScript(named: "Polyfills.js")
     }
     
     func destroyContext() {
         NSLog("[ScriptContext] Destroying JSContext: \(self.context)")
-        self.ports.forEach({ $0.disentangle() })
+//        self.ports.forEach({ $0.disentangle() })
         self.context = nil
     }
     

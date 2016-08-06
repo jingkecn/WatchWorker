@@ -1,2 +1,2 @@
-importScripts("DOMAPIs");
-importScripts("OtherPolyfills");
+importScripts("DOMAPIs.js");
+importScripts("OtherPolyfills.js");

@@ -1,4 +1,4 @@
-importScripts("JSClassDelegate");
+importScripts("JSClassDelegate.js");
 /**
  * @interface	{EventTarget}
  */

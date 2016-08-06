@@ -77,7 +77,7 @@ extension SharedWorkerGlobalScope {
         guard let worker = worker as? SharedWorker else { return }
         worker.scope = SharedWorkerGlobalScope.create(withUrl: worker.url, withName: worker.name)
         guard let scope = worker.scope as? SharedWorkerGlobalScope else { return }
-        scope.evaluateScriptFile(worker.url)
+        scope.importScript(named: worker.url)
         scope.parentScope = worker.context as? WorkerGlobalScope
         let insidePort = MessagePort.create(scope)
         let outsidePort = worker.port

@@ -25,7 +25,7 @@ class DedicatedWorkerGlobalScope: WorkerGlobalScope {
     
     override func registerGlobalFunctions() {
         super.registerGlobalFunctions()
-        self.evaluateScript("function postMessage(message) { scope && scope.postMessage(JSON.stringify(message)); }")
+        self.context?.evaluateScript("function postMessage(message) { scope && scope.postMessage(JSON.stringify(message)); }")
     }
     
 }
@@ -65,7 +65,7 @@ extension DedicatedWorkerGlobalScope {
         guard let worker = worker as? Worker else { return }
         worker.scope = DedicatedWorkerGlobalScope.create(withUrl: worker.url)
         guard let scope = worker.scope as? DedicatedWorkerGlobalScope else { return }
-        scope.evaluateScriptFile(worker.url)
+        scope.importScript(named: worker.url)
         scope.parentScope = worker.context as? WorkerGlobalScope
         let insidePort = MessagePort.create(scope)
         let outsidePort = worker.port

@@ -1,4 +1,4 @@
-importScripts("EventTarget");
+importScripts("EventTarget.js");
 
 class Worker extends EventTarget {
 

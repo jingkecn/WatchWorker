@@ -1,5 +1,5 @@
-importScripts("Document");
-importScripts("HTMLElement");
+importScripts("Document.js");
+importScripts("HTMLElement.js");
 /**
  * Polyfill
  * HTMLDocument is an abstract interface of the DOM which provides access to special properties and methods not present by default on a regular (XML) document.

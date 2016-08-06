@@ -1,2 +1,2 @@
-importScripts("es6-promise");
-importScripts("XMLHttpRequest");
+importScripts("es6-promise.js");
+importScripts("XMLHttpRequest.js");

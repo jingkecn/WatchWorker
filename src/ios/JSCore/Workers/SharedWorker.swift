@@ -27,6 +27,7 @@ class SharedWorker: AbstractWorker, SharedWorkerJSExport {
         self.scriptURL = scriptURL
         self.name = name
         super.init(context: context, scriptURL: scriptURL)
+        print("\(self.port)")
     }
     
     override func run() {

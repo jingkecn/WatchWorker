@@ -1,5 +1,5 @@
-importScripts("JSONRPCError");
-importScripts("JSONRPCMessage");
+importScripts("JSONRPCError.js");
+importScripts("JSONRPCMessage.js");
 
 class JSONRPCConnector {
 

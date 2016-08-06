@@ -1,4 +1,4 @@
-importScripts("WKAbstractScreenController");
+importScripts("WKAbstractScreenController.js");
 class WKMenuScreenController extends WKAbstractScreenController {
 
     constructor(controlled) {

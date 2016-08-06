@@ -1,4 +1,4 @@
-importScripts("SharedWorker");
+importScripts("SharedWorker.js");
 
 class SharedWatchWorker extends SharedWorker {
 

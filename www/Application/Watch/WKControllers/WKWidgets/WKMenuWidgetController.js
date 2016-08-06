@@ -1,6 +1,6 @@
-importScripts("NewsService");
-importScripts("TwitterService");
-importScripts("WKAbstractWidgetController");
+importScripts("NewsService.js");
+importScripts("TwitterService.js");
+importScripts("WKAbstractWidgetController.js");
 class WKMenuWidgetController extends WKAbstractWidgetController {
 
     constructor(controlled) {

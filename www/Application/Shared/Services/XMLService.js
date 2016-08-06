@@ -1,4 +1,4 @@
-importScripts("WebService");
+importScripts("WebService.js");
 
 class XMLService extends WebService {
 
