@@ -19,7 +19,7 @@ Please replace the contents in `AppDelegate.m` file within your Xcode project by
 - (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions
 {
     // Launch JavaScript execution context for WatchKit apps
-    [[WatchWorker sharedInstance] initializeWatchWorkerWithUrl:@"ApplicationScope"];
+    [[WatchWorker sharedInstance] initializeWatchWorkerWithUrl:@"ApplicationScope.js"];
     // Launch WatchConnectivity session to allow WatchConnectivity communication
     [[WCMessageService sharedInstance] startServiceOnSuccess:nil onError:nil];
     // We launch cordova WebView at last
