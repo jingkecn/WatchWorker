@@ -25,10 +25,10 @@ public class WindowTimers: NSObject, WindowTimersJSExport {
     // MARK: ********** Variables **********
     var tasks = Queue<(callback: JSValue, args: JSValue, id: Int, type: Type)>() {
         didSet {
-            print("Task queue: \n\(self.tasks.items)")
+            // print("Task queue: \n\(self.tasks.items)")
             while !self.tasks.isEmpty {
                 if let task = self.tasks.dequeue() {
-                    print("Executing :\(task.callback)\n")
+                    // print("Executing :\(task.callback)\n")
                     task.callback.callWithArguments(task.args.toArray())
                 }
             }
