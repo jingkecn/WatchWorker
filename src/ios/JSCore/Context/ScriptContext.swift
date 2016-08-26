@@ -21,7 +21,7 @@ public class ScriptContext: EventTargetDelegate {
         self.context = JSContext()
         self.registerGlobalObjects()
         self.registerGlobalFunctions()
-//        self.importScript(named: "JSCore.js")
+       self.importScript(named: "JSCore.js")
         self.importScript(named: "Polyfills.js")
     }
     
