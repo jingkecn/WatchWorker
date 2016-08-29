@@ -9,6 +9,7 @@
         <config-file target="config.xml" parent="/*">
             <feature name="WatchWorker">
                 <param name="ios-package" value="WatchWorker" />
+                <param name="onload" value="true" />
             </feature>
         </config-file>
 
