@@ -1,6 +1,6 @@
 {
   "name": "WatchWorker",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Messaging APIs for communication with JavaScript Worker between watchOS and iOS.",
   "cordova": {
     "id": "com-wiztivi-cordova-plugin-watchworker",

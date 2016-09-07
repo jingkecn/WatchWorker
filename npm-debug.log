@@ -1,0 +1,112 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'publish',
+1 verbose cli   '.' ]
+2 info using npm@3.10.3
+3 info using node@v6.5.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'C:\\Users\\piano\\Documents\\GitHub\\WatchWorker',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\piano\AppData\Roaming\npm-cache\WatchWorker\0.0.1\package.tgz not in flight; packing
+9 verbose correctMkdir C:\Users\piano\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+10 info lifecycle WatchWorker@0.0.1~prepublish: WatchWorker@0.0.1
+11 silly lifecycle WatchWorker@0.0.1~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ 'C:\\Users\\piano\\AppData\\Roaming\\npm-cache\\WatchWorker\\0.0.1\\package.tgz',
+12 verbose tar pack   'C:\\Users\\piano\\Documents\\GitHub\\WatchWorker' ]
+13 verbose tarball C:\Users\piano\AppData\Roaming\npm-cache\WatchWorker\0.0.1\package.tgz
+14 verbose folder C:\Users\piano\Documents\GitHub\WatchWorker
+15 verbose addLocalTarball adding from inside cache C:\Users\piano\AppData\Roaming\npm-cache\WatchWorker\0.0.1\package.tgz
+16 verbose correctMkdir C:\Users\piano\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+17 silly cache afterAdd WatchWorker@0.0.1
+18 verbose afterAdd C:\Users\piano\AppData\Roaming\npm-cache\WatchWorker\0.0.1\package\package.json not in flight; writing
+19 verbose correctMkdir C:\Users\piano\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+20 verbose afterAdd C:\Users\piano\AppData\Roaming\npm-cache\WatchWorker\0.0.1\package\package.json written
+21 silly publish { name: 'WatchWorker',
+21 silly publish   version: '0.0.1',
+21 silly publish   description: 'Messaging APIs for communication with JavaScript Worker between watchOS and iOS.',
+21 silly publish   cordova:
+21 silly publish    { id: 'com-wiztivi-cordova-plugin-watchworker',
+21 silly publish      platforms: [ 'ios' ] },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/jingkecn/WatchWorker.git' },
+21 silly publish   keywords: [ 'ecosystem:cordova', 'cordova-ios' ],
+21 silly publish   author: { name: 'Jing KE' },
+21 silly publish   license: 'MIT',
+21 silly publish   bugs: { url: 'https://github.com/jingkecn/WatchWorker/issues' },
+21 silly publish   homepage: 'https://github.com/jingkecn/WatchWorker#readme',
+21 silly publish   readme: 'WatchWorker Plugin for Cordova\r\n---\r\nThis is an experimental plugin for asynchronous communication between a smartwatch and its encountered mobile using HTML5 SharedWorker APIs.\r\n\r\n# Prequisites\r\n\r\n## For iOS\r\nThis plugin is ***ONLY*** available for **iOS9.3**, so please make sure that the deployment target is set to version **9.3** in your Xcode project (both project settings and target settings).\r\n\r\nPlease replace the contents in `AppDelegate.m` file within your Xcode project by the following lines.\r\n\r\n``` objc \r\n#import "AppDelegate.h"\r\n#import "MainViewController.h"\r\n#import "{PRODUCT_NAME}-Swift.h"\r\n\r\n@implementation AppDelegate\r\n\r\n- (BOOL)application:(UIApplication*)application didFinishLaunchingWithOptions:(NSDictionary*)launchOptions\r\n{\r\n    // Launch JavaScript execution context for WatchKit apps\r\n    [[WatchWorker sharedInstance] initializeWatchWorkerWithUrl:@"ApplicationScope.js"];\r\n    // Launch WatchConnectivity session to allow WatchConnectivity communication\r\n    [[WCMessageService sharedInstance] startServiceOnSuccess:nil onError:nil];\r\n    // We launch cordova WebView at last\r\n    self.viewController = [[MainViewController alloc] init];\r\n    return [super application:application didFinishLaunchingWithOptions:launchOptions];\r\n}\r\n\r\n@end\r\n```\r\n\r\n# Messaging\r\n\r\n## Initialization\r\n\r\nYou must initialize watchworker first to evaluate your script file in the new JavaScript context.\r\n\r\n``` javascript\r\n/**\r\n * Initialize a worker instance for smartwatch\r\n * @parameter   {string}    url (currently is the filename of your script, without a suffix)\r\n * @parameter   {callback}  onSuccess\r\n * @parameter   {callback}  onError\r\n */\r\nwatchworker.initialize(url, onSuccess, onError);\r\n```\r\n\r\n## Message Sender\r\n\r\n``` javascript\r\n// Please ensure that watchworker has been successfully initialized\r\n watchworker.initialize(url, function() {\r\n     /**\r\n      * Post a message to smartwatch\r\n      * @parameter   {string}    message\r\n      * @parameter   {callback}  onSuccess\r\n      * @parameter   {callback}  onError\r\n      */\r\n      watchworker.postMessage(message, onSuccess, onError);\r\n }, onError);\r\n```\r\n\r\n## Message Listener\r\n\r\n``` javascript\r\n// Please ensure that watchworker has been successfully initialized\r\n watchworker.initialize(url, function() {\r\n     /**\r\n      * Add event listener to watchworker\r\n      * @parameter   {string}    type\r\n      * @parameter   {callback}  callback\r\n      */\r\n      watchworker.addEventListener(type, callback);\r\n      // An example\r\n      watchworker.addEventListener("message", function(message) {\r\n          // TODO: message handler\r\n      });\r\n\r\n    /**\r\n     * Remove event listeners from watchworker\r\n     * @parameter   {string}    type\r\n     * @parameter   {callback}  onSuccess\r\n     * @parameter   {callback}  onError\r\n     */\r\n     watchworker.removeEventListener(type, onSuccess, onError);\r\n }, onError);\r\n```\r\n\r\n## Example\r\n\r\n``` javascript\r\n// On worker successfully initialized\r\nvar onSuccess = function () {\r\n    watchworker.addEventListener("message", function (message) {\r\n        // Receiving message\r\n    });\r\n    watchworker.addEventListener("error", function (error) {\r\n        // Receiving error\r\n    });\r\n    watchworker.postMessage("Message from web view!");\r\n};\r\n// On worker initialization error\r\nvar onError = function () {};\r\n// Initialize with a context inside script file named ApplicationScope.js\r\nwatchworker.initialize("ApplicationScope.js", onSuccess, onError);\r\n```',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '1b6c5f8344a9d33b01aaeec5b31cd435843019ff',
+21 silly publish   _id: 'WatchWorker@0.0.1',
+21 silly publish   scripts: {},
+21 silly publish   _shasum: '39e9a107f8be9bb1bc66f46669aac1fc66f63b2d',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name WatchWorker
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'WatchWorker',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'WatchWorker',
+26 silly mapToRegistry   name: 'WatchWorker',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/WatchWorker
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading C:\Users\piano\AppData\Roaming\npm-cache\WatchWorker\0.0.1\package.tgz
+30 verbose request uri https://registry.npmjs.org/WatchWorker
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 23:14:29
+33 verbose request using bearer token for auth
+34 verbose request id fdd14fb7986a50f4
+35 http request PUT https://registry.npmjs.org/WatchWorker
+36 http 403 https://registry.npmjs.org/WatchWorker
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Wed, 07 Sep 2016 21:14:32 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-lhr6333-LHR',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1473282871.103951,VS0,VE964',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating C:\Users\piano\AppData\Roaming\npm-cache\registry.npmjs.org\WatchWorker on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 0.0.1." : WatchWorker
+40 verbose stack     at makeError (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:252:14)
+40 verbose stack     at Request._callback (C:\Program Files\nodejs\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+40 verbose stack     at Request.self.callback (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:200:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:1067:10)
+40 verbose stack     at emitOne (events.js:101:20)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (C:\Program Files\nodejs\node_modules\npm\node_modules\request\request.js:988:12)
+41 verbose statusCode 403
+42 verbose pkgid WatchWorker
+43 verbose cwd C:\Users\piano\Documents\GitHub\WatchWorker
+44 error Windows_NT 10.0.14393
+45 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "publish" "."
+46 error node v6.5.0
+47 error npm  v3.10.3
+48 error code E403
+49 error "You cannot publish over the previously published version 0.0.1." : WatchWorker
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
