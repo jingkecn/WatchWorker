@@ -103,5 +103,5 @@ var onSuccess = function () {
 // On worker initialization error
 var onError = function () {};
 // Initialize with a context inside script file named ApplicationScope.js
-watchworker.initialize("ApplicationScope", onSuccess, onError);
+watchworker.initialize("ApplicationScope.js", onSuccess, onError);
 ```
