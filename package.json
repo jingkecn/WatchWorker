@@ -1,0 +1,25 @@
+{
+  "name": "WatchWorker",
+  "version": "0.0.1",
+  "description": "Messaging APIs for communication with JavaScript Worker between watchOS and iOS.",
+  "cordova": {
+    "id": "com-wiztivi-cordova-plugin-watchworker",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jingkecn/WatchWorker.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "Jing KE",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jingkecn/WatchWorker/issues"
+  },
+  "homepage": "https://github.com/jingkecn/WatchWorker#readme"
+}
